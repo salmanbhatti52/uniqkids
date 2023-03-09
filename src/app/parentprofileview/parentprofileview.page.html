@@ -1,62 +1,65 @@
 <ion-header [translucent]="true" class="ion-no-border cheader">
-	  <ion-toolbar class="headBgGlobal">
-	    <ion-buttons slot="start" class="menubtn">
-		    <ion-menu-button class="menuicon"></ion-menu-button>
-		  </ion-buttons>
-	  <ion-title class="ctitle">Profile</ion-title>
-	  <ion-buttons slot="end" class="plusbtn" (click)="next()">
-		  <img src="assets/imgs/icons/edit.svg">
-		</ion-buttons>
-	</ion-toolbar>
+  <ion-toolbar class="headBgGlobal">
+    <ion-buttons slot="start" class="menubtn">
+      <ion-menu-button class="menuicon"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ctitle">Profile</ion-title>
+    <ion-buttons slot="end" class="plusbtn" (click)="next()">
+      <img src="assets/imgs/icons/edit.svg" />
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="background">
- 
-  <p style="font-size: 15px;text-align: center;width: 80%;margin: 5% auto;">Need to change something in your profile? Edit your profile here</p>
+  <p style="font-size: 15px; text-align: center; width: 80%; margin: 5% auto">
+    Need to change something in your profile? Edit your profile here
+  </p>
 
-  
-	<div class="wrapper">
-		<div class="main">
-			<div class="inner">
-				<div class="logodiv">
-					<!-- <img src="assets/imgs/profilelogo.png" *ngIf="picUrl==''"> -->
-					<img src="{{picUrl}}">
-				</div>
-				<div class="text">{{fname}} {{lname}}</div>
-				<div class="text2">{{relationwithchild}}</div>
-				<div class="para">{{about}}</div>
-			</div>
-		</div>
+  <div class="wrapper">
+    <div class="main">
+      <div class="inner">
+        <div style="position: absolute; top: 10px; right: 10px">
+          <div class="para">Availbility</div>
+          <ion-toggle class="ttgg" mode="ios" [checked]="true"></ion-toggle>
+        </div>
+        <div class="logodiv">
+          <!-- <img src="assets/imgs/profilelogo.png" *ngIf="picUrl==''"> -->
+          <img src="{{picUrl}}" />
+        </div>
 
-		<div class="main2">
-			<div class="contactdiv">
-				<div class="icondiv">
-					<img src="assets/imgs/icons/sms.svg">
-				</div>
-				<p class="dtext">{{email}}</p>
-			</div>
+        <div class="text">{{fname}} {{lname}}</div>
+        <div class="text2">{{relationwithchild}}</div>
+        <div class="para">{{about}}</div>
+      </div>
+    </div>
 
-			<div class="contactdiv">
-				<div class="icondiv">
-					<img src="assets/imgs/icons/sendarrow.svg">
-				</div>
-				<p class="dtext1">{{address}}</p>
-			</div>
+    <div class="main2">
+      <div class="contactdiv">
+        <div class="icondiv">
+          <img src="assets/imgs/icons/sms.svg" />
+        </div>
+        <p class="dtext">{{email}}</p>
+      </div>
 
-			<div class="contactdiv">
-				<div class="icondiv">
-					<img src="assets/imgs/icons/phone.svg">
-				</div>
-				<p class="dtext1">{{mobilenumber}}</p>
-			</div>
-		</div>
+      <div class="contactdiv">
+        <div class="icondiv">
+          <img src="assets/imgs/icons/sendarrow.svg" />
+        </div>
+        <p class="dtext1">{{address}}</p>
+      </div>
 
-		<div *ngIf="page=='caregiver'">
-			<div class="ionbutton">
-				<ion-button class="ib">hire</ion-button>
-			</div>
-		</div>
-		
-	</div>
+      <div class="contactdiv">
+        <div class="icondiv">
+          <img src="assets/imgs/icons/phone.svg" />
+        </div>
+        <p class="dtext1">{{mobilenumber}}</p>
+      </div>
+    </div>
 
+    <div *ngIf="page=='caregiver'">
+      <div class="ionbutton">
+        <ion-button class="ib">hire</ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>
