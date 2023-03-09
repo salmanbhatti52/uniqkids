@@ -1,0 +1,65 @@
+.background{
+	--background: #F7F7F7;
+}
+.wrapper{
+	width:80%;
+	margin:10% auto;
+}
+
+.btn{
+	margin-top: 5%;  
+  outline: none;
+  background: #FE9805; 
+  border-radius: 12px;
+  display: flex;
+  width: 100%;
+}
+.btn img{
+	padding: 6% 10%;
+}
+.text{
+	color: #FFFFFF;
+    font-size: 30px;
+    padding: 14% 5% 14% 0%;
+    margin: 0px;
+    width: 100%;
+}
+.btn1{
+	margin-top: 8%;  
+  outline: none;
+  background: #FFFFFF; 
+  border-radius: 12px;
+  display: flex;
+  width: 100%;
+  border:3px solid #FE9805;
+}
+.btn1 img{
+	padding: 6% 10%;
+}
+.text1{
+	color: #FE9805;
+  font-size: 30px;
+  padding: 14% 5% 14% 0%;
+    margin: 0px;
+    width: 100%;
+}
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer
+{
+	font-size: 17px;
+	text-align: center;
+	color:#000000;
+}
+.bgtoolbar{
+	--background: #F7F7F7;
+}
+span
+{
+	color: #000;
+  font-weight:400;
+  font-size: 20px;
+}

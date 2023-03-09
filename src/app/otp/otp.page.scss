@@ -1,0 +1,96 @@
+.headBg {
+  --background: #F7F7F7;
+}
+.header {
+  display: flex;
+  /*margin-top: 5%;*/
+}
+.back-btn {
+  font-size: 20px;
+  padding: 37px 0 0 15px;
+  fill: #333;
+  cursor: pointer;
+}
+.backSvg {
+  fill: #333;
+}
+.background{
+   /*--background: #FE9805;*/
+   /*--overflow: hidden;*/
+   --background: url(../../assets/imgs/UniqKidz-Logo.png) 40% 0/90% #FE9805 !important;
+}
+.topdiv{
+  height: 400px;
+  background: #FFFFFF;
+  border-radius: 0px 0px 50px 50px;
+}
+.logindiv{
+  position: absolute;
+  left: 30px;
+  top: 240px;
+  background: #fff;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  width: 85%;
+  border-radius: 30px;
+}
+.wrapper{
+  width:70%;
+  margin:2% auto;
+}
+.headtxt{
+  font-weight: bold;
+   font-size: 30px;
+    color: #000000;
+    margin-top:8%;
+}
+
+.pinInput {
+   height: 45px;
+  width: 50px;
+  color: #000000;
+  text-align: center;
+  background-color: #EBEBEB;
+  border-radius: 12px;
+  font-size: 15px;
+  /* border: 1px solid #c5e2ee; */
+  margin-right: 15px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  opacity: 48%;
+}
+.pins {
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.ionbutton
+{
+  text-align: center;
+  width: 100%;
+  margin-top: 10%;
+}
+.ib
+{
+
+  color: white;
+  --background: #FE9805;
+  outline: none;
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 10%;
+  font-weight: bold;
+  height: 50px;
+   --border-width: 1px;
+  --border-style: solid;
+  --border-color: white;
+  --border-radius: 12px;
+  --box-shadow: none;
+  text-transform: uppercase;
+}
+.error {
+  color: #ff0000;
+  font-size: 12px;
+}

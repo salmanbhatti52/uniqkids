@@ -1,0 +1,45 @@
+.headBg {
+  --background: #F7F7F7;
+  padding: 1% 0%;
+}
+.menuicon{
+	color:#000;
+}
+.backicon{
+	margin-left: 10%;
+    margin-top: 6px;
+}
+
+.ctitle{
+	// text-align: center;
+  font-size: 18px;
+    font-weight: 600;
+}
+.titleclass{
+	text-align: center; padding-top: 8px;
+}
+.ios{
+	.backicon{
+		margin-left: 10%;
+		margin-top: 8px;
+	}
+	.titleclass{
+		text-align: center; padding-top: 11px;
+	}
+	.headBg {
+		--background: #F7F7F7;
+		padding: 3% 0%;
+	  }
+}
+.background{
+	--background: #F7F7F7;
+}
+.wrapper{
+	width: 80%;
+	margin: 5% auto;
+}
+p{
+	text-align: left;
+	font-size: 16px;
+	color: #000000;
+}

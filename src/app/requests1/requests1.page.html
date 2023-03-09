@@ -1,0 +1,146 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+  <ion-toolbar class="headBgGlobal">
+    <ion-row>
+      <ion-col style="padding-top:6px;" size="2">
+        <div>
+          <ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+      </ion-col>
+
+      <ion-col class="titleclass" size="8">
+        <ion-text class="ctitle">Requests</ion-text>
+      </ion-col>
+
+      <ion-col size="2">
+
+      </ion-col>
+    </ion-row>
+    <!-- <ion-buttons slot="start" style="margin-left: 2%;">
+	      <ion-menu-button class="menuicon"></ion-menu-button>
+	  </ion-buttons>
+	   <ion-title class="ctitle">Requests</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div class="wrapper">
+    <ion-segment id="segment" mode="ios" (ionChange)="segmentChanged($event)" #mySegment>
+      <ion-segment-button mode="ios" value="active">
+        <ion-label>Active</ion-label>
+      </ion-segment-button>
+      <ion-segment-button checked mode="ios" value="pending">
+        <ion-label>Pending</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="ios" value="previous">
+        <ion-label>Previous</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+
+    <div *ngFor="let req of requestsarray">
+      <!--------------------- Active div ------------------------------>
+      <div *ngIf="requestsType=='active'">
+        <div *ngIf="req.status=='Active'">
+          <div class="linediv">
+            <div class="leftline"></div>
+            <div class="label">{{req.date}}</div>
+            <div class="rightline"></div>
+          </div>
+          <div class="main" (click)="gotoprofile(req)">
+            <div class="inner">
+              <div class="top">
+                <div class="left">
+                  <img src="{{req.profile}}" width="145px" height="135px">
+                </div>
+                <div class="right">
+                  <div class="rightinner">
+                    <div class="textdiv">
+                      <div class="rtext">{{req.fname}} {{req.lname}} <span
+                          class="rtext1">{{req.relationwithchild}}</span></div>
+                      <div class="t1">Child</div>
+                      <div class="t2">{{req.childname}}</div>
+                      <div class="t2">Date : {{req.date}}</div>
+                      <div class="t1">Timing</div>
+                      <div class="t2">{{req.starttime}} - {{req.endtime}}</div>
+                    </div>
+                    <!-- <div class="rtext1"></div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="rtext2">{{req.about}}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--------------------- Active div End------------------------------->
+
+      <div *ngIf="requestsType=='pending'" style="margin-top: 8%;">
+        <div *ngIf="req.status=='Pending'">
+          <div class="main">
+            <div class="inner">
+              <div class="top" (click)="gotoprofile(req)">
+                <div class="left">
+                  <img src="{{req.profile}}" width="145px" height="135px">
+                </div>
+                <div class="right">
+                  <div class="rightinner">
+                    <div class="textdiv">
+                      <div class="rtext">{{req.fname}} {{req.lname}} <span
+                          class="rtext1">{{req.relationwithchild}}</span></div>
+                      <div class="t1">Child</div>
+                      <div class="t2">{{req.childname}}</div>
+                      <div class="t2">Date : {{req.date}}</div>
+                      <div class="t1">Timing</div>
+                      <div class="t2">{{req.starttime}} - {{req.endtime}}</div>
+                    </div>
+                    <!-- <div class="rtext1">{{req.relationwithchild}}</div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="rtext2">{{req.about}}</div>
+              <div class="btndiv">
+
+                <ion-button class="btn" (click)="accept(req)">Accept</ion-button>
+                <ion-button class="btn1" (click)="reject(req)">Reject</ion-button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <-------------------previous-------------------------------? -->
+      <div *ngIf="requestsType=='previous'" style="margin-top: 8%;">
+        <div *ngIf="req.status=='Completed'">
+          <div class="main">
+            <div class="inner">
+              <div class="top" (click)="gotoprofile(req)">
+                <div class="left">
+                  <img src="{{req.profile}}" width="145px" height="135px">
+                </div>
+                <div class="right">
+                  <div class="rightinner">
+                    <div class="textdiv">
+                      <div class="rtext">{{req.fname}} {{req.lname}} <span
+                          class="rtext1">{{req.relationwithchild}}</span></div>
+                      <div class="t1">Child</div>
+                      <div class="t2">{{req.childname}}</div>
+                      <div class="t2">Date : {{req.date}}</div>
+                      <div class="t1">Timing</div>
+                      <div class="t2">{{req.starttime}} - {{req.endtime}}</div>
+                    </div>
+                    <!-- <div class="rtext1">{{req.relationwithchild}}</div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="rtext2">{{req.about}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <-------------------previous-------------------------------? -->
+    </div>
+  </div>
+</ion-content>

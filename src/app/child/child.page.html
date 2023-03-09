@@ -1,0 +1,66 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	  <ion-toolbar class="headBgGlobal">
+		<ion-row>
+			<ion-col style="padding-top:6px;" size="2">
+				<div>
+					<ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+			</ion-col>
+
+			<ion-col class="titleclass" size="8">
+				<ion-text class="ctitle">Child</ion-text>
+			</ion-col>
+
+			<ion-col style="padding-top: 8px;padding-left: 20px;" size="2">
+        <div (click)="next()">
+          <img src="assets/imgs/icons/plus.svg">
+        </div>
+			</ion-col>
+		</ion-row>
+	    <!-- <ion-buttons slot="start" class="menubtn">
+		    <ion-menu-button class="menuicon"></ion-menu-button>
+		  </ion-buttons>
+	  <ion-title class="ctitle">Child</ion-title>
+	  <ion-buttons slot="end" class="plusbtn" (click)="next()">
+		  <img src="assets/imgs/icons/plus.svg">
+		</ion-buttons> -->
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<div class="wrapper">
+		<p *ngIf="error.status" class="error">
+	    {{error.message}}
+	  </p>
+    <div *ngIf="childdetil==false" style="margin-top: 45%;">
+      <div class="defaulttext">Add your child's details here to ensure the best care. </div>
+    </div>
+		<div *ngFor="let child of childarray">
+			<div class="main" (click)="gotoprofile(child)">
+				<div class="inner">
+					<div class="left">
+						<img src="{{child.profile}}" width="146px" height="130px">
+					</div>
+					<div class="right">
+						<div class="rtext">{{child.name}},<span style="font-weight:400;margin-left: 3%;">{{child.age}} years</span></div>
+						<div class="rtext1">{{child.description}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- <div class="main" (click)="gotoprofile()">
+			<div class="inner">
+				<div class="left">
+					<img src="assets/imgs/boy.png" width="146px" height="130px">
+				</div>
+				<div class="right">
+					<div class="rtext">Karl,<span style="font-weight:400;margin-left: 3%;">8 years</span></div>
+					<div class="rtext1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+
+</ion-content>

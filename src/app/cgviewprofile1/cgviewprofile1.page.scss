@@ -1,0 +1,287 @@
+.headBg {
+  --background: #F7F7F7;
+  padding:1% 0%;
+}
+.menuicon{
+	color:#000;
+}
+.menubtn{
+	margin-left:3%;
+}
+.plusbtn{
+	margin-right:3%;
+}
+.backSvg {
+  fill: #333;
+}
+
+.ctitle{
+	// text-align: center;
+  font-size: 18px;
+    font-weight: 600;
+}
+.titleclass{
+	text-align: center; padding-top: 8px;
+}
+.ios{
+	.titleclass{
+		text-align: center; padding-top: 11px;
+	}
+	.headBg {
+		--background: #F7F7F7;
+		padding:3% 0%;
+	  }
+}
+.wrapper{
+	width: 90%;
+  margin: 30% auto;
+}
+ion-segment {
+  padding: 5px 5px;
+  border-radius: 10px;
+  margin-top: 10px;
+  --background: #EBEBEB;
+  width: 85%;
+  margin: 5% auto;
+  ion-segment-button {
+    --border-width: 0;
+    --margin-bottom: 5px;
+    --margin-top: 5px;
+    border-radius: 10px;
+    --background-checked: #fe9805;
+    --indicator-color: transparent !important;
+    --color: #00000;
+    --color-checked: #fff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.main{
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 14px;
+	margin-top: 5%;
+	position: relative;
+}
+.inner{
+	text-align: center;
+    width: 80%;
+    margin: 0% auto;
+}
+.logodiv{
+	position: absolute;
+    top: 40px;
+    left: 115px;
+}
+.logodiv img{
+	border-radius: 90px;
+    width: 140px;
+    height: 140px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.text{
+	padding-top: 25%;
+	color:#000000;
+	font-weight: bold;
+	font-size:20px;
+	margin-left: 3%;
+}
+.text2{
+	color:#FE9805;
+	font-size: 14px;
+	font-style: italic;
+}
+.para{
+	color:#000000;
+	font-size: 14px;
+	padding: 4% 0%;
+}
+
+.main2{
+	width:60%;
+	margin: 10% auto;
+}
+.contactdiv{
+	display: flex;
+	margin-top: 10%;
+}
+.contactdiv p{
+	margin: 0px;
+    padding-left: 10%
+}
+
+.ionbutton
+{	
+ 	text-align: center;
+	width: 100%;
+	margin-top: 25%;
+}
+.ib
+{
+
+	color: white;
+  --background: #FE9805;
+  outline: none;
+  width: 80%;
+ font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10%;
+  height: 55px;
+   --border-width: 1px; 
+  --border-style: solid;
+  --border-color: white;
+  --border-radius: 12px;
+  --box-shadow: none;
+  text-transform: uppercase;
+}
+
+
+
+@media only screen and (max-width:414px) {
+	.wrapper{
+		width: 90%;
+	  margin: 25% auto;
+	}
+	.cwrapper{
+		width:90%;
+		margin:6% auto;
+	}
+	.logodiv{
+		position: absolute;
+    top: -75px;
+    left: 120px;
+	}
+
+}
+@media only screen and (max-width:360px) {
+	.wrapper{
+		width: 90%;
+	  margin: 27% auto;
+	}
+	.cwrapper{
+		width:90%;
+		margin:6% auto;
+	}
+	.logodiv{
+		position: absolute;
+    top: 25px;
+    left: 115px;
+	}
+
+}
+@media only screen and (max-width:375px) {
+	.wrapper{
+		width: 90%;
+	  margin: 27% auto;
+	}
+	.cwrapper{
+		width:90%;
+		margin:6% auto;
+	}
+	.logodiv{
+		position: absolute;
+    top: -80px;
+    left: 100px;
+	}
+
+}
+
+@media only screen and (max-width:320px) {
+	.cwrapper{
+		width:90%;
+		margin:6% auto;
+	}
+	.rtext2{
+		font-size: 12px;
+		font-weight:400;
+		margin-top: 3%;
+	}
+
+	.right{
+		margin-left: 5%;
+		width: 55%;
+		margin-top:1%;
+	}
+	.logodiv{
+		position: absolute;
+    top: -70px;
+    left: 85px;
+	}
+	.logodiv img{
+		border-radius: 90px;
+    width: 120px;
+    height: 120px;
+	}
+	.text{
+	padding-top: 25%;
+	color:#000000;
+	font-weight: bold;
+	font-size:20px
+}
+
+
+
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  	.cwrapper{
+			width:90%;
+			margin:6% auto;
+		}
+  .wrapper{
+		width: 90%;
+    margin: 18% auto;
+	}
+  .logodiv{
+		position: absolute;
+    top: 70px;
+    left: 310px;
+	}
+	.text{
+    padding-top: 17%;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+	}
+}
+
+/*/////////caregiver////////*/
+.cwrapper{
+	width:90%;
+	margin:6% auto;
+}
+.cmain{
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 14px;
+	margin-top: 5%;
+}
+.left img{
+	border-radius:7px;
+}
+.cinner{
+	padding: 1% 1.5%;
+	display: flex;
+}
+.right{
+	margin-left: 5%;
+	width: 50%;
+	margin-top:1%;
+}
+.rtext{
+	font-size: 20px;
+	font-weight:600;
+}
+.rtext1{
+	font-size: 14px;
+	font-weight:400;
+	color:#FE9805;
+	margin-top: 3%;
+}
+.rtext2{
+	font-size: 13px;
+	font-weight:400;
+	margin-top: 3%;
+}

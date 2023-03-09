@@ -1,0 +1,125 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	  <ion-toolbar class="headBgGlobal">
+      <ion-row>
+        <ion-col style="padding-top:6px;" size="2">
+          <div>
+            <ion-menu-button class="menuicon"></ion-menu-button>
+          </div>
+        </ion-col>
+  
+        <ion-col class="titleclass" size="8">
+          <ion-text class="ctitle">Payment</ion-text>
+        </ion-col>
+  
+        <ion-col size="2">
+  
+        </ion-col>
+      </ion-row>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<div class="wrapper">
+		<p style="text-align: center;font-size: 15px;font-weight: 600;">All your payments organized at one place.</p>
+		<div class="logo">
+			<img src="assets/imgs/paylogo.svg">
+		</div>
+
+		<ion-segment
+      id="segment"
+      mode="ios"
+      (ionChange)="segmentChanged($event)"
+      #mySegment>
+      <ion-segment-button checked mode="ios" value="pending">
+        <ion-label>Pending</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="ios" value="completed">
+        <ion-label>Completed</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+		<!-- <div class="main">
+			<div class="inner">
+				<div class="imgdiv">
+					<img src="assets/imgs/chat.png">
+				</div>
+				<div class="textdiv">
+					<div class="text">Justin Ortiz, $10/hr</div>
+					<div class="para">$56</div>
+				</div>
+				<ion-button class="btn1">Make Payment</ion-button>
+			</div>
+		</div> -->
+		<div *ngIf="paymentType=='pending'">
+      <div *ngIf="textdetail==false" style="margin-top:10%;text-align: center;">
+        <div class="defaulttext">Clear pending payments today to get back on track!  </div>
+      </div>
+			<div *ngFor="let pay of paymentarray">
+				<!-- <div *ngIf="pay.status=='Active'"> -->
+					<div class="date">{{pay.date}}</div>
+					<div class="main2">
+						
+						<div class="inner1">
+							<div class="left">
+								<div class="imgdiv1">
+									<img src="{{pay.profile}}">
+								</div>
+								<div class="textdiv1">
+									<div class="text1">{{pay.fname}} {{pay.lname}}, ${{pay.hourrate}}/hr</div>
+									<div class="para1">${{pay.totalamount}}/hr</div>
+								</div>
+							</div>
+							<div class="right">
+								<ion-button class="btn1" (click)=" presentModal(pay)">Make Payment</ion-button>
+							</div>
+							<div class="clear"></div>
+						</div>
+						
+					</div>		
+				<!-- </div> -->
+			</div>
+			
+		</div>
+
+		<div *ngIf="paymentType=='completed'">
+      <div *ngIf="textdetail2==false" style="margin-top:10%;text-align: center;">
+        <div class="defaulttext">Any payments that you have completed through UniqKidz will appear here.  </div>
+      </div>
+			<div  *ngFor="let pay of paymentarray" style="margin-top: 5%;">
+				<!-- <div *ngIf="pay.status=='Completed'"> -->
+					<div class="date">{{pay.date}}</div>
+					<div class="main2" >
+						
+						<div class="inner1">
+							<div class="left">
+								<div class="imgdiv1">
+									<img src="{{pay.profile}}">
+								</div>
+								<div class="textdiv1">
+									<div class="text1">{{pay.fname}} {{pay.lname}}, ${{pay.hourrate}}/hr</div>
+									<div class="para1">${{pay.totalamount}}/hr</div>
+								</div>
+							</div>
+							<div class="right">
+								<ion-button class="btn1" (click)="viewdetail(pay)">View Details</ion-button>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				<!-- </div> -->
+			</div>
+			
+		</div>
+		
+
+	</div>
+
+</ion-content>
+
+<!-- <ion-footer class="ion-no-border">
+<ion-toolbar class="bgtoolbar">
+	<div class="ionbutton" (click)="send()">
+		<ion-button class="ib">Send Payment</ion-button>
+	</div>
+</ion-toolbar>
+</ion-footer> -->

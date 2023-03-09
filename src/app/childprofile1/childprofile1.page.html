@@ -1,0 +1,261 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	<ion-toolbar class="headBgGlobal">
+		<ion-row>
+			<ion-col class="backbtn" size="2">
+			  <div>
+				<img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+			  </div>
+			</ion-col>
+	  
+			<ion-col class="titleclass" size="8">
+			  <ion-text class="ctitle">Profile</ion-text>
+			</ion-col>
+	  
+			<ion-col size="2">
+	  
+			</ion-col>
+		  </ion-row>
+	  <!-- <ion-buttons slot="start" class="backbtn">
+	    <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+	  </ion-buttons>
+	  <ion-title class="ctitle">Profile</ion-title> -->
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<ion-segment
+      id="segment"
+      mode="ios"
+      (ionChange)="segmentChanged($event)"
+      #mySegment>
+    <ion-segment-button mode="ios" value="child">
+      <ion-label>Child</ion-label>
+    </ion-segment-button>
+    <ion-segment-button checked mode="ios" value="parent">
+      <ion-label>Parent</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="requestsType=='child'">
+	  <div class="wrapper">
+			<div class="main" (click)="gotoprofile()">
+				<div class="inner">
+					<div class="left">
+						<img src="{{defaultProfile}}" width="145px" height="135px">
+					</div>
+					<div class="right">
+						<div class="rtext">{{childname}},<span style="font-weight:400;margin-left:3%;font-size:14px;color:#FE9805">{{age}} years old</span></div>
+						<div class="rtext1">{{diagnosis}}</div>
+						<div class="rtext2">{{notes}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main1">
+			<div class="inner1">
+				<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Allergies</h6>
+				<div style="display: flex">
+				<div class="btndiv" *ngFor="let all of allergyarr">
+					<ion-button class="btn">{{all.allergy}}</ion-button>
+					<!-- <ion-button class="btn1">{{all.allergy}}</ion-button> -->
+				</div>
+			</div>
+			</div>	
+		</div>
+
+		<div class="main2">
+			<div class="inner1">
+				<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Medications Alarms</h6>
+				<div style="display: flex">
+				<div class="medicationdiv" *ngFor="let med of medicationsarr">
+					<div class="medication1">
+						<div class="mtext">{{med.medicationname}}</div>
+						<div class="mtext2">{{med.medicationtime}}</div>
+					</div>
+					<!-- <div class="medication2">
+						<div class="mtext">Medications 2</div>
+						<div class="mtext2">12:30 pm</div>
+					</div>
+					<div class="medication3">
+						<div class="mtext">Medications 3</div>
+						<div class="mtext2">08:00 am</div>
+					</div> -->
+				</div>
+			</div>
+			</div>		
+		</div>
+
+		<div class="main1">
+		<div class="inner1">
+			<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Eating Times</h6>
+			<div style="display: flex">
+				<div class="medicationdiv"  *ngFor="let eat of foodarr">
+					<div class="medication1">
+						<div class="mtext">{{eat.foodname}}</div>
+						<div class="mtext2">{{eat.eatingtime}}</div>
+					</div>
+					<!-- <div class="medication2">
+						<div class="mtext">Eating Time 2</div>
+						<div class="mtext2">12:30 pm</div>
+					</div>
+					<div class="medication3">
+						<div class="mtext">Eating Time 3</div>
+						<div class="mtext2">08:00 am</div>
+					</div> -->
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="main2">
+		<div class="inner1">
+			<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Snack Times</h6>
+			<div style="display: flex">
+				<div class="medicationdiv" *ngFor="let snack of snackarr">
+					<div class="medication1">
+						<div class="mtext">{{snack.snackname}}</div>
+						<div class="mtext2">{{snack.snacktime}}</div>
+					</div>
+					<!-- <div class="medication2">
+						<div class="mtext">Snack Time 2</div>
+						<div class="mtext2">12:30 pm</div>
+					</div>
+					<div class="medication3">
+						<div class="mtext">Snack Time 3</div>
+						<div class="mtext2">08:00 am</div>
+					</div> -->
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="main1">
+		<div class="inner1">
+			<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Likes</h6>
+			<div style="display: flex">
+				<div class="btndiv" *ngFor="let like of likesarr">
+					<ion-button class="btn">{{like.likes}}</ion-button>
+					<!-- <ion-button class="btn1">Outdoor games</ion-button> -->
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<div class="main2">
+		<div class="inner1">
+			<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Dislikes</h6>
+			<div style="display: flex">
+				<div class="btndiv" *ngFor="let dislike of dislikesarr">
+					<ion-button class="btn">{{dislike.dislikes}}</ion-button>
+					<!-- <ion-button class="btn1">Outdoor games</ion-button> -->
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<div class="main1">
+		<div class="inner1">
+			<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Favorite activities</h6>
+			<div style="display: flex">
+				<div class="btndiv" *ngFor="let fav of favouritearr">
+					<ion-button class="btn">{{fav.favourite}}</ion-button>
+					<!-- <ion-button class="btn1">Outdoor games</ion-button> -->
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<div class="main2">
+		<div class="inner1">
+			<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Emergency phone numbers</h6>
+			<div style="display: flex">
+				<div class="calldiv" *ngFor="let num of contactsarr">
+					<div class="contactdiv">
+						<div class="icondiv">
+							<img src="assets/imgs/icons/call.png">
+						</div>
+						<p>{{num.contact}}</p>
+					</div>
+					<!-- <div class="contactdiv1">
+						<div class="icondiv">
+							<img src="assets/imgs/icons/call.png">
+						</div>
+						<p>+1 412 688 699</p>
+					</div> -->
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<div class="main1">
+		<div class="inner1">
+			<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Pediatrician</h6>
+			<div class="para">{{pediatrician}}</div>
+		</div>	
+	</div>
+
+	<div class="main2">
+		<div class="inner1">
+			<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Insurance information</h6>
+			<div class="para">{{insuranceinfo}}</div>
+		</div>	
+	</div>
+
+	<div class="main1">
+		<div class="inner1">
+			<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Special instructions</h6>
+			<div class="para">{{instruction}}</div>
+		</div>	
+	</div>
+
+	<div class="main2">
+		<div class="inner1">
+			<h6 style="color:#FE9805;font-weight:500;font-size:14px;margin:0px">Additional notes</h6>
+			<div class="para">{{notes}}</div>
+		</div>	
+	</div>
+	
+  </div>
+	
+	<!-- -----------parent div ------------------------->
+	<div *ngIf="requestsType=='parent'">
+		<div class="pwrapper">
+			<div class="pmain">
+				<div class="pinner">
+					<div class="plogodiv">
+						<img src="{{picUrl}}">
+					</div>
+					<div class="text">{{fname}} {{lname}}</div>
+					<div class="text2">{{relationwithchild}}</div>
+					<div class="ppara">{{about}}</div>
+				</div>
+			</div>
+
+			<div class="pmain2">
+				<div class="pcontactdiv">
+					<div class="picondiv">
+						<img src="assets/imgs/icons/sms.png">
+					</div>
+					<p>{{email}}</p>
+				</div>
+
+				<div class="pcontactdiv">
+					<div class="picondiv">
+						<img src="assets/imgs/icons/arrow.png">
+					</div>
+					<p>{{address}}</p>
+				</div>
+
+				<div class="pcontactdiv">
+					<div class="picondiv">
+						<img src="assets/imgs/icons/call.png">
+					</div>
+					<p>{{mobilenumber}}</p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+</ion-content>

@@ -1,0 +1,222 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>cgprofile</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header [translucent]="true" class="ion-no-border cheader">
+  <ion-toolbar class="headBgGlobal">
+  <ion-row>
+    <ion-col style="padding-top:6px;" size="2">
+      <div>
+        <ion-menu-button class="menuicon"></ion-menu-button>
+      </div>
+    </ion-col>
+
+    <ion-col class="titleclass" size="8">
+      <ion-text class="ctitle">Complete Profile</ion-text>
+    </ion-col>
+
+    <ion-col size="2">
+
+    </ion-col>
+  </ion-row>
+  
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+	
+	<!-- <ion-segment
+    id="segment"
+    mode="ios"
+    (ionChange)="segmentChanged($event)"
+      #mySegment>
+    <ion-segment-button mode="ios" value="agency">
+      <ion-label>Agency Profile</ion-label>
+    </ion-segment-button>
+    <ion-segment-button checked mode="ios" value="caregiver">
+      <ion-label>Caregivers Profile</ion-label>
+    </ion-segment-button>
+	</ion-segment> -->
+
+	<div class="wrapper">
+		
+		<!-- <div *ngIf="profiletype=='agency'"> -->
+			<div class="logodiv" (click)="uploadPic()">
+				<!-- <img src="assets/imgs/icons/msglogo.svg"> -->
+				<img src="{{defaultProfile}}">
+			</div>
+			<div class="name">{{fname}} {{lname}}</div>
+			<!-- <div class="name" *ngIf="profiletype=='caregiver'">Name</div> -->
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Email" type="email" [(ngModel)]="email" readonly></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Mobile number" type="tel" [(ngModel)]="mobilenumber"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="mobilenumberError.status" class="error">
+		    {{mobilenumberError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Street address" type="text" [(ngModel)]="address"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="addressError.status" class="error">
+		    {{addressError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Per hour USD rate" type="tel" [(ngModel)]="price"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="priceError.status" class="error">
+		    {{priceError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-textarea placeholder="About"  rows="6" cols="20" [(ngModel)]="about"></ion-textarea>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="aboutError.status" class="error">
+		    {{aboutError.message}}
+		  </p>
+
+		
+			<h6 style="font-size: 14px;font-weight: 600;">Back Account</h6>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Bank name" type="text" [(ngModel)]="bankname"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="banknameError.status" class="error">
+		    {{banknameError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Account number" type="tel" [(ngModel)]="accountnumber"></ion-input>
+					</div>
+				</div>
+			</div>
+			<p *ngIf="accountnumberError.status" class="error">
+		    {{accountnumberError.message}}
+		  </p>
+			
+		<!-- </div> -->
+
+		<!-----------------------------caregiver fileds ------------------------------------>
+		<!-- <div *ngIf="profiletype=='caregiver'">
+			<div class="logodiv" (click)="uploadPic(2)">
+				<img src="assets/imgs/icons/msglogo.svg">
+			
+			</div>
+		
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="name" type="text" [(ngModel)]="cname"></ion-input>
+					</div>
+				</div>
+			</div>
+
+      <p *ngIf="nameError.status" class="error">
+		    {{nameError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Email" type="email" [(ngModel)]="cemail"></ion-input>
+					</div>
+				</div>
+			</div>
+
+      	<p *ngIf="emailError.status" class="error">
+			    {{emailError.message}}
+			  </p>
+      
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Mobile number" type="tel" [(ngModel)]="cmobilenumber"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="mobilenumberError.status" class="error">
+		    {{mobilenumberError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Street address" type="text" [(ngModel)]="caddress"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="addressError.status" class="error">
+		    {{addressError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Per hour USD rate" type="tel" [(ngModel)]="cprice"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="priceError.status" class="error">
+		    {{priceError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-textarea placeholder="About"  rows="6" cols="20" [(ngModel)]="cabout"></ion-textarea>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="aboutError.status" class="error">
+		    {{aboutError.message}}
+		  </p>
+			
+		</div> -->
+
+		<div class="ionbutton" (click)="viewprofile()">
+			<ion-button class="ib">Done</ion-button>
+		</div>
+
+	</div>
+
+</ion-content>

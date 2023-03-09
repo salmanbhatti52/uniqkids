@@ -1,0 +1,266 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+		  <ion-toolbar class="headBgGlobal">
+        <ion-row>
+          <ion-col class="backbtn" size="2">
+            <div>
+              <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+            </div>
+          </ion-col>
+    
+          <ion-col class="titleclass" size="8">
+            <ion-text class="ctitle">Edit Child</ion-text>
+          </ion-col>
+    
+          <ion-col size="2">
+    
+          </ion-col>
+        </ion-row>
+		    <!-- <ion-buttons slot="start" class="backbtn">
+		      <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+		  </ion-buttons>
+		  <ion-title class="ctitle">Edit Child</ion-title> -->
+		</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<div class="wrapper">
+		<div class="topdiv">
+			<div class="logodiv" (click)="uploadPic()">
+				<!-- <img src="{{defaultProfile}}"> -->
+				<img src="{{defaultProfile}}" *ngIf="defaultProfile!=''">
+				<img src="assets/imgs/profilelogo.png" *ngIf="defaultProfile==''">
+			</div>
+
+			<div class="inputdiv">
+				<div class="pinput">
+					<ion-input placeholder="Childname" type="text" [(ngModel)]="childname"></ion-input>
+				</div>
+			</div>
+			<p *ngIf="childnameError.status" class="error">
+    		{{childnameError.message}}
+	    </p>
+			<div class="progressdiv">
+				<div class="htext">Age</div>
+				<!-- <img src="assets/imgs/progress.png"> -->
+				<ion-range min="0" max="30"
+				 [value]="age" 
+					(ionChange)="setValue($event)">
+			 	></ion-range>
+				<p style="margin: 0px;margin-left: 25%;font-size: 10px;font-weight: 500;">{{age}} years</p>
+			</div>
+
+
+			<div class="inputdiv">
+				<div class="pinput">
+					<ion-input placeholder="Diagnosis" type="text" [(ngModel)]="diagnosis"></ion-input>
+				</div>
+			</div>
+			<p *ngIf="diagnosisError.status" class="error">
+    		{{diagnosisError.message}}
+	    </p>
+			<div class="inputdiv">
+				<div class="pinput">
+					<ion-input placeholder="Allergies" type="text" [(ngModel)]="allergies"></ion-input>
+				</div>
+			</div>
+			<div class="para">Write allergies separated by ,</div>
+		</div>
+		<p *ngIf="allergiesError.status" class="error">
+    		{{allergiesError.message}}
+	  </p>
+		<!-- <div class="boxdiv">
+			<div class="one">
+				<div class="box1">
+					<div class="innerbox">
+						<div class="imgdiv">
+							<img src="assets/imgs/pharma.svg">
+						</div>
+						
+						<div class="text1">Medications</div>
+					</div>
+					
+				</div>
+				<div class="box2">
+					<div class="imgdiv">
+						<img src="assets/imgs/nutrition.svg">
+					</div>
+					<div class="text1">Eating Time</div>
+				</div>
+			</div>
+
+			<div class="one">
+				<div class="box1">
+					<div class="innerbox">
+						<div class="imgdiv">
+							<img src="assets/imgs/pharma.svg">
+						</div>
+						
+						<div class="text1">Medications</div>
+					</div>
+					
+				</div>
+				<div class="box2">
+					<div class="imgdiv">
+						<img src="assets/imgs/nutrition.svg">
+					</div>
+					<div class="text1">Eating Time</div>
+				</div>
+			</div>
+
+			<div class="one">
+				<div class="box1">
+					<div class="innerbox">
+						<div class="imgdiv">
+							<img src="assets/imgs/pharma.svg">
+						</div>
+						
+						<div class="text1">Medications</div>
+					</div>
+					
+				</div>
+				<div class="box2">
+					<div class="imgdiv">
+						<img src="assets/imgs/nutrition.svg">
+					</div>
+					<div class="text1">Eating Time</div>
+				</div>
+			</div>
+		</div> -->
+
+		<div class="boxdiv">
+			<div class="left" (click)="medication()">
+				<div class="box1">
+					<div class="innerbox">
+						<img src="assets/imgs/pharma.svg">
+						<div class="text1">Medications</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="right" (click)="eating()">
+				<div class="box1">
+					<div class="innerbox">
+						<img src="assets/imgs/nutrition-protein.svg">
+						<div class="text1">Eating Time</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="boxdiv">
+			<div class="left" (click)="snack()">
+				<div class="box1">
+					<div class="innerbox">
+						<img src="assets/imgs/snack.svg">
+						<div class="text1">Snack Time</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="right" (click)="likes()">
+				<div class="box1">
+					<div class="innerbox">
+						<img src="assets/imgs/likes.svg">
+						<div class="text1">Likes</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="boxdiv">
+			<div class="left"  (click)="dislikes()">
+				<div class="box1">
+					<div class="innerbox">
+						<img src="assets/imgs/dislikes.svg">
+						<div class="text1">DisLikes</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="right" (click)="favorite()">
+				<div class="box1">
+					<div class="innerbox">
+						<img src="assets/imgs/star.svg">
+						<div class="text1">Favorite Activities</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="inputdiv1">
+			<div class="pinput1">
+				<ion-input placeholder="Emergency Contacts" type="tel" [(ngModel)]="contacts"></ion-input>
+			</div>
+			<img src="assets/imgs/icons/plus.svg" class="cimg" (click)="add()">
+		</div>
+
+		<!-- <p *ngIf="contactsError.status" class="error">
+    		{{contactsError.message}}
+	  </p> -->
+
+		<div class="contactdiv" *ngFor="let arr of emergencycontacts">
+			<div class="icondiv">
+				<img src="assets/imgs/icons/call.png">
+			</div>
+			<p>{{arr}}</p>
+		</div>
+
+		<div class="fields">
+			<div class="inputdiv1">
+				<div class="pinput1">
+					<ion-textarea placeholder="Pediatrician"  rows="3" cols="20" [(ngModel)]="pediatrician"></ion-textarea>
+				</div>
+			</div>
+		</div>
+		<p *ngIf="pediatricianError.status" class="error">
+    		{{pediatricianError.message}}
+	  </p>
+		<div class="fields">
+			<div class="inputdiv1">
+				<div class="pinput1">
+					<ion-textarea placeholder="Insurance information"  rows="3" cols="20" [(ngModel)]="insuranceinfo"></ion-textarea>
+				</div>
+			</div>
+		</div>
+
+		<p *ngIf="insuranceinfoError.status" class="error">
+    		{{insuranceinfoError.message}}
+	  </p>
+
+		<div class="fields">
+			<div class="inputdiv1">
+				<div class="pinput1">
+					<ion-textarea placeholder="Special instructions"  rows="3" cols="20" [(ngModel)]="instructions"></ion-textarea>
+				</div>
+			</div>
+		</div>
+
+		<p *ngIf="instructionsError.status" class="error">
+    		{{instructionsError.message}}
+	  </p>
+
+		<div class="fields">
+			<div class="inputdiv1">
+				<div class="pinput1">
+					<ion-textarea placeholder="Additional Notes"  rows="3" cols="20" [(ngModel)]="notes"></ion-textarea>
+				</div>
+			</div>
+		</div>
+
+		<p *ngIf="notesError.status" class="error">
+    		{{notesError.message}}
+	  </p>
+
+		<div class="ionbutton" (click)="gotoprofile()">
+			<ion-button class="ib">Save</ion-button>
+		</div>
+
+	</div>
+
+</ion-content>

@@ -1,0 +1,90 @@
+.headBg {
+  --background: #F7F7F7;
+  padding: 1% 0%;
+}
+.menuicon{
+	color:#000;
+}
+.backbtn{
+  margin-left:0%;
+  padding-top:11px;
+  padding-left: 18px;
+}
+.backSvg {
+  fill: #333;
+}
+
+.ctitle{
+	// text-align: center;
+  font-size: 18px;
+    font-weight: 600;
+}
+.titleclass{
+	text-align: center; padding-top: 8px;
+}
+.ios{
+  .backbtn{
+    margin-left:0%;
+    padding-top:14px;
+    padding-left: 18px;
+  }
+	.titleclass{
+		text-align: center; padding-top: 11px;
+	}
+  .headBg {
+    --background: #F7F7F7;
+    padding: 3% 0%;
+  }
+}
+.background{
+	 --background: #F7F7F7;
+}
+.wrapper{
+	width:80%;
+	margin:10% auto;
+}
+.logodiv{
+  text-align: center;
+}
+.field{
+	display: flex;
+}
+.inputdiv{
+	display: flex;
+    border-radius: 12px;
+    background: #FFFFFF;
+    width: 85%
+}
+.pinput
+{
+	width: 100%;
+  font-size: 15px;
+  color: #000;
+  opacity: 48%;
+  padding: 2% 0% 2% 7%;
+}
+.imgdiv{
+	margin-left: 7%;
+    margin-top: 4%;
+}
+
+.box{
+  display: flex;
+  margin-top: 5%;
+}
+.chip{
+  background:#09A8F9;
+  border-radius: 7px;
+}
+.label{
+  font-size: 14px;
+  color: #FFFFFF;
+}
+.chipimg{
+  margin-left: 5px;
+    margin-top: 2px;
+}
+.error {
+  color: #ff0000;
+  font-size: 12px;
+}

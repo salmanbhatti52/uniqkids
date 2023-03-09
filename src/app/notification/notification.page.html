@@ -1,0 +1,118 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	 <ion-toolbar class="headBgGlobal">
+    <ion-row>
+			<ion-col style="padding-top:6px;" size="2">
+				<div>
+					<ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+			</ion-col>
+
+			<ion-col class="titleclass" size="8">
+				<ion-text class="ctitle">Notifications</ion-text>
+			</ion-col>
+
+			<ion-col size="2">
+
+			</ion-col>
+		</ion-row>
+	    <!-- <ion-buttons slot="start" style="margin-left: 2%;">
+	      <ion-menu-button class="menuicon"></ion-menu-button>
+	    </ion-buttons>
+	   <ion-title class="ctitle">Notifications</ion-title> -->
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<div class="wrapper">
+    <div *ngIf="chatdetail==false" style="margin-top: 45%;">
+      <div class="defaulttext">Any notification you get to help you care for your child will appear here.</div>
+    </div>
+		<div *ngFor="let noti of notiarray">
+			<div class="main" (click)="notitype(noti.notitype)">
+				<div class="inner1">
+					<div class="imgdiv">
+						<img src="assets/imgs/icons/noti.png">
+					</div>
+					<div class="textdiv">
+						<div class="text">{{noti.sender_name}}</div>
+						<div class="para">{{noti.message}}</div>
+					</div>
+					
+					<div class="right">
+						<div class="date">{{noti.date}}</div>
+						<div class="time">{{noti.time}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="main">
+			<div class="inner1">
+				<div class="imgdiv">
+					<img src="assets/imgs/icons/noti.png">
+				</div>
+				<div class="textdiv">
+					<div class="text">Lorium Ipsum</div>
+					<div class="para">didi ile ilgilenir misiniz</div>
+				</div>
+				
+				<div class="right">
+					<div class="date">2020-07-08</div>
+					<div class="time">05:40pm</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main">
+			<div class="inner1">
+				<div class="imgdiv">
+					<img src="assets/imgs/icons/noti.png">
+				</div>
+				<div class="textdiv">
+					<div class="text">Lorium Ipsum</div>
+					<div class="para">didi ile ilgilenir misiniz</div>
+				</div>
+				
+				<div class="right">
+					<div class="date">2020-07-08</div>
+					<div class="time">05:40pm</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main">
+			<div class="inner1">
+				<div class="imgdiv">
+					<img src="assets/imgs/icons/noti.png">
+				</div>
+				<div class="textdiv">
+					<div class="text">Lorium Ipsum</div>
+					<div class="para">didi ile ilgilenir misiniz</div>
+				</div>
+				
+				<div class="right">
+					<div class="date">2020-07-08</div>
+					<div class="time">05:40pm</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main">
+			<div class="inner1">
+				<div class="imgdiv">
+					<img src="assets/imgs/icons/noti.png">
+				</div>
+				<div class="textdiv">
+					<div class="text">Lorium Ipsum</div>
+					<div class="para">didi ile ilgilenir misiniz</div>
+				</div>
+				
+				<div class="right">
+					<div class="date">2020-07-08</div>
+					<div class="time">05:40pm</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+
+</ion-content>

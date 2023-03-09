@@ -1,0 +1,51 @@
+.headBg {
+  --background: #F7F7F7;
+}
+.menuicon{
+	color:#000;
+}
+.backbtn{
+	margin-left:5%;
+}
+.backSvg {
+  fill: #333;
+}
+
+.ctitle{
+	text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+.background{
+	 --background: #F7F7F7;
+}
+.wrapper{
+	width:90%;
+	margin:0% auto;
+}
+.main{
+	background: #fff;
+	/*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
+	border-radius: 14px;
+	margin-top: 5%;
+	padding: 5% 2%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th{
+	padding: 8px;
+  font-size: 15px;
+  text-align: center;
+}
+td{
+
+  padding: 10px 8px;
+  font-size: 10px;
+  text-align: center;
+}
+

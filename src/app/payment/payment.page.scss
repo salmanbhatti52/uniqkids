@@ -1,0 +1,158 @@
+.headBg {
+  --background: #F7F7F7;
+  padding-top:5%;
+}
+.menuicon{
+	color:#000;
+}
+.menubtn{
+	margin-left:3%;
+}
+.plusbtn{
+	margin-right:3%;
+}
+.backSvg {
+  fill: #333;
+}
+
+.ctitle{
+	// text-align: center;
+  font-size: 18px;
+    font-weight: 600;
+}
+.titleclass{
+	text-align: center; padding-top: 8px;
+}
+.ios{
+	.titleclass{
+		text-align: center; padding-top: 10px;
+	}
+}
+.background{
+	 --background: #F7F7F7;
+}
+.wrapper{
+	width:90%;
+	margin:15% auto;
+}
+.card{
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 14px;
+	margin-top: 10%;
+}
+.inner{
+	padding: 3% 8%;
+}
+.left{
+	width: 90%;
+	float: left;
+}
+.right{
+	width: 10%;
+  float: left;
+  margin-top: 5%;
+}
+.t1{
+	font-size:15px;
+	color:#000000;
+}
+.t2{
+	font-size:10px;
+	color:#000000;
+	margin-top: 3%
+}
+.text{
+	font-size:10px;
+	color: #7F889F;
+}
+.clear{
+	clear:both;
+}
+
+.main{
+	margin-top: 20%;
+}
+.fields{
+	margin-top:5%;
+}
+.inputdiv{
+	display: flex;
+  border-radius: 12px;
+  background: #FFFFFF;
+  padding: 1% 5%;
+  margin: 5% auto;
+  width: 80%;
+}
+
+
+.pinput
+{
+	width: 100%;
+	font-size: 15px;
+  color: #000;
+  opacity: 48%;
+}
+.twofields{
+	display: flex;
+  width: 80%;
+  margin: 0% auto;
+}
+.cvvdiv{
+	border-radius: 12px;
+  background: #FFFFFF;
+  padding: 1% 5%;
+  width: 50%;
+}
+.datediv{
+	border-radius: 12px;
+  background: #FFFFFF;
+  padding: 1% 5%;
+  width: 45%;
+  margin-left: 5%;
+}
+
+.ionbutton
+{	
+	width: 80%;
+    margin: 5% auto;
+}
+.ib
+{
+
+	color: white;
+  --background: #FE9805;
+  outline: none;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10%;
+  height: 58px;
+   --border-width: 1px; 
+  --border-style: solid;
+  --border-color: white;
+  --border-radius: 12px;
+  --box-shadow: none;
+  text-transform: uppercase;
+}
+
+
+@media only screen and (max-width:320px) {
+  .left{
+  width: 85%;
+  float: left;
+  }
+  .right{
+    width: 15%;
+    float: left;
+    margin-top: 5%;
+  }
+  
+}
+
+.error {
+  color:  #ff0000;
+  font-size: 14px;
+  margin-left: 15px;
+  padding-bottom:5px;
+}

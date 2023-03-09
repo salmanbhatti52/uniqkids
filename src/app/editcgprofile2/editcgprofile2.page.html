@@ -1,0 +1,135 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>cgprofile</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header [translucent]="true" class="ion-no-border cheader">
+  <ion-toolbar class="headBgGlobal">
+  <ion-row>
+    <ion-col style="padding-top:6px;" size="2">
+      <div>
+        <ion-menu-button class="menuicon"></ion-menu-button>
+      </div>
+    </ion-col>
+
+    <ion-col class="titleclass" size="8">
+      <ion-text class="ctitle">Edit Profile</ion-text>
+    </ion-col>
+
+    <ion-col size="2">
+
+    </ion-col>
+  </ion-row>
+    <!-- <ion-buttons slot="start">
+      <ion-menu-button class="menuicon"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ctitle">Complete Profile</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<!-- <ion-segment
+    id="segment"
+    mode="ios"
+    (ionChange)="segmentChanged($event)"
+      #mySegment>
+    <ion-segment-button mode="ios" value="agency">
+      <ion-label>Agency Profile</ion-label>
+    </ion-segment-button>
+    <ion-segment-button checked mode="ios" value="caregiver">
+      <ion-label>Caregivers Profile</ion-label>
+    </ion-segment-button>
+	</ion-segment> -->
+
+	<div class="wrapper">
+		
+		
+
+		
+		
+			<div class="logodiv" (click)="uploadPic()">
+				<img src="{{defaultProfile}}">
+			
+			</div>
+		
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="name" type="text" [(ngModel)]="cname"></ion-input>
+					</div>
+				</div>
+			</div>
+
+      <p *ngIf="nameError.status" class="error">
+		    {{nameError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Email" type="email" [(ngModel)]="cemail" readonly></ion-input>
+					</div>
+				</div>
+			</div>
+
+      	<p *ngIf="emailError.status" class="error">
+			    {{emailError.message}}
+			  </p>
+      
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Mobile number" type="tel" [(ngModel)]="cmobilenumber"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="mobilenumberError.status" class="error">
+		    {{mobilenumberError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Street address" type="text" [(ngModel)]="caddress"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="addressError.status" class="error">
+		    {{addressError.message}}
+		  </p>
+
+			<!-- <div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Per hour USD rate" type="tel" [(ngModel)]="cprice"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="priceError.status" class="error">
+		    {{priceError.message}}
+		  </p> -->
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-textarea placeholder="About"  rows="6" cols="20" [(ngModel)]="cabout"></ion-textarea>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="aboutError.status" class="error">
+		    {{aboutError.message}}
+		  </p>
+			
+		
+
+		<div class="ionbutton" (click)="viewcaregiverprofile()">
+			<ion-button class="ib">Done</ion-button>
+		</div>
+
+	</div>
+
+</ion-content>

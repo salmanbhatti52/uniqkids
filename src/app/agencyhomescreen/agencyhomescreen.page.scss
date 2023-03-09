@@ -1,0 +1,94 @@
+/*.cheader{
+	position: fixed;
+}*/
+.headBg {
+  --background: #F7F7F7;
+  padding: 1% 0%;
+}
+.menuicon{
+	color:#000;
+}
+.ios{
+  .headBg {
+    --background: #F7F7F7;
+    padding: 3% 0%;
+  }
+  
+}
+.pimg{
+	width: 41px;
+    height: 41px;
+    border-radius: 50px;
+}
+.logo{
+	text-align: right;
+  margin-right: 5%;
+}
+.logo img{
+	width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.background{
+	 --background: #F7F7F7;
+}
+.wrapper{
+	width:90%;
+	margin:5% auto;
+}
+.timer{
+	text-align: center;
+}
+.text{
+	font-size: 18px;
+	color:#000;
+	font-weight: 600;
+}
+.text1{
+	color:#FE9805;
+	font-size: 29px;
+	font-weight: 600;
+}
+.main{
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 14px;
+	margin-top: 7%;
+}
+.left img{
+	border-radius:7px;
+}
+.inner{
+	padding:2% 3%;
+	display: flex;
+}
+.right{
+	margin-left: 5%;
+	width: 50%;
+	margin-top:2%;
+}
+.rtext{
+	font-size: 20px;
+	font-weight:600;
+}
+.rtext1{
+	font-size: 14px;
+	font-weight:600;
+	margin-top: 2%;
+	color: #000000;
+}
+.rtext2{
+	font-size: 14px;
+  margin-top: 1%;
+}
+.rtext3{
+	font-size: 13px;
+    font-weight: 600;
+    margin-top: 1%;
+    color: #000000;
+    overflow: hidden;
+    height: 50px;
+}
+.rtext4{
+	margin-top: 3%;
+}

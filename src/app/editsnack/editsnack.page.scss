@@ -1,0 +1,150 @@
+.headBg {
+  --background: #F7F7F7;
+  padding: 1% 0%;
+}
+.menuicon{
+	color:#000;
+}
+.backbtn{
+  margin-left:0%;
+  padding-top:11px;
+  padding-left: 18px;
+}
+.backSvg {
+  fill: #333;
+}
+
+.ctitle{
+	// text-align: center;
+  font-size: 18px;
+    font-weight: 600;
+}
+.titleclass{
+	text-align: center; padding-top: 8px;
+}
+.ios{
+  .backbtn{
+    margin-left:0%;
+    padding-top:14px;
+    padding-left: 18px;
+  }
+	.titleclass{
+		text-align: center; padding-top: 11px;
+	}
+  .headBg {
+    --background: #F7F7F7;
+    padding: 3% 0%;
+  }
+}
+.background{
+	 --background: #F7F7F7;
+}
+.wrapper{
+	width:80%;
+	margin:10% auto;
+}
+.field{
+	display: flex;
+}
+.inputdiv{
+	display: flex;
+    border-radius: 12px;
+    background: #FFFFFF;
+    width: 85%
+}
+.pinput
+{
+	width: 100%;
+  font-size: 15px;
+  color: #000;
+  opacity: 48%;
+  padding: 2% 0% 2% 7%;
+}
+.imgdiv{
+	margin-left: 7%;
+    margin-top: 4%;
+}
+.boxdiv{
+
+    margin-top: 5%;
+}
+.box1{
+	background: #fff;
+    /*box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;*/
+    box-shadow: #0000001a 2px 5px 5px;
+    border-radius: 14px;
+}
+.text1{
+	font-weight:600;
+	font-size:22px;
+	color:#000000;
+}
+.text2{
+	font-weight:500;
+	font-size:14px;
+	color:#FFBF05;
+	margin-top: 5%;
+}
+.innerbox{
+	text-align: center;
+  padding: 10% 13%;
+}
+.icondiv{
+  background: #fff;
+  box-shadow: #0000001a 2px 5px 5px;
+  border-radius: 90px;
+    width: 24px;
+    height: 20px;
+    margin-left: 80%;
+}
+.icondiv img{
+  padding: 2px;
+}
+.left{
+	width: 45%;
+	float: left;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+.right{
+	width: 45%;
+	float: left;
+	margin-left: 5%;
+}
+.clear{
+	clear: both;
+}
+
+.bg_white{
+    padding: 0.6em 0em;
+    /*background: #fff;*/
+}
+.vertical_list{
+    text-align: center;
+    height: 100px;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding:0em 6px;
+}
+.vertical_list p {
+    //margin: 0px;
+}
+.vertical_slider ion-slide{
+    margin-left: 0em !important;
+    color:#B0B0B0;
+    /*border-top: 1px solid #B0B0B0;
+    border-bottom: 1px solid #B0B0B0;*/
+    font-size: 40px;
+    /* padding: 1em 0em; */
+
+}
+
+.vertical_slider ion-slide.swiper-slide-active{
+    color:#000 !important;
+    font-size: 44px !important;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 12px;
+}

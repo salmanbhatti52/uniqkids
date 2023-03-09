@@ -1,0 +1,106 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>requestpopup</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="background">
+	<div class="wrapper">
+		<div class="main">
+			<div style="text-align: end;margin-right: 15px;font-size: 18px;font-weight: 600;" (click)="close()">close</div>
+      <div *ngIf="child=='yes'">
+        <div class="textdiv">
+          <div class="text1">Send Request</div>
+          <div class="text2">Select child</div>
+        </div>
+        <div class="requestdiv" *ngFor="let child of childarray; let i = index;">
+          <div class="inner">
+            <div class="left">
+              <img src="assets/imgs/profilelogo.png" width="145px" height="135px" *ngIf="child.profile==null">
+              <img src="{{child.profile}}" width="145px" height="135px"  *ngIf="child.profile!=null">
+            </div>
+            <div class="right">
+              <div class="rtext">{{child.name}},<span style="font-weight:400;margin-left: 3%;">{{child.age}} years</span></div>
+              <!-- <div class="rtext1">Care Giver</div>
+              <div class="rtext2">Ana Claudia</div>
+              <div class="rtext3">Timing</div> -->
+              <div class="rtext4">{{child.about}}</div>
+            </div>
+          </div>
+          <div class="checkbox">
+            <ion-checkbox color="primary" slot="start"
+            mode='ios' class="checkicon" 
+            (ionChange)="selectchild(child,$event,i)"
+            ></ion-checkbox> 
+          </div>
+        </div>
+        <p *ngIf="selectError.status" class="error">
+          {{selectError.message}}
+        </p>
+        
+
+        <!-- <div class="requestdiv">
+          <div class="inner">
+            <div class="left">
+              <img src="assets/imgs/child.png" width="145px" height="135px">
+            </div>
+            <div class="right">
+              <div class="rtext">Emily,<span style="font-weight:400;margin-left: 3%;">3 years</span></div>
+              <div class="rtext1">Care Giver</div>
+              <div class="rtext2">Ana Claudia</div>
+              <div class="rtext3">Timing</div>
+              <div class="rtext4">8:40 pm - 6:00 am</div>
+            </div>
+          </div>
+          <div class="checkbox">
+            <ion-checkbox color="primary" slot="start" mode='ios' class="checkicon"></ion-checkbox> 
+          </div>
+        </div> -->
+
+        <div class="datediv">
+          <h6 style="font-size:14px;text-align: center;">Please select date & time</h6>
+          <div class="date">
+            <div class="datepick">
+              <ion-datetime 
+                display-format="MM/DD/YYYY" 
+                picker-format="YYYY-MM-DD"  min="{{myDate}}"  max="2040-02-19" placeholder="10/25/2021" [(ngModel)]="date"
+                (ionChange)="selectdata()"
+                style="color: #000000;"
+              ></ion-datetime>
+            </div>
+            <div class="imgdiv">
+              <img src="assets/imgs/icons/cal.png">
+            </div>
+          </div>
+          <p *ngIf="dateError.status" class="error">
+            {{dateError.message}}
+          </p>
+          <div class="timepick">
+            <div class="time1">
+              <ion-datetime display-format="hh:mm A" picker-format="h:mm A" placeholder="09:00AM"
+              (ionChange)="starttime()" [(ngModel)]="stime" style="color: #000000;"></ion-datetime>
+            </div>
+          
+            <div class="time2">
+              <ion-datetime display-format="hh:mm A" picker-format="h:mm A" placeholder="08:00AM"
+              (ionChange)="endtime()" [(ngModel)]="etime" style="color: #000000;"></ion-datetime>
+            </div>
+          </div>
+          <p *ngIf="strtTimeError.status" class="error">
+            {{strtTimeError.message}}
+          </p>
+          <p *ngIf="endTimeError.status" class="error">
+            {{endTimeError.message}}
+          </p>
+          
+        </div>
+        <div class="ionbutton" (click)="closeModal()">
+          <ion-button class="ib">Send Request</ion-button>
+        </div>
+      </div>
+      <div *ngIf="child=='none'">
+        <div style="text-align: center;font-size: 20px; font-weight: bold; height: 100px;">No Child Exist</div>
+      </div>
+		</div>
+	</div>
+</ion-content>

@@ -1,0 +1,129 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	 <ion-toolbar class="headBgGlobal">
+		<ion-row>
+			<ion-col style="padding-top:6px;" size="2">
+				<div>
+					<ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+			</ion-col>
+
+			<ion-col class="titleclass" size="8">
+				<ion-text class="ctitle">Requests</ion-text>
+			</ion-col>
+
+			<ion-col size="2">
+
+			</ion-col>
+		</ion-row>
+	    <!-- <ion-buttons slot="start" style="margin-left: 2%;">
+	      <ion-menu-button class="menuicon"></ion-menu-button>
+	  </ion-buttons>
+	   <ion-title class="ctitle">Requests</ion-title> -->
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<div class="wrapper">
+		<ion-segment
+      id="segment"
+      mode="ios"
+      (ionChange)="segmentChanged($event)"
+      #mySegment>
+      <ion-segment-button mode="ios" value="current">
+        <ion-label>Current</ion-label>
+      </ion-segment-button>
+      <ion-segment-button checked mode="ios" value="pending">
+        <ion-label>Pending</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="ios" value="previous">
+        <ion-label>Previous</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <div *ngFor="let req of requestsarray">
+    	<div *ngIf="requestsType=='pending'">
+    		<div  *ngIf="req.status=='Pending'">
+	    		<div class="main" (click)="gotoprofile(req)">
+						<div class="inner">
+							<div class="top">
+								<div class="left">
+									<img src="{{req.profile}}" width="145px" height="135px">
+								</div>
+								<div class="right">
+									<div class="rightinner">
+										<div class="textdiv">
+											<div class="rtext">{{req.fname}} {{req.lname}} <span class="rtext1">${{req.price}}/hr</span></div>
+											<div class="t1">Child</div>
+											<div class="t2">{{req.childname}}</div>
+                      <div class="t2">Date : {{req.date}}</div>
+											<div class="t1">Timing</div>
+											<div class="t2">{{req.starttime}} - {{req.endtime}}</div>
+										</div>
+										<!-- <div class="rtext1"></div> -->
+									</div>
+								</div>
+							</div>
+								<div class="rtext2">{{req.about}}</div>
+						</div>
+					</div>
+				</div>
+    	</div>
+    	
+    	<div  *ngIf="requestsType=='current'" style="margin-top: 8%;">
+    		<div *ngIf="req.status=='Active'">
+    			<div class="main" (click)="gotoprofile(req)">
+						<div class="inner">
+							<div class="top">
+								<div class="left">
+									<img src="{{req.profile}}" width="145px" height="135px">
+								</div>
+								<div class="right">
+									<div class="rightinner">
+										<div class="textdiv">
+											<div class="rtext">{{req.fname}} {{req.lname}} <span class="rtext1">${{req.price}}/hr</span></div>
+											<div class="t1">Child</div>
+											<div class="t2">{{req.childname}}</div>
+                      <div class="t2">Date : {{req.date}}</div>
+											<div class="t1">Timing</div>
+											<div class="t2">{{req.starttime}} - {{req.endtime}}</div>
+										</div>
+										<!-- <div class="rtext1">${{req.price}}/hr</div> -->
+									</div>
+								</div>
+							</div>
+								<div class="rtext2">{{req.about}}</div>
+						</div>
+					</div>
+    		</div>
+    	</div>
+
+    	<div  *ngIf="requestsType=='previous'" style="margin-top: 8%;">
+    		<div *ngIf="req.status=='Completed'">
+    			<div class="main" (click)="gotoprofile(req)">
+						<div class="inner">
+							<div class="top">
+								<div class="left">
+									<img src="{{req.profile}}" width="145px" height="135px">
+								</div>
+								<div class="right">
+									<div class="rightinner">
+										<div class="textdiv">
+											<div class="rtext">{{req.fname}} {{req.lname}} <span class="rtext1">${{req.price}}/hr</span></div>
+											<div class="t1">Child</div>
+											<div class="t2">{{req.childname}}</div>
+											<div class="t1">Timing</div>
+											<div class="t2">{{req.starttime}} - {{req.endtime}}</div>
+										</div>
+										<!-- <div class="rtext1">${{req.price}}/hr</div> -->
+									</div>
+								</div>
+							</div>
+								<div class="rtext2">{{req.about}}</div>
+						</div>
+					</div>
+    		</div>
+    	</div>
+    </div>
+    
+	</div>
+</ion-content>

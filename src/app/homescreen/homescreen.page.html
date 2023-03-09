@@ -1,0 +1,150 @@
+<!-- <ion-header [translucent]="true" class="ion-no-border cheader">
+		  <ion-toolbar class="headBgGlobal">
+		    <ion-buttons slot="start" style="margin-left: 2%;">
+		      <ion-menu-button class="menuicon"></ion-menu-button>
+		  </ion-buttons>
+		  <ion-buttons slot="end" style="margin-right: 2%;" (click)="goto()">
+		    <img src="{{parentProfile}}" class="pimg">
+		  </ion-buttons>
+		</ion-toolbar>
+</ion-header> -->
+<ion-header [translucent]="true" class="ion-no-border cheader">
+   <ion-toolbar class="headBgGlobal">
+    <ion-row>
+      <ion-col class="backbtn" size="2">
+        <div>
+          <ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+      </ion-col>
+
+      <ion-col size="8">
+      </ion-col>
+
+      <ion-col size="2">
+        <div (click)="goto()">
+          <img src="{{parentProfile}}" class="pimg">
+          <!-- <img src="assets/imgs/clogo.png" *ngIf="userType=='caregiver'"> -->
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+
+	<div class="wrapper">
+		<div class="text">Welcome</div>
+		<div class="text1">{{name}}</div>
+
+		<div class="timer" *ngIf="picture==false">
+			<!-- <img src="assets/imgs/timer.png"> -->
+			<img src="assets/imgs/logo.svg">
+		</div>
+
+    <div *ngIf="mobile=='android'"> 
+      <svg
+      id="progress-circle"
+      width="50vh"
+      height="25vh"
+      viewBox="0 0 200 200"
+      *ngIf="progressbar==true"
+      >
+      <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color=#FE9805></stop>
+        <stop offset="100%" stop-color=#FE9805></stop>
+      </linearGradient>
+      <circle cx="50%" cy="50%" stroke="#f3f3f3" stroke-width="12" fill="none" [attr.r]="circleR"/>
+      <circle cx="50%" cy="50%"
+        stroke="url(#grad1)"
+        [attr.r]="circleR"
+        stroke-width="12"
+        stroke-linecap="round"
+        fill="none"
+        [attr.stroke-dasharray]="circleDasharray"
+        [attr.stroke-dashoffset]="percentageOffset(percent| async)"
+      />
+      <text x="50%" y="55%" class="timer-text">{{time | async }}</text>
+      <!-- <text x="50%" y="55%" class="timer-text" *ngIf="mobile=='android'">{{time | async }}</text>
+      <text x="50%" y="-45%" class="timer-text" *ngIf="mobile=='ios'">{{time | async }}</text> -->
+      </svg>
+    </div>
+
+    <div *ngIf="mobile=='ios'"> 
+      <svg
+      id="progress-circle"
+      width="40vh"
+      height="25vh"
+      viewBox="0 0 200 200"
+      *ngIf="progressbar==true"
+      >
+      <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color=#FE9805></stop>
+        <stop offset="100%" stop-color=#FE9805></stop>
+      </linearGradient>
+      <circle cx="50%" cy="50%" stroke="#f3f3f3" stroke-width="12" fill="none" [attr.r]="circleR"/>
+      <circle cx="50%" cy="50%"
+        stroke="url(#grad1)"
+        [attr.r]="circleR"
+        stroke-width="12"
+        stroke-linecap="round"
+        fill="none"
+        [attr.stroke-dasharray]="circleDasharray"
+        [attr.stroke-dashoffset]="percentageOffset(percent| async)"
+      />
+      
+      <text x="50%" y="55%" class="timer-text" *ngIf="mobile=='android'">{{time | async }}</text>
+      <text x="50%" y="-45%" class="timer-text" *ngIf="mobile=='ios'">{{time | async }}</text>
+      </svg>
+    </div>
+  
+		<div *ngFor="let child of childsarray;let i = index;">
+			<div  *ngIf="child.status=='Active'">
+
+        <!-- <div *ngIf="child.date==currentdate"> -->
+          <div  class="main" [class.ativeindex]="activeid == child.hiringid" [disabled]="disabled[i]">
+            <div class="inner" >
+              <div class="left" (click)="gotoprofile(child)">
+                <img src="{{child.profile}}" width="140px" height="125px">
+              </div>
+              <div class="right">
+
+
+
+
+                <div class="rtext">{{child.childname}},<span style="font-weight:400;margin-left: 3%;">{{child.age}} years</span>
+                  </div>
+                <div class="rtext1">Care Giver</div>
+                <div class="rtext2">{{child.fname}} {{child.lname}}</div>
+                <div class="rtext3">Date : {{child.date}}</div>
+                <div class="rtext3">Timing</div>
+                <div class="rtext4">{{child.starttime}} - {{child.endtime}}</div>
+
+              </div>
+            </div>
+            <div class="tbtndiv">
+              <ion-button class="tbtn" (click)="viewtimer(child,i)" [disabled]="disabled[i]">view timer</ion-button>
+            </div>
+
+          </div>
+        <!-- </div> -->
+
+			</div>
+		</div>
+
+ 
+		<!-- <div class="main" (click)="gotoprofile()">
+			<div class="inner">
+				<div class="left">
+					<img src="assets/imgs/boy.png" width="140px" height="125px">
+				</div>
+				<div class="right">
+					<div class="rtext">Emily,<span style="font-weight:400;margin-left: 3%;">3 years</span></div>
+					<div class="rtext1">Care Giver</div>
+					<div class="rtext2">Ana Claudia</div>
+					<div class="rtext3">Timing</div>
+					<div class="rtext4">8:40 pm - 6:00 am</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</ion-content>

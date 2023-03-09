@@ -1,0 +1,62 @@
+import { __decorate } from "tslib";
+import { Injectable } from '@angular/core';
+let LoginwithuserService = class LoginwithuserService {
+    constructor() {
+        this.appPages = [];
+        console.log('medication');
+    }
+    setSideMenu(type) {
+        if (type === "Parent") {
+            this.userType = "Parent";
+            this.appPages = [
+                { title: 'Profile', url: '/parentprofileview', img: '/assets/imgs/icons/profile.svg' },
+                { title: 'Child', url: '/child', img: '/assets/imgs/icons/child.png' },
+                { title: 'Caregiver', url: '/caregiver', img: '/assets/imgs/icons/caregiver.png' },
+                { title: 'Chat', url: '/chat', img: '/assets/imgs/icons/chat.png' },
+                { title: 'Payment', url: '/paymentto', img: '/assets/imgs/icons/payment.png' },
+                { title: 'Notifications', url: '/notification', img: '/assets/imgs/icons/notification.png' },
+                { title: 'Requests', url: '/requests', img: '/assets/imgs/icons/requests.png' },
+                { title: 'Terms and Condition', url: '/termsandcondition', img: '/assets/imgs/icons/term.png' },
+            ];
+        }
+        if (type === "Professional") {
+            this.userType = "Professional";
+            this.appPages = [
+                { title: 'Profile', url: '/cgviewprofile', img: '/assets/imgs/icons/profile.svg' },
+                { title: 'Requests', url: '/requests1', img: '/assets/imgs/icons/requests.png' },
+                { title: 'Chat', url: '/chat', img: '/assets/imgs/icons/chat.png' },
+                { title: 'Earnings', url: '/earning', img: '/assets/imgs/icons/money.png' },
+                { title: 'Notifications', url: '/notification', img: '/assets/imgs/icons/notification.png' },
+                { title: 'Terms and Condition', url: '/termsandcondition', img: '/assets/imgs/icons/term.png' },
+            ];
+        }
+        if (type === "Family") {
+            this.userType = "Family";
+            this.appPages = [
+                { title: 'Profile', url: '/cgviewprofile', img: '/assets/imgs/icons/profile.svg' },
+                { title: 'Requests', url: '/requests1', img: '/assets/imgs/icons/requests.png' },
+                { title: 'Chat', url: '/chat', img: '/assets/imgs/icons/chat.png' },
+                { title: 'Notifications', url: '/notification', img: '/assets/imgs/icons/notification.png' },
+                { title: 'Terms and Condition', url: '/termsandcondition', img: '/assets/imgs/icons/term.png' },
+            ];
+        }
+        if (type === "Agency") {
+            this.userType = "Agency";
+            this.appPages = [
+                { title: 'Profile', url: '/cgviewprofile1', img: '/assets/imgs/icons/profile.svg' },
+                { title: 'Requests', url: '/requests1', img: '/assets/imgs/icons/requests.png' },
+                { title: 'Chat', url: '/chat', img: '/assets/imgs/icons/chat.png' },
+                { title: 'Earnings', url: '/earning', img: '/assets/imgs/icons/money.png' },
+                { title: 'Notifications', url: '/notification', img: '/assets/imgs/icons/notification.png' },
+                { title: 'Terms and Condition', url: '/termsandcondition', img: '/assets/imgs/icons/term.png' },
+            ];
+        }
+    }
+};
+LoginwithuserService = __decorate([
+    Injectable({
+        providedIn: 'root'
+    })
+], LoginwithuserService);
+export { LoginwithuserService };
+//# sourceMappingURL=loginwithuser.service.js.map

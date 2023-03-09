@@ -1,0 +1,62 @@
+<!-- <ion-header [translucent]="true" class="ion-no-border cheader">
+		  <ion-toolbar class="headBgGlobal">
+		    <ion-buttons slot="start" class="backbtn">
+		      <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+		  </ion-buttons>
+		  <ion-title class="ctitle">Likes</ion-title>
+		</ion-toolbar>
+</ion-header> -->
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	<ion-toolbar class="headBgGlobal">
+	  <ion-row>
+		<ion-col class="backbtn" size="2">
+		  <div>
+			<img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+		  </div>
+		</ion-col>
+  
+		<ion-col class="titleclass" size="8">
+		  <ion-text class="ctitle">Likes</ion-text>
+		</ion-col>
+  
+		<ion-col size="2">
+  
+		</ion-col>
+	  </ion-row>
+  </ion-toolbar>
+  </ion-header>
+  
+
+<ion-content class="background">
+	<div class="wrapper">
+		<div class="logodiv">
+			<img src="assets/imgs/dislikelogo.svg">
+		</div>
+
+		<div class="field">
+			<div class="inputdiv">
+				<div class="pinput">
+					<ion-input placeholder="Enter dislikes" type="text" [(ngModel)]="dislikes"></ion-input>
+				</div>
+			</div>
+			<div class="imgdiv" (click)="add()">
+				<img src="assets/imgs/icons/plus.svg">
+			</div>
+		</div>
+
+		<p *ngIf="error.status" class="error">
+      {{error.message}}
+    </p>
+
+		<div style="display: flex; flex-wrap: wrap;">
+			<div class="box" *ngFor="let likes of childService.dislikes;let i = index;">
+
+				<ion-chip class="chip" (click)="del(i)">  
+			     <ion-label class="label">{{likes}}</ion-label>
+			     <img src="assets/imgs/icons/cross2.png" class="chipimg">  
+			  </ion-chip>  
+			</div>
+		</div>
+	
+	</div>
+</ion-content>

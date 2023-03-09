@@ -1,0 +1,40 @@
+
+.wrapper{
+	width: 90%;
+	margin:5% auto;
+}
+.inputdiv{
+	display: flex;
+  border-radius: 14px;
+  background: #00000029;
+  padding: 1% 5%;
+	margin-top: 5%;
+}
+
+
+.pinput
+{
+	width: 100%;
+	font-size: 15px;
+  color: #000;
+  opacity: 48%;
+}
+.btndiv{
+	margin-top:5%;
+	display: flex;
+}
+.btn1{
+	--background: #FE9805;
+	--box-shadow: none;
+	--border-radius: 12px;
+	width: 47%;
+	height: 46px;
+}
+.btn2{
+	--background:#E63F3F;
+	--box-shadow: none;
+	--border-radius: 12px;
+	width: 47%;
+	height: 46px;
+	margin-left: 4%;
+}

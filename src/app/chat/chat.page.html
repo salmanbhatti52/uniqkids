@@ -1,0 +1,85 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	 <ion-toolbar class="headBgGlobal">
+
+		<ion-row>
+			<ion-col style="padding-top:6px;" size="2">
+				<div>
+					<ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+			</ion-col>
+
+			<ion-col class="titleclass" size="8">
+				<ion-text class="ctitle">Conversations</ion-text>
+			</ion-col>
+
+			<ion-col size="2">
+
+			</ion-col>
+		</ion-row>
+
+	   
+	 
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<div class="wrapper">
+    <div *ngIf="chatdetail==false" style="margin-top: 45%;">
+      <div class="defaulttext">In a mood to chat? Converse with a like-minded parent or caregiver today! </div>
+    </div>
+		<div *ngFor="let chats of allChats; let i = index">
+			<div class="main" (click)="open(chats)">
+				<div class="inner">
+					<div class="imgdiv">
+						<img src="{{chats.profilepic}}">
+					</div>
+					<div class="textdiv">
+						<div class="text">{{chats.name}}</div>
+						<div class="para">{{chats.message}}</div>
+					</div>
+					<div class="time">{{chats.time}}</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- <div class="main">
+			<div class="inner">
+				<div class="imgdiv">
+					<img src="assets/imgs/chat.png">
+				</div>
+				<div class="textdiv">
+					<div class="text">Justin Ortiz</div>
+					<div class="para">Duis pretium gravida enim, vel maximus...</div>
+				</div>
+				<div class="time">05:40pm</div>
+			</div>
+		</div>
+
+		<div class="main">
+			<div class="inner">
+				<div class="imgdiv">
+					<img src="assets/imgs/chat.png">
+				</div>
+				<div class="textdiv">
+					<div class="text">Justin Ortiz</div>
+					<div class="para">Duis pretium gravida enim, vel maximus...</div>
+				</div>
+				<div class="time">05:40pm</div>
+			</div>
+		</div>
+
+		<div class="main">
+			<div class="inner">
+				<div class="imgdiv">
+					<img src="assets/imgs/chat.png">
+				</div>
+				<div class="textdiv">
+					<div class="text">Justin Ortiz</div>
+					<div class="para">Duis pretium gravida enim, vel maximus...</div>
+				</div>
+				<div class="time">05:40pm</div>
+			</div>
+		</div> -->
+	</div>
+</ion-content>

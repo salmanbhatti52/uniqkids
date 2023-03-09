@@ -1,0 +1,93 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	  <ion-toolbar class="headBgGlobal">
+	    <ion-buttons slot="start" class="menubtn">
+		    <ion-menu-button class="menuicon"></ion-menu-button>
+		  </ion-buttons>
+	  <ion-title class="ctitle">Payment</ion-title>
+	  <ion-buttons slot="end" class="plusbtn" (click)="next()">
+		  <img src="assets/imgs/icons/payicon.svg">
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<div class="wrapper">
+		<div class="logo">
+			<img src="assets/imgs/paylogo.svg">
+		</div>
+
+		<div class="card" (click)="paymentto()">
+			<div class="inner">
+				<div class="left">
+					<div class="t1">4728 2923 3*** *****</div>
+					<div class="t2">Card Holder ****</div>
+				</div>
+				<div class="right">
+					<div class="text">Delete</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+
+		<div class="main">
+			<h6 style="font-size: 14px;text-align: center;">Add New Card</h6>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Card holder name" type="text" [(ngModel)]="name"></ion-input>
+					</div>
+				</div>
+			</div>
+			<p *ngIf="nameError.status" class="error">
+		    {{nameError.message}}
+		  </p>
+
+			<div class="fields">
+				<div class="inputdiv">
+					<div class="pinput">
+						<ion-input placeholder="Card number" type="tel" [(ngModel)]="cardnumber"></ion-input>
+					</div>
+				</div>
+			</div>
+
+			<p *ngIf="cardnumberError.status" class="error">
+		    {{cardnumberError.message}}
+		  </p>
+
+			<div class="twofields">
+				<div class="cvvdiv">
+					<div class="pinput">
+						<ion-input placeholder="cvv" type="tel" [(ngModel)]="cvv"></ion-input>
+					</div>
+				</div>
+				<div class="datediv">
+					<div class="pinput">
+						<!-- <ion-input placeholder="Expiry date" type="tel" [(ngModel)]="expdate"></ion-input> -->
+						<ion-datetime 
+						  display-format="MM/YY" 
+        			picker-format="YYYY-MM"  max="2050-12-09" placeholder="Expiry date" [(ngModel)]="expdate"
+        			(ionChange)="selectdata()"
+        			style="color: #000000;"
+        		></ion-datetime>
+					</div>
+				</div>
+			</div>
+			<p *ngIf="cvvError.status" class="error">
+		    {{cvvError.message}}
+		  </p>
+
+		  <p *ngIf="expdateError.status" class="error">
+		    {{expdateError.message}}
+		  </p>
+
+			<div class="ionbutton">
+				<ion-button class="ib" (click)="savecard()">Save</ion-button>
+			</div>
+
+		</div>	
+
+	</div>
+
+</ion-content>

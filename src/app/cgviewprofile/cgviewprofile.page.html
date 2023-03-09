@@ -1,0 +1,92 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	  <ion-toolbar class="headBgGlobal">
+		<ion-row>
+			<ion-col style="padding-top:6px;" size="2">
+				<div>
+					<ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+			</ion-col>
+
+			<ion-col class="titleclass" size="8">
+				<ion-text class="ctitle">Profile</ion-text>
+			</ion-col>
+
+			<ion-col style="padding-top: 8px;padding-left: 20px;" size="2">
+        <div (click)="completeprofile()">
+			    <img src="assets/imgs/icons/edit.svg">
+        </div>
+			</ion-col>
+		</ion-row>
+	    <!-- <ion-buttons slot="start" class="menubtn">
+		    <ion-menu-button class="menuicon"></ion-menu-button>
+		  </ion-buttons>
+	  <ion-title class="ctitle">Profile</ion-title>
+	  <ion-buttons slot="end" class="plusbtn" (click)="completeprofile()">
+		  <img src="assets/imgs/icons/edit.svg">
+		</ion-buttons> -->
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<p style="font-size: 15px;text-align: center;width: 80%;margin: 5% auto;">Need to change something in your profile? Edit your profile here</p>
+  
+	<div class="wrapper">
+	
+		<div class="main">
+			<div class="inner">
+				<div class="logodiv">
+					<!-- <img src="assets/imgs/logo1.png"> -->
+					<img src="{{picUrl}}">
+				</div>
+				<div class="text">{{fname}} {{lname}}</div>
+				<div class="text2" *ngIf="accountTypeId!=3">${{price}}/hr</div>
+				<div class="para">{{about}}</div>
+			</div>
+		</div>
+
+		<div class="main2">
+			<div class="contactdiv">
+				<div class="icondiv">
+					<img src="assets/imgs/icons/sms.svg">
+				</div>
+				<p>{{email}}</p>
+			</div>
+
+			<div class="contactdiv">
+				<div class="icondiv">
+					<img src="assets/imgs/icons/sendarrow.svg">
+				</div>
+				<p>{{address}}</p>
+			</div>
+
+			<div class="contactdiv">
+				<div class="icondiv">
+					<img src="assets/imgs/icons/phone.svg">
+				</div>
+				<p>{{mobilenumber}}</p>
+			</div>
+
+			<div *ngIf="accountTypeId!=3">
+				<h6 style="font-size: 14px;font-weight: 500;margin-top: 15%;">Bank Accout</h6>
+				<div class="contactdiv">
+					<div class="icondiv">
+						<img src="assets/imgs/icons/bank.svg">
+					</div>
+					<p>{{bankname}}</p>
+				</div>
+				<div class="contactdiv">
+					<div class="icondiv">
+						<img src="assets/imgs/icons/accnum.svg">
+					</div>
+					<p>{{accountnumber}}</p>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+	
+
+	
+
+</ion-content>

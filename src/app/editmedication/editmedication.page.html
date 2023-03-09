@@ -1,0 +1,118 @@
+<!-- <ion-header [translucent]="true" class="ion-no-border cheader">
+		  <ion-toolbar class="headBgGlobal">
+		    <ion-buttons slot="start" class="backbtn">
+		      <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+		  </ion-buttons>
+		  <ion-title class="ctitle">Medications Time</ion-title>
+		</ion-toolbar>
+</ion-header> -->
+<ion-header [translucent]="true" class="ion-no-border cheader">
+  <ion-toolbar class="headBgGlobal">
+    <ion-row>
+      <ion-col class="backbtn" size="2">
+        <div>
+          <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+        </div>
+      </ion-col>
+
+      <ion-col class="titleclass" size="8">
+        <ion-text class="ctitle">Medications Time</ion-text>
+      </ion-col>
+
+      <ion-col size="2">
+
+      </ion-col>
+    </ion-row>
+   
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<div class="wrapper">
+
+	<ion-row class="bg_white">
+    <ion-col size="2"></ion-col>
+    <ion-col size="2" class="vertical_list">
+      <ion-slides (ionSlideDidChange)="getStartHoures()" class="vertical_slider s_hours" [options]="option"  >
+        <ion-slide  *ngFor="let i of hours" >
+          <ng-container *ngIf="i<=9">
+            <p>0{{i}}</p>
+          </ng-container>
+          <ng-container *ngIf="i>9">
+            <p>{{i}}</p>
+          </ng-container>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+    <ion-col size="2" class="vertical_list">
+      <ion-slides (ionSlideDidChange)="getStartHoures()" class="vertical_slider s_mints" [options]="option"  >
+        <ion-slide  *ngFor="let i of mints" >
+          <ng-container *ngIf="i<=9">
+            <p>0{{i}}</p>
+          </ng-container>
+          <ng-container *ngIf="i>9">
+            <p>{{i}}</p>
+          </ng-container>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+    <ion-col size="2" class="vertical_list s_v">
+      <ion-slides (ionSlideDidChange)="getStartHoures()" class="vertical_slider" [options]="option"  >
+        <ion-slide>
+          <p style="font-size: 23px;">AM</p>
+        </ion-slide>
+        <ion-slide>
+          <p style="font-size: 23px;">PM</p>
+        </ion-slide>
+        <!-- <ion-slide>
+          <p style="font-size: 23px;">AM</p>
+        </ion-slide>
+        <ion-slide>
+          <p style="font-size: 23px;">PM</p>
+        </ion-slide> -->
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+		<div class="field">
+			<div class="inputdiv">
+				<div class="pinput">
+					<ion-input placeholder="Enter medication name" type="text" [(ngModel)]="medicationname"></ion-input>
+				</div>
+			</div>
+			<div class="imgdiv" (click)="add()">
+				<img src="assets/imgs/icons/plus.svg">
+			</div>
+		</div>
+
+    <p *ngIf="error.status" class="error">
+      {{error.message}}
+    </p>
+		
+		
+		<div class="boxdiv" >
+			<div class="left" *ngFor="let arr of editchildService.medication;let i = index;">
+				<div class="box1">
+					<div class="innerbox">
+            <div class="icondiv" (click)="del(i)"><ion-icon name="close"></ion-icon></div>
+						<div class="text1">{{arr.medication_time}}</div>
+						<div class="text2">{{arr.medication_name}}</div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- <div class="right">
+				<div class="box1">
+					<div class="innerbox">
+						<div class="text1">8:30 AM</div>
+						<div class="text2">Medication Name</div>
+					</div>
+					
+				</div>
+			</div> -->
+			<div class="clear"></div>
+		</div>
+		
+	</div>
+</ion-content>

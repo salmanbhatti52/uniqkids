@@ -1,0 +1,119 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	  <ion-toolbar class="headBgGlobal">
+		<ion-row>
+			<ion-col style="padding-top:6px;" size="2">
+				<div>
+					<ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+			</ion-col>
+
+			<ion-col class="titleclass" size="8">
+				<ion-text class="ctitle">Earning</ion-text>
+			</ion-col>
+
+			<ion-col size="2">
+
+			</ion-col>
+		</ion-row>
+	    <!-- <ion-buttons slot="start" class="menubtn">
+		    <ion-menu-button class="menuicon"></ion-menu-button>
+		  </ion-buttons>
+	  <ion-title class="ctitle">Earning</ion-title> -->
+	  <!-- <ion-buttons slot="end" class="plusbtn" (click)="next()">
+		  <img src="assets/imgs/icons/payicon.svg">
+		</ion-buttons> -->
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<div class="card">
+		<div class="inner">
+			<div class="btext">Total Earning</div>
+			<div class="text2">${{earnings}}</div>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<!-- <div class="box">
+			<div class="innerbox">
+				<div class="left">
+					<div class="t1">Available Balance</div>
+				</div>
+				<div class="right">
+					<div class="text">$3069</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+		</div> -->
+
+		<!-- <div class="ionbutton" (click)="next()">
+			<ion-button class="ib">Withdraw</ion-button>
+		</div> -->
+
+		<ion-segment
+      id="segment"
+      mode="ios"
+      (ionChange)="segmentChanged($event)"
+      #mySegment>
+      <ion-segment-button mode="ios" value="pending">
+        <ion-label>Pending</ion-label>
+      </ion-segment-button>
+      <ion-segment-button checked mode="ios" value="completed">
+        <ion-label>Completed</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <div *ngIf="paymentType=='pending'">
+			<div *ngFor="let pay of earningarray">
+				<!-- <div *ngIf="pay.status=='Active'"> -->
+			    <h6 style="font-size: 14px;font-weight:500;">{{pay.date}}</h6>
+			    <div class="main">
+						<div class="maininner">
+							<div class="imgdiv">
+								<img src="{{pay.profile}}">
+							</div>
+							<div class="textdiv">
+								<div class="maintext">{{pay.fname}} {{pay.lname}}</div>
+								<div class="para">Child: {{pay.childname}}</div>
+							</div>
+							<div class="last">
+								<div class="time">${{pay.totalamount}}</div>
+							</div>
+						</div>
+					</div>
+				<!-- </div> -->
+			</div>
+		</div>
+
+		 <div *ngIf="paymentType=='completed'">
+			<div *ngFor="let pay of earningarray">
+				<!-- <div *ngIf="pay.status=='Completed'"> -->
+			    <h6 style="font-size: 14px;font-weight:500;">{{pay.date}}</h6>
+			    <div class="main2" >
+		
+						<div class="inner1">
+							<div class="left">
+								<div class="imgdiv1">
+									<img src="{{pay.profile}}">
+								</div>
+								<div class="textdiv1">
+									<div class="text1">{{pay.fname}} {{pay.lname}}, <span style="font-size:10px;font-weight:400;">Child: {{pay.childname}}</span></div>
+									<div class="para1">${{pay.totalamount}}</div>
+								</div>
+							</div>
+							<div class="right">
+								<ion-button class="btn1" (click)="viewdetail(pay)">View Details</ion-button>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				<!-- </div> -->
+			</div>
+		</div>
+
+	</div>
+
+	
+
+</ion-content>

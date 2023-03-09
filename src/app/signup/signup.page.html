@@ -1,0 +1,146 @@
+	<ion-header class="ion-no-border">
+    <ion-toolbar class="headBg">
+      <div class="header">
+        <div class="back-btn">
+         	<img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+        </div>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+<ion-content class="background" fullscreen>
+
+  
+  <!-- <div class="header">
+    <div class="back-btn">
+      <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+      </div>
+  </div> -->
+  <div style="text-align: center;margin-top: 4%;">
+    <img src="assets/imgs/ulogo.png">
+  </div>	
+  
+  <div class="logindiv">
+		  <div class="wrapper">
+		  	
+		  	<div class="headtxt">Sign up today</div>
+		  	<p style="margin-bottom: 10%;font-size:14px;color: #000000;opacity:0.8;">UniqKidz holds all the important information that you need about your child. </p>
+
+		  	<div class="fields">
+					<div class="inputdiv">
+						<div class="icondiv">
+							<img src="assets/imgs/icons/user.png">
+						</div>
+						<div class="pinput">
+							<ion-input placeholder="First Name" type="text"  [(ngModel)]="firstname"></ion-input>
+						</div>
+					</div>
+				</div>
+				<p *ngIf="firstnameError.status" class="error">
+		      {{firstnameError.message}}
+		    </p>
+
+				<div class="fields">
+					<div class="inputdiv">
+						<div class="icondiv">
+							<img src="assets/imgs/icons/user.png">
+						</div>
+						<div class="pinput">
+							<ion-input placeholder="Last Name" type="text"  [(ngModel)]="lastname"></ion-input>
+						</div>
+					</div>
+				</div>
+
+				<p *ngIf="lastnameError.status" class="error">
+		      {{lastnameError.message}}
+		    </p>
+		  
+		  	<div class="fields">
+					<div class="inputdiv">
+						<div class="icondiv">
+							<img src="assets/imgs/icons/email.svg">
+						</div>
+						<div class="pinput">
+							<ion-input placeholder="Email" type="email"  [(ngModel)]="email"></ion-input>
+						</div>
+					</div>
+				</div>
+				<p *ngIf="emailError.status" class="error">
+			    {{emailError.message}}
+			  </p>
+
+				<div class="fields">
+					<div class="inputdiv">
+						<div class="icondiv">
+							<img src="assets/imgs/icons/lock.svg">
+						</div>
+						<div class="pinput">
+							<ion-input placeholder="Password"
+							 [(ngModel)]="password"
+							 type="{{showPass ? 'text':'password' }}"
+							 ></ion-input>
+						</div>
+						<div class="icondiv">
+							<ion-icon name="eye" class="eye"  *ngIf="!showPass" (click)="togglePass()"></ion-icon>
+							<ion-icon name="eye-off" class="eye"  *ngIf="showPass" (click)="togglePass()"></ion-icon>
+						</div>
+					</div>
+				</div>
+				 <p *ngIf="passwordError.status" class="error">
+				    {{passwordError.message}}
+				  </p>
+
+				<div class="fields">
+					<div class="inputdiv">
+						<div class="icondiv">
+							<img src="assets/imgs/icons/lock.svg">
+						</div>
+						<div class="pinput">
+							<ion-input placeholder="Password" 
+								[(ngModel)]="confirmPassword"
+								type="{{showcPass ? 'text':'password' }}"
+							></ion-input>
+						</div>
+						<!-- <div class="icondiv">
+							<img src="assets/imgs/icons/eye.svg">
+						</div> -->
+						<div class="icondiv">
+							<ion-icon name="eye" class="eye"  *ngIf="!showcPass" (click)="togglecPass()"></ion-icon>
+							<ion-icon name="eye-off" class="eye"  *ngIf="showcPass" (click)="togglecPass()"></ion-icon>
+						</div>
+					</div>
+				</div>
+				<p *ngIf="confirmPasswordError.status" class="error">
+			    {{confirmPasswordError.message}}
+			  </p>
+
+        <p style="margin-bottom: 10%;font-size: 11px;color: #000000;opacity: 0.8;">By signing up, you agree to our <span style="text-decoration: underline;" (click)="termsandcondition('terms')">Terms and Conditions</span> </p>
+			  <p *ngIf="error.status" class="error">{{error.message}}</p>
+				<div class="ionbutton" (click)="gotohome()">
+					<ion-button class="ib" id="post" #id>
+					 <span class="btns">register</span> 
+					</ion-button>
+				</div>
+
+				 <!-- <div class="signup">
+		      <p>Don't have an account already?</p>
+		      <p (click)="signupPage()" class="signupText">SIGN UP</p>
+		    </div> -->
+
+		  </div>
+
+	  </div>
+ 
+ 
+	<!-- <div class="footer">
+		Already a member? <span (click)="gotologin()">Login here</span>
+     
+	</div> -->
+</ion-content>
+
+<ion-footer class="ion-no-border" *ngIf="showfooter==true">
+	<ion-toolbar class="bgtoolbar">
+		<div class="footer">
+			Already a member? <span (click)="gotologin()">Login here</span>
+		</div>
+	</ion-toolbar>
+</ion-footer>

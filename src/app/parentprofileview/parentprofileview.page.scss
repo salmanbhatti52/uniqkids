@@ -1,0 +1,217 @@
+.headBg {
+  --background: #F7F7F7;
+  padding:1% 0%;
+}
+.menuicon{
+	color:#000;
+}
+.menubtn{
+	/*margin-left:3%;*/
+}
+.plusbtn{
+	margin-right:3%;
+}
+.backSvg {
+  fill: #333;
+}
+
+.ctitle{
+	text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+.ios{
+  .headBg {
+    --background: #F7F7F7;
+    padding: 3% 0%;
+  }
+}
+.background{
+	 --background: #F7F7F7;
+}
+.wrapper{
+	width: 90%;
+  margin: 30% auto;
+  position: relative;
+}
+.main{
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 14px;
+	margin-top: 5%;
+}
+.inner{
+	text-align: center;
+    width: 80%;
+    margin: 0% auto;
+}
+.logodiv{
+	position: absolute;
+    top: 40px;
+    left: 115px;
+}
+.logodiv img{
+	border-radius: 90px;
+    width: 140px;
+    height: 140px;
+}
+.text{
+	padding-top: 30%;
+	color:#000000;
+	font-weight: bold;
+	font-size:20px
+}
+.text2{
+	color:#FE9805;
+	font-size: 14px;
+	font-style: italic;
+}
+.para{
+	color:#000000;
+	font-size: 14px;
+	padding: 4% 0%;
+}
+
+.main2{
+	width:70%;
+	margin: 10% auto;
+}
+.contactdiv{
+	display: flex;
+	margin-top: 10%;
+	align-items: center;
+}
+.dtext{
+	margin: 0px;
+  margin-left: 8%;
+  font-size:14px;
+  width: 100%;
+}
+.dtext1{
+	margin: 0px;
+  margin-left: 10%;
+  font-size:14px;
+  width: 100%;
+}
+.contactdiv p{
+	
+}
+/*.icondiv img{
+	width: 24px;
+	height: 24px;
+}
+*/
+.ionbutton
+{	
+ 	text-align: center;
+	width: 100%;
+	margin-top: 25%;
+}
+.ib
+{
+
+	color: white;
+  --background: #FE9805;
+  outline: none;
+  width: 80%;
+ font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10%;
+  height: 55px;
+   --border-width: 1px; 
+  --border-style: solid;
+  --border-color: white;
+  --border-radius: 12px;
+  --box-shadow: none;
+  text-transform: uppercase;
+}
+
+
+
+@media only screen and (max-width:414px) {
+	.wrapper{
+		width: 90%;
+	  margin: 25% auto;
+    position: relative;
+	}
+	.logodiv{
+		position: absolute;
+    top: -60px;
+    left: 116px
+	}
+
+}
+@media only screen and (max-width:360px) {
+	.wrapper{
+		width: 90%;
+	  margin: 27% auto;
+    position: relative;
+	}
+	.logodiv{
+		position: absolute;
+    top: 25px;
+    left: 115px;
+	}
+
+}
+@media only screen and (max-width:375px) {
+	.wrapper{
+		width: 90%;
+	  margin: 27% auto;
+    position:relative;
+	}
+	.logodiv{
+		position: absolute;
+    top: -70px;
+    left: 94px;
+	}
+
+}
+
+@media only screen and (max-width:320px) {
+	.logodiv{
+		position: absolute;
+    top: -55px;
+    left: 82px
+	}
+  .logodiv img{
+    border-radius: 90px;
+      width: 125px;
+      height: 125px;
+  }
+	.text{
+	padding-top: 35%;
+	color:#000000;
+	font-weight: bold;
+	font-size:20px
+}
+
+
+
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  .wrapper{
+		width: 90%;
+    margin: 18% auto;
+    position: relative;
+	}
+  .logodiv{
+		position: absolute;
+    top: -90px;
+    left: 260px;
+	}
+  .logodiv img{
+    border-radius: 90px;
+      width: 175px;
+      height: 175px;
+  }
+	.text{
+    padding-top: 17%;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+	}
+}

@@ -1,0 +1,42 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>registeras</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="background">
+	<div class="wrapper">
+		<div style="text-align: center;">
+  		<img src="assets/imgs/ulogo.png" height="102px">
+  	</div>
+  	<div class="mandiv">
+  		<img src="assets/imgs/grouplogo.svg">
+  	</div>
+    <p style="margin:5px 0px;font-size: 14px;color: #000000;opacity: 0.8;text-align: center;">Help us understand your relationship with the child better by selecting your role in their life! </p>
+  	<div class="btndiv">
+	  	<button class="btn ion-activatable ripple-parent" (click)="parent()">
+	  		<img src="assets/imgs/manlogo.svg">
+				<div class="text">Parent</div>
+				 <ion-ripple-effect></ion-ripple-effect>
+			</button>
+
+
+	  	<button class="btn1 ion-activatable ripple-parent" (click)="caregiver()">
+	  		<img src="assets/imgs/child.svg">
+				<div class="text1">Caregiver</div>
+				 <ion-ripple-effect></ion-ripple-effect>
+			</button>
+  	
+  	</div>
+  	
+	</div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+	<ion-toolbar class="bgtoolbar">
+		<div class="footer">
+			Already got an account? <span (click)="gotologin()">Login</span>
+		</div>
+	</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,281 @@
+.headBg {
+  --background: #F7F7F7;
+  padding:1% 0%;
+}
+.menuicon{
+	color:#000;
+}
+.menubtn{
+	margin-left:3%;
+}
+.plusbtn{
+	margin-right:3%;
+}
+.backSvg {
+  fill: #333;
+}
+
+.ctitle{
+	// text-align: center;
+  font-size: 18px;
+    font-weight: 600;
+}
+.titleclass{
+	text-align: center; padding-top: 8px;
+}
+.ios{
+	.titleclass{
+		text-align: center; padding-top: 11px;
+	}
+  .headBg {
+    --background: #F7F7F7;
+    padding:3% 0%;
+  }
+}
+.background{
+	 --background: #F7F7F7;
+}
+.card{
+	background: #FE9805;
+  width: 80%;
+  margin: 5% auto;
+  border-radius: 20px;
+  text-align: center;
+}
+.inner{
+	padding: 10% 0%;
+}
+.btext{
+	font-size: 34px;
+  color: #fff;
+}
+.text2{
+	font-size: 43px;
+  color: #fff;
+  font-weight: bold;
+}
+.wrapper{
+	width:90%;
+	margin:0% auto;
+}
+.box{
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 14px;
+	margin-top: 5%;
+}
+.innerbox{
+	padding: 3% 6%;
+}
+.left{
+	width: 73%;
+	float: left;
+}
+.right{
+	width: 27%;
+  float: left;
+}
+.t1{
+	font-size:15px;
+	color:#000000;
+	margin-top: 5%;
+  font-weight: 500;
+}
+
+.text{
+	font-size: 29px;
+  color: #FE9805;
+  font-weight: 500;
+}
+.clear{
+	clear:both;
+}
+
+
+.ionbutton
+{	
+	width: 80%;
+  margin: 5% auto;
+}
+.ib
+{
+
+	color: white;
+  --background: #FE9805;
+  outline: none;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10%;
+  height: 58px;
+   --border-width: 1px; 
+  --border-style: solid;
+  --border-color: white;
+  --border-radius: 12px;
+  --box-shadow: none;
+  text-transform: uppercase;
+}
+
+ion-segment {
+  padding: 5px 5px;
+  border-radius: 10px;
+  margin-top: 10px;
+  --background: #EBEBEB;
+  ion-segment-button {
+    --border-width: 0;
+    --margin-bottom: 5px;
+    --margin-top: 5px;
+    border-radius: 10px;
+    --background-checked: #fe9805;
+    --indicator-color: transparent !important;
+    --color: #00000;
+    --color-checked: #fff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+
+}
+
+
+.main{
+	background: #fff;
+	/*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
+	border-radius: 14px;
+	margin-top: 5%;
+}
+
+.maininner{
+	padding: 3%;
+	display: flex;
+}
+.imgdiv img{
+	border-radius: 50%;
+    width: 44px;
+    height: 44px;
+}
+.textdiv{
+	margin-left: 4%;
+    margin-top: 1%;
+    width: 30%;
+}
+.maintext{
+	font-size: 15px;
+	font-weight: 500;
+	color:#000000;
+}
+.para{
+	font-size: 10px;
+	font-weight: 400;
+	color:#000000;
+	margin-top: 6%;
+
+}
+.last{
+	margin-left: 30%;
+	margin-top: 2%
+}
+.date{
+	color:#CFCFCF;
+	font-size:10px;
+}
+.time{
+	font-size: 18px;
+  font-weight: 400;
+  margin-top: 4%;
+  color: #FE9805;
+  text-align: center;
+}
+
+/*//////*/
+.main2{
+  background: #fff;
+  /*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
+  border-radius: 14px;
+  margin-top: 5%;
+}
+.inner1{
+  padding: 3%;
+  display: flex;
+}
+.left{
+  width:65%;
+  float: left;
+  display: flex;
+}
+.imgdiv1 img{
+  border-radius: 50%;
+    width: 44px;
+    height: 44px;
+}
+.textdiv1{
+  margin-left: 4%;
+  margin-top: 1%;
+}
+.text1{
+  font-size: 15px;
+  font-weight: 500;
+  color:#000000;
+}
+.para1{
+ font-size: 15px;
+  font-weight: 900;
+  color: #000000;
+  margin-top: 6%;
+
+}
+.right{
+  width: 35%;
+  float: left;
+}
+.clear{
+  clear: both;
+}
+
+.btn1
+{
+
+ color: white;
+  --background: #FE9805;
+  outline: none;
+  width: 110px;
+  font-size: 12px;
+  font-weight: 600;
+  height: 45px;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: white;
+  --border-radius: 12px;
+  --box-shadow: none;
+  text-transform: capitalize;
+}
+
+
+@media only screen and (max-width:320px) {
+ .text{
+	font-size: 27px;
+    color: #FE9805;
+    font-weight: 500;
+  }
+
+  .btn1
+  {
+
+    color: white;
+    --background: #FE9805;
+    outline: none;
+    width: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    height: 40px;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: white;
+    --border-radius: 12px;
+    --box-shadow: none;
+    text-transform: capitalize;
+  }
+  
+}

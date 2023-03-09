@@ -1,0 +1,112 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	 <ion-toolbar class="headBgGlobal">
+	<ion-row>
+	  <ion-col class="backbtn" size="2">
+		<div>
+		  <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+		</div>
+	  </ion-col>
+
+	  <ion-col class="titleclass" size="8">
+		<ion-text class="ctitle">{{name}}</ion-text>
+	  </ion-col>
+
+	  <ion-col size="2">
+
+	  </ion-col>
+	</ion-row>
+		<!-- <ion-buttons slot="start" class="backbtn">
+			  <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+		  </ion-buttons>
+	   <ion-title class="ctitle">{{name}}</ion-title> -->
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+	<div class="wrapper">
+		<div  no-lines *ngFor="let chat of messages">	
+			<div class="linediv" *ngIf="chat.date">
+				<div class="leftline"></div>
+				<div class="label">{{chat.date}}</div>
+				<div class="rightline"></div>
+			</div>	
+			<div *ngIf="chat.userId!=loggedid">
+				<div class="main">
+					<div class="left">
+						<img src="{{chat.profilepic}}">
+					</div>
+					<div *ngIf="chat.messageType=='text'">
+						<div class="right">
+							<div class="text">
+								<p>{{chat.message}}</p>
+								<div class="time">{{chat.time}}</div>
+							</div>
+						</div>
+					</div>
+					<div *ngIf="chat.messageType=='attachment'">
+						<div class="right">
+							<div class="text">
+								<img class="attachment_sender" src="{{chat.message}}" />
+								<div class="time">{{chat.time}}</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			
+
+			<div class="main2" *ngIf="chat.userId==loggedid">
+				<div class="right1">
+					<div *ngIf="chat.messageType=='text'">
+						<div class="text1" >
+							{{chat.message}}
+						</div>
+					</div>
+					<div *ngIf="chat.messageType=='attachment'">
+						<div class="text1">
+				<img class="attachment_sender" src="{{chat.message}}" />
+			  </div>
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+		<!-- <div class="main2">
+			<div class="right">
+				<img src="assets/imgs/msgimg.png">
+			</div>
+		</div> -->
+	</div>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+	<div class="bottomdiv">
+		<div class="imgdiv" (click)="selectImages('profile')">
+			<img src="assets/imgs/icons/attachment.png">
+		</div>
+		<div class="inputdiv">
+				<div class="pinput">
+					<!-- <ion-input placeholder="Type Your message here..." type="text" [(ngModel)]="data.message"></ion-input> -->
+					<ion-textarea
+			class="input"
+			rows="1"
+			cols="20"
+			[(ngModel)]="data.message"
+			placeholder="Type Your message here..."
+			(keypress)="userTyping($event)"
+		  ></ion-textarea>
+				</div>
+				<img src="assets/imgs/icons/send.png" class="cimg" (click)="sendMsg()">
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+	</div>
+  </ion-toolbar>
+</ion-footer>

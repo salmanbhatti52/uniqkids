@@ -1,0 +1,97 @@
+// .cheader{
+// 	position: fixed;
+// }
+.headBg {
+  --background: #F7F7F7;
+  padding: 1% 0%;
+}
+.menuicon{
+	color:#000;
+}
+.ctitle{
+	// text-align: center;
+  font-size: 18px;
+    font-weight: 600;
+}
+.titleclass{
+	text-align: center; padding-top: 8px;
+}
+.ios{
+	.titleclass{
+		text-align: center; padding-top: 11px;
+	}
+  .headBg {
+    --background: #F7F7F7;
+    padding: 3% 0%;
+  }
+}
+
+.background{
+	 --background: #F7F7F7;
+}
+.wrapper{
+	width:70%;
+	margin:5% auto;
+}
+.logodiv{
+	/*background: #ffff;*/
+    width: 110px;
+    margin: 0% auto;
+    /*border-radius: 90px;*/
+    height: 110px;
+}
+.logodiv img{
+	 border-radius: 90px;
+  width: 110px;
+  height: 110px;
+}
+.name{
+	text-align: center;
+  font-weight: bold;
+  margin-top: 5%;
+  font-size: 20px;
+}
+
+.fields{
+	margin-top:5%;
+}
+.inputdiv{
+	display: flex;
+    border-radius: 8px;
+    background: #FFFFFF;
+    padding: 1% 5%;
+	margin-top: 5%;
+}
+
+
+.pinput
+{
+	width: 100%;
+	color: #000;
+  opacity: 48%;
+}
+
+.ionbutton
+{	
+ 	text-align: center;
+	width: 100%;
+	margin-top: 10%;
+}
+.ib
+{
+
+	color: white;
+  --background: #fd8f07f2;
+  outline: none;
+  width: 100%;
+ font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10%;
+  height: 50px;
+   --border-width: 1px; 
+  --border-style: solid;
+  --border-color: white;
+  --border-radius: 12px;
+  --box-shadow: none;
+  text-transform: uppercase;
+}

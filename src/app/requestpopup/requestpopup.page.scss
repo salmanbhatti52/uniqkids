@@ -1,0 +1,133 @@
+.background{
+	 --background:none;
+}
+.wrapper{
+	width:90%;
+	margin:5% auto;
+}
+.main{
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 14px;
+	margin-top: 7%;
+	padding-top: 8%;
+}
+.textdiv{
+	text-align: center;
+}
+.text1{
+	color: #FE9805;
+    font-size: 20px;
+    font-weight: 600;
+}
+.text2{
+	margin-top: 5%;
+  font-size: 14px;
+}
+.requestdiv{
+	margin-top: 5%;
+	position: relative;
+}
+.left img{
+	border-radius:7px;
+}
+.inner{
+	padding:2% 6%;
+	display: flex;
+	
+}
+.right{
+	margin-left: 5%;
+	width: 50%;
+	margin-top:1%;
+}
+.rtext{
+	font-size: 20px;
+	font-weight:600;
+}
+.rtext1{
+	font-size: 14px;
+	font-weight:600;
+	margin-top: 2%;
+}
+.checkbox{
+	position: absolute;
+  top: 17%;
+  left: 10%;
+}
+.checkicon{
+	width: 22px;
+  height: 22px;
+  // border: 2px solid #000000;
+  border-radius: 50px;
+  --background-checked: #FE9805;
+  --checkmark-color: #fff;
+  --border-color-checked: #fff;
+}
+.datediv{
+  margin-top: 5%;
+}
+.date{
+	display: flex;
+	width: 50%;
+	margin: 5% auto 0%;
+}
+.datepick{
+	background: #0000000D;
+  border-radius: 7px;
+  width: 127px;
+  height: 45px;
+}
+.timepick{
+	display: flex;
+	width: 80%;
+	margin:3% auto;
+}
+.time1{
+	background:#0000000D;
+  border-radius: 7px;
+  width: 127px;
+  height: 45px;
+  padding: 0% 5%;
+}
+.time2{
+	// background: #9F9F9F;
+  background:#0000000D;
+  border-radius: 7px;
+  width: 127px;
+  height: 45px;
+  margin-left: 5%;
+  padding: 0% 5%;
+}
+.ionbutton
+{	
+ 	text-align: center;
+	width: 90%;
+    
+  margin: 5% auto;
+}
+.ib
+{
+
+	color: white;
+  --background: #FE9805;
+  outline: none;
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 10%;
+  height: 58px;
+   --border-width: 1px; 
+  --border-style: solid;
+  --border-color: white;
+  --border-radius: 12px;
+  --box-shadow: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.error {
+  color:  #ff0000;
+  font-size: 14px;
+  margin-left: 15px;
+  padding-bottom:5px;
+}

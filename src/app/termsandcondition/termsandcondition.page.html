@@ -1,0 +1,36 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+	  <ion-toolbar class="headBgGlobal">
+		<ion-row>
+			<ion-col style="padding-top:6px;" size="2">
+				<div>
+					<ion-menu-button class="menuicon"></ion-menu-button>
+          <div class="backicon" (click)="closemodal()">
+            <img src="assets/imgs/icons/backbtn.svg" *ngIf="page=='terms'">
+          </div>
+        </div>
+			</ion-col>
+
+			<ion-col class="titleclass" size="8">
+				<ion-text class="ctitle">Terms & Conditions</ion-text>
+			</ion-col>
+
+			<ion-col size="2">
+
+			</ion-col>
+		</ion-row>
+	    <!-- <ion-buttons slot="start">
+	      <ion-menu-button class="menuicon"></ion-menu-button>
+	    </ion-buttons>
+	    <ion-title class="ctitle">Terms & Conditions</ion-title> -->
+	  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+	<div class="wrapper">
+		<p>The UniqKidz logo and all the intellectual content displayed on this application are the sole property of UniqKidz, LLC unless otherwise specified or recognizable. Users may not copy, share, replicate, sell, or modify the intellectual property of Uniqkidz in any way without receiving express consent from the owners. To use the UniqKidz service, users are responsible for providing the right information. Failure to do so will result in the termination of a user account or the unavailability of service.Racism, obscenity, and other ethical issues may also result in the termination of your account. 
+		This software is recommended for use by individuals over 13. Individuals accessing the software do so at 
+		their own responsibility. Uniqkidz reserves the right to terminate a user account with or without prior 
+		warning or notice and for any reason including any threats that it may pose to the community. 
+		The suspension of any account due to reasons that the user is responsible for, will not exempt them from 
+		any pending payments. </p>
+	</div>
+</ion-content>

@@ -1,0 +1,92 @@
+.headBg {
+  --background: #F7F7F7;
+}
+.menuicon{
+	color:#000;
+}
+.backbtn{
+	margin-left:5%;
+}
+.backSvg {
+  fill: #333;
+}
+
+.ctitle{
+	text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+.background{
+	 --background: #F7F7F7;
+}
+.card{
+	background: #FE9805;
+  width: 80%;
+  margin: 5% auto;
+  border-radius: 20px;
+  text-align: center;
+}
+.inner{
+	padding: 10% 0%;
+}
+.text1{
+	font-size: 34px;
+  color: #fff;
+}
+.text2{
+	font-size: 43px;
+  color: #fff;
+  font-weight: bold;
+}
+.wrapper{
+	width:90%;
+	margin:0% auto;
+}
+.main{
+	background: #fff;
+	/*box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;*/
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
+	border-radius: 14px;
+	margin-top: 5%;
+}
+.inner1{
+	padding: 3%;
+	display: flex;
+}
+.imgdiv img{
+	border-radius: 50%;
+    width: 44px;
+    height: 44px;
+}
+.textdiv{
+	margin-left: 4%;
+    margin-top: 1%;
+    width: 30%;
+}
+.text{
+	font-size: 15px;
+	font-weight: 500;
+	color:#000000;
+}
+.para{
+	font-size: 10px;
+	font-weight: 400;
+	color:#000000;
+	margin-top: 6%;
+
+}
+
+.right{
+	 margin-left: 30%;
+}
+.date{
+	font-size: 10px;
+	color:#CFCFCF;
+}
+.time{
+	font-size: 18px;
+  font-weight: 400;
+  margin-top: 4%;
+  margin-left: 5%;
+  color: #FE9805;
+}
