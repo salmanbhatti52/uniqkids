@@ -1,0 +1,57 @@
+<ion-header [translucent]="true" class="ion-no-border cheader">
+  <ion-toolbar class="headBgGlobal">
+    <ion-row>
+      <ion-col style="padding-top: 6px" size="2">
+        <div>
+          <ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+      </ion-col>
+
+      <ion-col class="titleclass" size="8">
+        <ion-text class="ctitle">Delete Account</ion-text>
+      </ion-col>
+
+      <ion-col size="2"> </ion-col>
+    </ion-row>
+    <!-- <ion-buttons slot="start">
+      <ion-menu-button class="menuicon"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ctitle">Terms & Conditions</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+  <div class="wrapper">
+    <div class="thead">Why do you want to delete your UniqKidz account?</div>
+    <div class="flex-c" *ngFor="let checkboxes of Checkboxes">
+      <ion-checkbox
+        mode="md"
+        class="check"
+        [(ngModel)]="checkboxes.isItemChecked"
+        (ionChange)="verifyEvent(checkboxes)"
+      >
+      </ion-checkbox>
+      <span class="lbl">{{checkboxes.question}}</span>
+    </div>
+
+    <div style="color: #000000; margin-top: 10%; font-size: 14px">
+      Commnets(optional)
+    </div>
+
+    <ion-textarea
+      style="padding: 10px 20px"
+      rows="10"
+      cols="5"
+      class="desc-area"
+      placeholder="Please provide additional information here..."
+      [(ngModel)]="desc"
+    ></ion-textarea>
+
+    <!-- <ion-button class="btn" (click)="delete()">Delete</ion-button> -->
+
+    <div class="ionbutton" (click)="delete()">
+      <ion-button class="ib">
+        <span class="btns">Delete Account</span>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

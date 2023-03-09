@@ -230,6 +230,10 @@ const routes: Routes = [
   {
     path: 'editcgprofile2',
     loadChildren: () => import('./editcgprofile2/editcgprofile2.module').then( m => m.Editcgprofile2PageModule)
+  },
+  {
+    path: 'deleteacc',
+    loadChildren: () => import('./deleteacc/deleteacc.module').then( m => m.DeleteaccPageModule)
   }
 ];
 
