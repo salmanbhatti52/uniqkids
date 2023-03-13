@@ -18,7 +18,7 @@ export class SigninPage implements OnInit {
 
   isLoading = false;
 
-  player_id: any = "122222";
+  player_id: any = "";
 
   //ali please chage it and make it null
 
