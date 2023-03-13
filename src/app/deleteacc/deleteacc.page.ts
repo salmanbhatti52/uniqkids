@@ -46,20 +46,20 @@ export class DeleteaccPage implements OnInit {
   }
 
   delete() {
-    console.log("adasdsadsadsa", this.selectquestions.length);
-
+    var user = JSON.parse(localStorage.getItem("user"));
+    console.log("userrrrrrrrrrrrrr", user.email);
     if (this.selectquestions.length == 0) {
       this.basicmsg.presentToast("Choose one option atleast");
     } else {
       const del = {
-        userEmail: "1",
+        email: user.email,
       };
-      this.rest.sendRequest("deleteuser", del).subscribe((res: any) => {
+      this.rest.sendRequest("delete_account", del).subscribe((res: any) => {
         console.log("report user result==", res);
         if (res.status == "success") {
-          alert(res.message);
-          this.basicmsg.presentToast(res.message);
-          this.navCtrl.navigateRoot("tabs/tab1");
+          this.basicmsg.presentToast(res.data);
+          localStorage.clear();
+          this.navCtrl.navigateRoot("/");
         }
         if (res.status == "error") {
           this.basicmsg.presentToast(res.message);

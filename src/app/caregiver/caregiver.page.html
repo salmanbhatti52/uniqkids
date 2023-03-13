@@ -1,68 +1,70 @@
 <ion-header [translucent]="true" class="ion-no-border cheader">
-	 <ion-toolbar class="headBgGlobal">
-      <!-- <ion-buttons slot="start" style="margin-left: 2%;">
+  <ion-toolbar class="headBgGlobal">
+    <!-- <ion-buttons slot="start" style="margin-left: 2%;">
           <ion-menu-button class="menuicon"></ion-menu-button>
       </ion-buttons>
       <ion-title class="ctitle">Caregiver</ion-title> -->
 
-     <ion-row>
-			<ion-col style="padding-top:6px;" size="2">
-				<div>
-					<ion-menu-button class="menuicon"></ion-menu-button>
+    <ion-row>
+      <ion-col style="padding-top: 6px" size="2">
+        <div>
+          <ion-menu-button class="menuicon"></ion-menu-button>
         </div>
-			</ion-col>
+      </ion-col>
 
-			<ion-col class="titleclass" size="8">
-				<ion-text class="ctitle">Caregiver</ion-text>
-			</ion-col>
+      <ion-col class="titleclass" size="8">
+        <ion-text class="ctitle">Caregiver</ion-text>
+      </ion-col>
 
-			<ion-col size="2">
-
-			</ion-col>
-		</ion-row>
-	</ion-toolbar>
+      <ion-col size="2"> </ion-col>
+    </ion-row>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="background">
-	<div class="wrapper">
-		<div class="inputdiv">
-			<div class="pinput">
-				<ion-input placeholder="Search" type="text"  (ionChange)=search($event)></ion-input>
-				<!-- <ion-input placeholder="Search" type="text" [(ngModel)]="filterTerm" animated="true"></ion-input> -->
-				 <!-- <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar> -->
-			</div>
-			<img src="assets/imgs/icons/search.svg" class="cimg">
-		</div>
+  <div class="wrapper">
+    <div class="inputdiv">
+      <div class="pinput">
+        <ion-input
+          placeholder="Search"
+          type="text"
+          (ionChange)="search($event)"
+        ></ion-input>
+        <!-- <ion-input placeholder="Search" type="text" [(ngModel)]="filterTerm" animated="true"></ion-input> -->
+        <!-- <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar> -->
+      </div>
+      <img src="assets/imgs/icons/search.svg" class="cimg" />
+    </div>
 
-   
-    <div class="defaulttext">Need to take a day off from the stressful routine? Search for a Caregiver and find 
-		the one that best suits your needs
+    <div class="defaulttext">
+      Need to take a day off from the stressful routine? Search for a Caregiver
+      and find the one that best suits your needs
+    </div>
 
-	</div>
-    
-		<div *ngFor="let care of caregiver">
-			<div class="main" (click)="gotoprofile(care)">
-				<div class="inner">
-					<div class="left">
-						<img src="{{care.profile}}" width="145px" height="135px">
-					</div>
-					<div class="right">
-						<div class="rtext">{{care.fname}} {{care.lname}}</div>
-						<div class="rtext2">{{care.caregivertype}}</div>
-						<div class="rtext1">{{care.price}}/hr</div>
-						<!-- <div class="rtext2">{{care.address}}</div> -->
-						<div class="rtext2">{{care.about}}</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-    <p *ngIf="caregivers==false" class="error">
-      Search for caregivers
-    </p>
-   
+    <div *ngFor="let care of caregiver">
+      <div
+        *ngIf="care.availability=='Yes'"
+        class="main"
+        (click)="gotoprofile(care)"
+      >
+        <div class="inner">
+          <div class="left">
+            <img src="{{care.profile}}" width="145px" height="135px" />
+          </div>
+          <div class="right">
+            <div class="rtext">{{care.fname}} {{care.lname}}</div>
+            <div class="rtext2">{{care.caregivertype}}</div>
+            <div class="rtext1">{{care.price}}/hr</div>
+            <!-- <div class="rtext2">{{care.address}}</div> -->
+            <div class="rtext2">{{care.about}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<!-- <div class="main" (click)="gotoprofile()">
+    <p *ngIf="caregivers==false" class="error">Search for caregivers</p>
+
+    <!-- <div class="main" (click)="gotoprofile()">
 			<div class="inner">
 				<div class="left">
 					<img src="assets/imgs/caregiver.png" width="145px" height="135px">
@@ -87,7 +89,5 @@
 				</div>
 			</div>
 		</div> -->
-
-	</div>
-
+  </div>
 </ion-content>

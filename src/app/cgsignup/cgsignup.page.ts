@@ -1,30 +1,35 @@
-import { Component, OnInit,ChangeDetectorRef } from '@angular/core';
-import { NavController,MenuController,Platform,ModalController } from '@ionic/angular';
+import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
+import {
+  NavController,
+  MenuController,
+  Platform,
+  ModalController,
+} from "@ionic/angular";
 import { LoginwithuserService } from "../loginwithuser.service";
 import { RestService } from "../services/rest.service";
 import { LoadingService } from "../services/loading.service";
-import { TermsandconditionPage } from '../termsandcondition/termsandcondition.page';
-import { OneSignal } from '@ionic-native/onesignal/ngx';
+import { TermsandconditionPage } from "../termsandcondition/termsandcondition.page";
+import { OneSignal } from "@ionic-native/onesignal/ngx";
 @Component({
-  selector: 'app-cgsignup',
-  templateUrl: './cgsignup.page.html',
-  styleUrls: ['./cgsignup.page.scss'],
+  selector: "app-cgsignup",
+  templateUrl: "./cgsignup.page.html",
+  styleUrls: ["./cgsignup.page.scss"],
 })
 export class CgsignupPage implements OnInit {
   showPass = false;
   showcPass = false;
 
-	showfooter=true;
-  showhide=false;
-  userType:any;
-  firstname:any='';
-  lastname:any='';
-  email:any='';
-  password:any='';
-  confirmPassword:any='';
-  type:any;
-  accountTypeId:any;
-  player_id:any;
+  showfooter = true;
+  showhide = false;
+  userType: any;
+  firstname: any = "";
+  lastname: any = "";
+  email: any = "";
+  password: any = "";
+  confirmPassword: any = "";
+  type: any;
+  accountTypeId: any;
+  player_id: any;
 
   isLoading = true;
   displayOption = false;
@@ -57,52 +62,49 @@ export class CgsignupPage implements OnInit {
     status: false,
     message: "",
   };
-  caregiverarray=[
-    {name:'Professional Caregiver'},
-    {name:'Family/Friend Caregiver'},
-    {name:'Agency Caregiver'}
+  caregiverarray = [
+    { name: "Professional Caregiver" },
+    { name: "Family/Friend Caregiver" },
+    { name: "Agency Caregiver" },
   ];
-  caregivertype:any;
+  caregivertype: any;
 
-  sender_id = '620446083343';
-  oneSignalAppId = '7c8eac8b-868e-461d-b8db-91604121255b';
+  sender_id = "620446083343";
+  oneSignalAppId = "7c8eac8b-868e-461d-b8db-91604121255b";
   identy: any;
-  constructor(public navCtrl: NavController,
-    public modalController:ModalController,
-    public platform:Platform,
+  constructor(
+    public navCtrl: NavController,
+    public modalController: ModalController,
+    public platform: Platform,
     public userService: LoginwithuserService,
-    public loading:LoadingService,
+    public loading: LoadingService,
     private rest: RestService,
-    public menuCtrl:MenuController,
+    public menuCtrl: MenuController,
     public cd: ChangeDetectorRef,
-    private oneSignal: OneSignal) { }
+    private oneSignal: OneSignal
+  ) {}
 
-   ngOnInit() {
-
+  ngOnInit() {
     this.userType = localStorage.getItem("userType");
-    console.log('userType',this.userType);
+    console.log("userType", this.userType);
 
-    this.player_id=localStorage.getItem('deviceID');
-    console.log('player_id',this.player_id);
+    this.player_id = localStorage.getItem("deviceID");
+    console.log("player_id", this.player_id);
 
-    this.platform.keyboardDidShow.subscribe(ev => {
-
-      console.log('keyboard show',ev);
+    this.platform.keyboardDidShow.subscribe((ev) => {
+      console.log("keyboard show", ev);
       this.showfooter = false;
       this.cd.detectChanges();
-      console.log('showFooter',this.showfooter)
+      console.log("showFooter", this.showfooter);
     });
 
-    
-    this.platform.keyboardDidHide.subscribe(ev => {
-      if(this.showhide == true)
-      {
+    this.platform.keyboardDidHide.subscribe((ev) => {
+      if (this.showhide == true) {
         this.showfooter = true;
         this.showhide = false;
         this.cd.detectChanges();
-        console.log('keyboard hide');
-      }
-      else{
+        console.log("keyboard hide");
+      } else {
         this.showhide = true;
       }
     });
@@ -111,26 +113,25 @@ export class CgsignupPage implements OnInit {
     this.oneSignal.startInit(this.oneSignalAppId, this.sender_id);
     this.oneSignal.endInit();
     this.oneSignal.getIds().then((identity) => {
-      console.log('identity',identity.userId);
+      console.log("identity", identity.userId);
       this.identy = identity;
-      this.player_id=this.identy.userId;
+      this.player_id = this.identy.userId;
     });
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     this.menuCtrl.enable(false);
   }
   ionViewWillLeave() {
     // enable the root left menu when leaving this page
-  this.menuCtrl.enable(true);
+    this.menuCtrl.enable(true);
   }
 
-
-  gotologin(){
-  	this.navCtrl.navigateForward('/signin');
+  gotologin() {
+    this.navCtrl.navigateForward("/signin");
   }
-  goback(){
-    this.navCtrl.navigateBack('/registeras');
+  goback() {
+    this.navCtrl.navigateBack("/registeras");
   }
 
   togglePass() {
@@ -140,13 +141,13 @@ export class CgsignupPage implements OnInit {
     this.showcPass = !this.showcPass;
   }
   toggleSelect() {
-    console.log('hellow')
+    console.log("hellow");
     // if (!this.isLoading) {
-      this.displayOption =true;
+    this.displayOption = true;
     // }
   }
   selecttype(type) {
-    console.log('typesssss',type);
+    console.log("typesssss", type);
     // if (survey.type) {
     //   this.displayOption = false;
     //   return;
@@ -154,43 +155,44 @@ export class CgsignupPage implements OnInit {
     // this.selectedSurvey = survey;
     // this.surveyAnswer = [];
     this.type = type.name;
-    console.log('caregiver type',this.type);
-    if (this.type=='Professional Caregiver') {
+    console.log("caregiver type", this.type);
+    if (this.type == "Professional Caregiver") {
       // const myArray = this.type.split(' Caregiver');
       // this.caregivertype=myArray[0];
-      this.accountTypeId=2// id 2 for Professional
-      console.log('accountTypeId:',this.accountTypeId)
+      this.accountTypeId = 2; // id 2 for Professional
+      console.log("accountTypeId:", this.accountTypeId);
       // console.log('split text',this.caregivertype);
       this.displayOption = false;
-    
     }
-    if (this.type=='Family/Friend Caregiver') {
+    if (this.type == "Family/Friend Caregiver") {
       // const myArray = this.type.split('/Friend Caregiver');
       // this.caregivertype=myArray[0];
-      this.accountTypeId=3 // id 3 for Family
-      console.log('accountTypeId:',this.accountTypeId)
+      this.accountTypeId = 3; // id 3 for Family
+      console.log("accountTypeId:", this.accountTypeId);
       // console.log('split text',this.caregivertype);
       this.displayOption = false;
-    
     }
-    if (this.type=='Agency Caregiver') {
+    if (this.type == "Agency Caregiver") {
       // const myArray = this.type.split(' Caregiver');
       // this.caregivertype=myArray[0];
-      this.accountTypeId=4 // id 4 for agency
-      console.log('accountTypeId:',this.accountTypeId)
+      this.accountTypeId = 4; // id 4 for agency
+      console.log("accountTypeId:", this.accountTypeId);
       // console.log('split text',this.caregivertype);
       this.displayOption = false;
-    
     }
-    
-    
   }
-  close(){
+  close() {
     this.displayOption = false;
   }
 
-   gotohome(){
-    if(this.firstname && this.lastname && this.email && this.password && this.confirmPassword){
+  gotohome() {
+    if (
+      this.firstname &&
+      this.lastname &&
+      this.email &&
+      this.password &&
+      this.confirmPassword
+    ) {
       if (!this.validateEmail(this.email)) {
         this.emailError.status = true;
         this.emailError.message = "Invalid Email address.";
@@ -217,50 +219,49 @@ export class CgsignupPage implements OnInit {
         userEmail: this.email,
         userPassword: this.password,
         confirmPassword: this.confirmPassword,
-        accountTypeId:this.accountTypeId,
-        oneSignalId:this.player_id,
-        userType: 1
+        accountTypeId: this.accountTypeId,
+        oneSignalId: this.player_id,
+        userType: 1,
       };
       this.rest.sendRequest("signup", signUpData).subscribe(
-        (data:any)=>{
-         console.log('signup request data',data);
-         if(data.status=='success'){
-           
+        (data: any) => {
+          console.log("signup request data", data);
+          if (data.status == "success") {
             this.firstname = "";
-            this.lastname="";
+            this.lastname = "";
             this.email = "";
             this.password = "";
             this.confirmPassword = "";
             this.loading.hideLoader();
             localStorage.setItem("user", JSON.stringify(data.data));
-            localStorage.setItem("uid",data.data.users_id);
-            this.loading.presentToast('Registered Successfully!!!');
-            if(this.type=='Professional Caregiver'){
+            localStorage.setItem("uid", data.data.users_id);
+            this.loading.presentToast("Registered Successfully!!!");
+            if (this.type == "Professional Caregiver") {
               this.userService.setSideMenu("Professional");
-              this.userService.userType='Professional';
-              console.log('service', this.userService.userType)
-              localStorage.setItem('accountTypeId', this.accountTypeId);
-              this.navCtrl.navigateRoot('/cghomescreen');
+              this.userService.userType = "Professional";
+              console.log("service", this.userService.userType);
+              localStorage.setItem("accountTypeId", this.accountTypeId);
+              this.navCtrl.navigateRoot("/cghomescreen");
             }
-            if(this.type=='Family/Friend Caregiver'){
+            if (this.type == "Family/Friend Caregiver") {
               this.userService.setSideMenu("Family");
-              this.userService.userType='Family';
-              console.log('service', this.userService.userType)
-              localStorage.setItem('accountTypeId', this.accountTypeId);
-              this.navCtrl.navigateRoot('/cghomescreen');
+              this.userService.userType = "Family";
+              console.log("service", this.userService.userType);
+              localStorage.setItem("accountTypeId", this.accountTypeId);
+              this.navCtrl.navigateRoot("/cghomescreen");
             }
-            if(this.type=='Agency Caregiver'){
+            if (this.type == "Agency Caregiver") {
               this.userService.setSideMenu("Agency");
-              this.userService.userType='Agency';
-              console.log('service', this.userService.userType)
-              localStorage.setItem('accountTypeId', this.accountTypeId);
-              this.navCtrl.navigateRoot('/agencyhomescreen');
+              this.userService.userType = "Agency";
+              console.log("service", this.userService.userType);
+              localStorage.setItem("accountTypeId", this.accountTypeId);
+              this.navCtrl.navigateRoot("/agencyhomescreen");
             }
           }
-          if(data.status=='error'){
+          if (data.status == "error") {
             this.loading.hideLoader();
             // console.log('signup request data:',data.status);
-              this.error.status = true;
+            this.error.status = true;
             this.error.message = data.message;
             setTimeout(() => {
               this.error.status = false;
@@ -268,10 +269,8 @@ export class CgsignupPage implements OnInit {
             }, 3000);
             return;
           }
-         
-        },(err)=>{
-          
-        }
+        },
+        (err) => {}
       );
     }
     if (!this.firstname) {
@@ -290,7 +289,7 @@ export class CgsignupPage implements OnInit {
       this.emailError.status = true;
       this.emailError.message = "Email address is required";
     }
-    
+
     if (!this.password) {
       this.passwordError.status = true;
       this.passwordError.message = "Password is required";
@@ -314,14 +313,10 @@ export class CgsignupPage implements OnInit {
       this.confirmPasswordError.message = "";
     }, 3000);
 
-    if(this.userType=='parent'){
-      this.navCtrl.navigateRoot('/homescreen');
+    if (this.userType == "parent") {
+      this.navCtrl.navigateRoot("/homescreen");
     }
-    
-
-    
   }
-
 
   validateEmail(email) {
     const re =
@@ -329,13 +324,13 @@ export class CgsignupPage implements OnInit {
     return re.test(String(email).toLowerCase());
   }
 
-  async termsandcondition(terms){
+  async termsandcondition(terms) {
     const modal = await this.modalController.create({
       component: TermsandconditionPage,
-      cssClass: 'termsclass',
+      cssClass: "termsclass",
       componentProps: {
-        termsaandcondition:terms
-      }
+        termsaandcondition: terms,
+      },
     });
     return await modal.present();
   }
