@@ -148,7 +148,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- <ion-header>\n  <ion-toolbar>\n    <ion-title>cgprofile</ion-title>\n  </ion-toolbar>\n</ion-header> -->\n<ion-header [translucent]=\"true\" class=\"ion-no-border cheader\">\n\t<ion-toolbar class=\"headBgGlobal\">\n\t  <!-- <ion-buttons slot=\"start\">\n\t\t<ion-menu-button class=\"menuicon\"></ion-menu-button>\n\t  </ion-buttons>\n\t  <ion-title class=\"ctitle\">Complete Profile</ion-title> -->\n\n\t  <ion-row>\n\t\t  <ion-col style=\"padding-top:6px;\" size=\"2\">\n\t\t\t  <div>\n\t\t\t\t  <ion-menu-button class=\"menuicon\"></ion-menu-button>\n\t  </div>\n\t\t  </ion-col>\n\n\t\t  <ion-col class=\"titleclass\" size=\"8\">\n\t\t\t  <ion-text class=\"ctitle\">Complete Profile</ion-text>\n\t\t  </ion-col>\n\n\t\t  <ion-col size=\"2\">\n\n\t\t  </ion-col>\n\t  </ion-row>\n\n\t</ion-toolbar>\n  </ion-header>\n<ion-content class=\"background\">\n\n\t<div class=\"wrapper\">\n\t\t\n\t\t<div class=\"logodiv\" (click)=\"uploadPic()\">\n\t\t\t<!-- <img src=\"assets/imgs/icons/msglogo.svg\"> -->\n\t\t\t<img src=\"{{defaultProfile}}\">\n\t\t</div>\n\t\t<div class=\"name\">{{fname}} {{lname}}</div>\n\t\t\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Email\" type=\"email\" [(ngModel)]=\"email\" readonly></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Mobile number\" type=\"tel\" [(ngModel)]=\"mobilenumber\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<p *ngIf=\"mobilenumberError.status\" class=\"error\">\n\t    {{mobilenumberError.message}}\n\t  </p>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Relation with child\" type=\"text\" [(ngModel)]=\"relationwithchild\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"relationError.status\" class=\"error\">\n\t    {{relationError.message}}\n\t  </p>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Street address\" type=\"text\" [(ngModel)]=\"address\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"addressError.status\" class=\"error\">\n\t    {{addressError.message}}\n\t  </p>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-textarea placeholder=\"About\"  rows=\"6\" cols=\"20\" [(ngModel)]=\"about\"></ion-textarea>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"aboutError.status\" class=\"error\">\n\t    {{aboutError.message}}\n\t  </p>\n\n\t\t<div class=\"ionbutton\" (click)=\"update()\">\n\t\t\t<ion-button class=\"ib\">Done</ion-button>\n\t\t</div>\n\n\t</div>\n\n</ion-content>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- <ion-header>\n  <ion-toolbar>\n    <ion-title>cgprofile</ion-title>\n  </ion-toolbar>\n</ion-header> -->\n<ion-header [translucent]=\"true\" class=\"ion-no-border cheader\">\n  <ion-toolbar class=\"headBgGlobal\">\n    <!-- <ion-buttons slot=\"start\">\n\t\t<ion-menu-button class=\"menuicon\"></ion-menu-button>\n\t  </ion-buttons>\n\t  <ion-title class=\"ctitle\">Complete Profile</ion-title> -->\n\n    <ion-row>\n      <ion-col style=\"padding-top: 6px\" size=\"2\">\n        <div>\n          <ion-menu-button class=\"menuicon\"></ion-menu-button>\n        </div>\n      </ion-col>\n\n      <ion-col class=\"titleclass\" size=\"8\">\n        <ion-text class=\"ctitle\">Complete Profile</ion-text>\n      </ion-col>\n\n      <ion-col size=\"2\"> </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-header>\n<ion-content class=\"background\">\n  <div id=\"page\" class=\"adjust-overflow\">\n    <div class=\"wrapper\">\n      <div class=\"logodiv\" (click)=\"uploadPic()\">\n        <!-- <img src=\"assets/imgs/icons/msglogo.svg\"> -->\n        <img src=\"{{defaultProfile}}\" />\n      </div>\n      <div class=\"name\">{{fname}} {{lname}}</div>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Email\"\n              type=\"email\"\n              [(ngModel)]=\"email\"\n              readonly\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Mobile number\"\n              type=\"tel\"\n              [(ngModel)]=\"mobilenumber\"\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n      <p *ngIf=\"mobilenumberError.status\" class=\"error\">\n        {{mobilenumberError.message}}\n      </p>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Relation with child\"\n              type=\"text\"\n              [(ngModel)]=\"relationwithchild\"\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"relationError.status\" class=\"error\">\n        {{relationError.message}}\n      </p>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Street address\"\n              type=\"text\"\n              [(ngModel)]=\"address\"\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"addressError.status\" class=\"error\">{{addressError.message}}</p>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-textarea\n              placeholder=\"About\"\n              rows=\"6\"\n              cols=\"20\"\n              [(ngModel)]=\"about\"\n            ></ion-textarea>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"aboutError.status\" class=\"error\">{{aboutError.message}}</p>\n\n      <div class=\"ionbutton\" (click)=\"update()\">\n        <ion-button class=\"ib\">Done</ion-button>\n      </div>\n    </div>\n  </div>\n</ion-content>\n");
 
 /***/ }),
 
@@ -220,7 +220,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ParentprofilePage = class ParentprofilePage {
-    constructor(camera, alertCtrl, navctrl, loading, imagePicker, sanitizer, rest) {
+    constructor(camera, alertCtrl, navctrl, loading, imagePicker, sanitizer, rest, cd, platform) {
         this.camera = camera;
         this.alertCtrl = alertCtrl;
         this.navctrl = navctrl;
@@ -228,11 +228,13 @@ let ParentprofilePage = class ParentprofilePage {
         this.imagePicker = imagePicker;
         this.sanitizer = sanitizer;
         this.rest = rest;
-        this.defaultProfile = 'assets/imgs/profilelogo.png';
-        this.mobilenumber = '';
-        this.relationwithchild = '';
-        this.address = '';
-        this.about = '';
+        this.cd = cd;
+        this.platform = platform;
+        this.defaultProfile = "assets/imgs/profilelogo.png";
+        this.mobilenumber = "";
+        this.relationwithchild = "";
+        this.address = "";
+        this.about = "";
         this.mobilenumberError = {
             status: false,
             message: "",
@@ -259,7 +261,7 @@ let ParentprofilePage = class ParentprofilePage {
             correctOrientation: true,
             destinationType: this.camera.DestinationType.DATA_URL,
             encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE
+            mediaType: this.camera.MediaType.PICTURE,
         };
         this.galleryOptions = {
             sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
@@ -268,30 +270,55 @@ let ParentprofilePage = class ParentprofilePage {
             allowEdit: false,
             encodingType: this.camera.EncodingType.JPEG,
             mediaType: this.camera.MediaType.PICTURE,
-            correctOrientation: true
+            correctOrientation: true,
         };
-        this.accountTypeId = localStorage.getItem('accountTypeId');
-        console.log('accountTypeId', this.accountTypeId);
+        this.accountTypeId = localStorage.getItem("accountTypeId");
+        console.log("accountTypeId", this.accountTypeId);
     }
     ngOnInit() {
+        this.platform.keyboardDidShow.subscribe((ev) => {
+            var deviceHeight = window.innerHeight;
+            let keyboardHeight = ev.keyboardHeight;
+            var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+            deviceHeightAdjusted =
+                deviceHeightAdjusted < 0
+                    ? deviceHeightAdjusted * -1
+                    : deviceHeightAdjusted; //only positive number
+            document.getElementById("page").style.height =
+                deviceHeightAdjusted + "px"; //set page height
+            document
+                .getElementById("page")
+                .setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+            console.log("keyboard show", ev);
+            this.cd.detectChanges();
+        });
+        this.platform.keyboardDidHide.subscribe((ev) => {
+            setTimeout(() => {
+                document.getElementById("page").style.height = 110 + "%"; //device  100% height
+            }, 100);
+            this.cd.detectChanges();
+            console.log("keyboard hide");
+        });
+        //keybpoardddddd --------------
         this.imagePicker.requestReadPermission();
     }
     ionViewDidEnter() {
-        this.userid = localStorage.getItem('uid');
-        console.log('userid', this.userid);
+        this.userid = localStorage.getItem("uid");
+        console.log("userid", this.userid);
         this.getprofiledata(this.userid);
     }
     getprofiledata(userid) {
         this.loading.loadershow();
         this.rest.sendRequest("get_profile_details", { userId: userid }).subscribe((data) => {
-            console.log('get_profile_details data::', data);
-            if (data.status == 'success') {
-                console.log('suucesssss');
+            console.log("get_profile_details data::", data);
+            if (data.status == "success") {
+                console.log("suucesssss");
                 this.fname = data.data.first_name;
                 this.lname = data.data.last_name;
                 this.email = data.data.email;
-                if (data.data.profile_picture == '' || data.data.profile_picture == null) {
-                    this.defaultProfile = 'assets/imgs/profilelogo.png';
+                if (data.data.profile_picture == "" ||
+                    data.data.profile_picture == null) {
+                    this.defaultProfile = "assets/imgs/profilelogo.png";
                 }
                 else {
                     this.defaultProfile = data.data.profile_picture;
@@ -302,9 +329,9 @@ let ParentprofilePage = class ParentprofilePage {
                 this.about = data.data.about;
                 this.loading.hideLoader();
             }
-            if (data.status == 'error') {
+            if (data.status == "error") {
                 this.loading.hideLoader();
-                console.log('signup request data:', data.status);
+                console.log("signup request data:", data.status);
                 this.error.status = true;
                 this.error.message = data.message;
                 setTimeout(() => {
@@ -313,30 +340,27 @@ let ParentprofilePage = class ParentprofilePage {
                 }, 3000);
                 return;
             }
-        }, (err) => {
-        });
+        }, (err) => { });
     }
     uploadPic() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             let confirm = yield this.alertCtrl.create({
-                header: 'Choose from',
-                cssClass: 'profileAlertBox',
+                header: "Choose from",
+                cssClass: "profileAlertBox",
                 buttons: [
                     {
-                        text: 'Camera',
+                        text: "Camera",
                         handler: () => {
-                            this.camera.getPicture(this.cameraOptions)
-                                .then((imageData) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-                                // console.log('imagedata is = ' , imageData); 
+                            this.camera.getPicture(this.cameraOptions).then((imageData) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                                // console.log('imagedata is = ' , imageData);
                                 this.picUrl = imageData;
                                 this.defaultProfile = `data:image/png;base64,${imageData}`;
-                                // console.log('defaultProfile is = ' , this.defaultProfile); 
-                            }), err => {
-                            });
-                        }
+                                // console.log('defaultProfile is = ' , this.defaultProfile);
+                            }), (err) => { });
+                        },
                     },
                     {
-                        text: 'Gallery',
+                        text: "Gallery",
                         handler: () => {
                             // this.camera.getPicture(this.galleryOptions)
                             // .then(async imageData => {
@@ -346,34 +370,37 @@ let ParentprofilePage = class ParentprofilePage {
                             // })
                             let options = {
                                 maximumImagesCount: 1,
-                                outputType: 1
+                                outputType: 1,
                             };
                             this.imagePicker.getPictures(options).then((results) => {
-                                console.log('all selected', results);
+                                console.log("all selected", results);
                                 if (results != null) {
                                     for (var i = 0; i < results.length; i++) {
-                                        console.log('each one' + results[i]);
+                                        console.log("each one" + results[i]);
                                         if (results[i] != "") {
                                             // let dturl=this.sanitizer.bypassSecurityTrustResourceUrl(results[i]);
                                             // console.log('image sanitizewe:?',dturl)
-                                            console.log('data:image/jpeg;base64,', results[i]);
+                                            console.log("data:image/jpeg;base64,", results[i]);
                                             this.picUrl = results[i];
                                             this.defaultProfile = `data:image/png;base64,${results[i]}`;
                                         }
                                     }
                                 }
                             }, (err) => {
-                                console.log('error', err);
+                                console.log("error", err);
                             });
-                        }
+                        },
                     },
-                ]
+                ],
             });
             yield confirm.present();
         });
     }
     update() {
-        if (this.mobilenumber && this.relationwithchild && this.address && this.about) {
+        if (this.mobilenumber &&
+            this.relationwithchild &&
+            this.address &&
+            this.about) {
             let profiledata = {
                 userId: this.userid,
                 accountTypeId: this.accountTypeId,
@@ -381,22 +408,22 @@ let ParentprofilePage = class ParentprofilePage {
                 mobileNumber: this.mobilenumber,
                 streetAddress: this.address,
                 about: this.about,
-                relationWithChild: this.relationwithchild
+                relationWithChild: this.relationwithchild,
             };
             // console.log('parentprofile',JSON.stringify(profiledata))
             this.loading.loadershow();
             this.rest.sendRequest("update_profile", profiledata).subscribe((data) => {
-                console.log('update_profile data::', data);
-                if (data.status == 'success') {
+                console.log("update_profile data::", data);
+                if (data.status == "success") {
                     this.loading.hideLoader();
-                    this.loading.presentToast('Profile Update Successfully!!');
+                    this.loading.presentToast("Profile Update Successfully!!");
                     //  if(this.accountTypeId==1){
-                    this.navctrl.navigateRoot('homescreen');
+                    this.navctrl.navigateRoot("homescreen");
                     //  }
                 }
-                if (data.status == 'error') {
+                if (data.status == "error") {
                     this.loading.hideLoader();
-                    console.log('signup request data:', data.status);
+                    console.log("signup request data:", data.status);
                     this.error.status = true;
                     this.error.message = data.message;
                     setTimeout(() => {
@@ -405,8 +432,7 @@ let ParentprofilePage = class ParentprofilePage {
                     }, 3000);
                     return;
                 }
-            }, (err) => {
-            });
+            }, (err) => { });
         }
         if (!this.mobilenumber) {
             this.mobilenumberError.status = true;
@@ -443,11 +469,13 @@ ParentprofilePage.ctorParameters = () => [
     { type: _services_loading_service__WEBPACK_IMPORTED_MODULE_7__["LoadingService"] },
     { type: _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_8__["ImagePicker"] },
     { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["DomSanitizer"] },
-    { type: _services_rest_service__WEBPACK_IMPORTED_MODULE_6__["RestService"] }
+    { type: _services_rest_service__WEBPACK_IMPORTED_MODULE_6__["RestService"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["Platform"] }
 ];
 ParentprofilePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: 'app-parentprofile',
+        selector: "app-parentprofile",
         template: _raw_loader_parentprofile_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_parentprofile_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
     })

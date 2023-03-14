@@ -192,20 +192,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CgprofilePage = class CgprofilePage {
-    constructor(navCtrl, camera, alertCtrl, imagePicker, loading, rest) {
+    constructor(navCtrl, camera, alertCtrl, imagePicker, loading, rest, platform, cd) {
         this.navCtrl = navCtrl;
         this.camera = camera;
         this.alertCtrl = alertCtrl;
         this.imagePicker = imagePicker;
         this.loading = loading;
         this.rest = rest;
-        this.defaultProfile = 'assets/imgs/profilelogo.png';
-        this.mobilenumber = '';
-        this.price = '';
-        this.address = '';
-        this.about = '';
-        this.bankname = '';
-        this.accountnumber = '';
+        this.platform = platform;
+        this.cd = cd;
+        this.defaultProfile = "assets/imgs/profilelogo.png";
+        this.mobilenumber = "";
+        this.price = "";
+        this.address = "";
+        this.about = "";
+        this.bankname = "";
+        this.accountnumber = "";
         this.mobilenumberError = {
             status: false,
             message: "",
@@ -244,7 +246,7 @@ let CgprofilePage = class CgprofilePage {
             correctOrientation: true,
             destinationType: this.camera.DestinationType.DATA_URL,
             encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE
+            mediaType: this.camera.MediaType.PICTURE,
         };
         this.galleryOptions = {
             sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
@@ -253,28 +255,55 @@ let CgprofilePage = class CgprofilePage {
             allowEdit: false,
             encodingType: this.camera.EncodingType.JPEG,
             mediaType: this.camera.MediaType.PICTURE,
-            correctOrientation: true
+            correctOrientation: true,
         };
-        this.userid = localStorage.getItem('uid');
-        console.log('userid', this.userid);
-        this.accountTypeId = localStorage.getItem('accountTypeId');
-        console.log('accountTypeId', this.accountTypeId);
+        this.userid = localStorage.getItem("uid");
+        console.log("userid", this.userid);
+        this.accountTypeId = localStorage.getItem("accountTypeId");
+        console.log("accountTypeId", this.accountTypeId);
         this.getprofiledata();
     }
     ngOnInit() {
+        this.platform.keyboardDidShow.subscribe((ev) => {
+            var deviceHeight = window.innerHeight;
+            let keyboardHeight = ev.keyboardHeight;
+            var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+            deviceHeightAdjusted =
+                deviceHeightAdjusted < 0
+                    ? deviceHeightAdjusted * -1
+                    : deviceHeightAdjusted; //only positive number
+            document.getElementById("page").style.height =
+                deviceHeightAdjusted + "px"; //set page height
+            document
+                .getElementById("page")
+                .setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+            console.log("keyboard show", ev);
+            this.cd.detectChanges();
+        });
+        this.platform.keyboardDidHide.subscribe((ev) => {
+            setTimeout(() => {
+                document.getElementById("page").style.height = 110 + "%"; //device  100% height
+            }, 100);
+            this.cd.detectChanges();
+            console.log("keyboard hide");
+        });
+        //keybpoardddddd --------------
         this.imagePicker.requestReadPermission();
     }
     getprofiledata() {
         this.loading.loadershow();
-        this.rest.sendRequest("get_profile_details", { userId: this.userid }).subscribe((data) => {
-            console.log('get_profile_details data::', data);
-            if (data.status == 'success') {
-                console.log('suucesssss');
+        this.rest
+            .sendRequest("get_profile_details", { userId: this.userid })
+            .subscribe((data) => {
+            console.log("get_profile_details data::", data);
+            if (data.status == "success") {
+                console.log("suucesssss");
                 this.loading.hideLoader();
                 this.fname = data.data.first_name;
                 this.lname = data.data.last_name;
                 this.email = data.data.email;
-                if (data.data.profile_picture == '' || data.data.profile_picture == null) {
+                if (data.data.profile_picture == "" ||
+                    data.data.profile_picture == null) {
                     this.defaultProfile = this.defaultProfile;
                 }
                 else {
@@ -287,9 +316,9 @@ let CgprofilePage = class CgprofilePage {
                 this.bankname = data.data.bank_name;
                 this.accountnumber = data.data.account_number;
             }
-            if (data.status == 'error') {
+            if (data.status == "error") {
                 this.loading.hideLoader();
-                console.log('signup request data:', data.status);
+                console.log("signup request data:", data.status);
                 this.error.status = true;
                 this.error.message = data.message;
                 setTimeout(() => {
@@ -298,49 +327,46 @@ let CgprofilePage = class CgprofilePage {
                 }, 3000);
                 return;
             }
-        }, (err) => {
-        });
+        }, (err) => { });
     }
     uploadPic() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             let confirm = yield this.alertCtrl.create({
-                header: 'Choose from',
-                cssClass: 'profileAlertBox',
+                header: "Choose from",
+                cssClass: "profileAlertBox",
                 buttons: [
                     {
-                        text: 'Camera',
+                        text: "Camera",
                         handler: () => {
-                            this.camera.getPicture(this.cameraOptions)
-                                .then((imageData) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-                                // console.log('imagedata is = ' , imageData); 
+                            this.camera.getPicture(this.cameraOptions).then((imageData) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+                                // console.log('imagedata is = ' , imageData);
                                 this.picUrl = imageData;
                                 this.defaultProfile = `data:image/png;base64,${imageData}`;
-                                // console.log('defaultProfile is = ' , this.defaultProfile); 
-                            }), err => {
-                            });
-                        }
+                                // console.log('defaultProfile is = ' , this.defaultProfile);
+                            }), (err) => { });
+                        },
                     },
                     {
-                        text: 'Gallery',
+                        text: "Gallery",
                         handler: () => {
                             let options = {
                                 maximumImagesCount: 1,
-                                outputType: 1
+                                outputType: 1,
                             };
                             this.imagePicker.getPictures(options).then((results) => {
-                                console.log('all selected', results);
+                                console.log("all selected", results);
                                 if (results != null) {
                                     for (var i = 0; i < results.length; i++) {
-                                        console.log('each one' + results[i]);
+                                        console.log("each one" + results[i]);
                                         if (results[i] != "") {
-                                            console.log('data:image/jpeg;base64,', results[i]);
+                                            console.log("data:image/jpeg;base64,", results[i]);
                                             this.picUrl = results[i];
                                             this.defaultProfile = `data:image/png;base64,${results[i]}`;
                                         }
                                     }
                                 }
                             }, (err) => {
-                                console.log('error', err);
+                                console.log("error", err);
                             });
                             // this.camera.getPicture(this.galleryOptions)
                             // .then(async imageData => {
@@ -348,9 +374,9 @@ let CgprofilePage = class CgprofilePage {
                             //   this.defaultProfile = `data:image/png;base64,${imageData}`
                             // }, err => {
                             // })
-                        }
+                        },
                     },
-                ]
+                ],
             });
             yield confirm.present();
         });
@@ -366,26 +392,26 @@ let CgprofilePage = class CgprofilePage {
                 about: this.about,
                 bankName: this.bankname,
                 accountNumber: this.accountnumber,
-                perHourRate: this.price
+                perHourRate: this.price,
             };
             this.loading.loadershow();
             this.rest.sendRequest("update_profile", profiledata).subscribe((data) => {
-                console.log('update_profile data::', data);
-                if (data.status == 'success') {
+                console.log("update_profile data::", data);
+                if (data.status == "success") {
                     if (this.accountTypeId == 2) {
-                        this.loading.presentToast('Profile Update Successfully!!');
+                        this.loading.presentToast("Profile Update Successfully!!");
                         this.loading.hideLoader();
-                        this.navCtrl.navigateForward('/cgviewprofile');
+                        this.navCtrl.navigateForward("/cgviewprofile");
                     }
                     if (this.accountTypeId == 3) {
-                        this.loading.presentToast('Profile Update Successfully!');
+                        this.loading.presentToast("Profile Update Successfully!");
                         this.loading.hideLoader();
-                        this.navCtrl.navigateForward('/cgviewprofile');
+                        this.navCtrl.navigateForward("/cgviewprofile");
                     }
                 }
-                if (data.status == 'error') {
+                if (data.status == "error") {
                     this.loading.hideLoader();
-                    console.log('signup request data:', data.status);
+                    console.log("signup request data:", data.status);
                     this.error.status = true;
                     this.error.message = data.message;
                     setTimeout(() => {
@@ -394,8 +420,7 @@ let CgprofilePage = class CgprofilePage {
                     }, 3000);
                     return;
                 }
-            }, (err) => {
-            });
+            }, (err) => { });
         }
         if (!this.mobilenumber) {
             this.mobilenumberError.status = true;
@@ -443,11 +468,13 @@ CgprofilePage.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"] },
     { type: _ionic_native_image_picker_ngx__WEBPACK_IMPORTED_MODULE_8__["ImagePicker"] },
     { type: _services_loading_service__WEBPACK_IMPORTED_MODULE_7__["LoadingService"] },
-    { type: _services_rest_service__WEBPACK_IMPORTED_MODULE_6__["RestService"] }
+    { type: _services_rest_service__WEBPACK_IMPORTED_MODULE_6__["RestService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] }
 ];
 CgprofilePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: 'app-cgprofile',
+        selector: "app-cgprofile",
         template: _raw_loader_cgprofile_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_cgprofile_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
     })
@@ -466,7 +493,7 @@ CgprofilePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- <ion-header>\n  <ion-toolbar>\n    <ion-title>cgprofile</ion-title>\n  </ion-toolbar>\n</ion-header> -->\n<ion-header [translucent]=\"true\" class=\"ion-no-border cheader\">\n  <ion-toolbar class=\"headBgGlobal\">\n  <ion-row>\n    <ion-col style=\"padding-top:6px;\" size=\"2\">\n      <div>\n        <ion-menu-button class=\"menuicon\"></ion-menu-button>\n      </div>\n    </ion-col>\n\n    <ion-col class=\"titleclass\" size=\"8\">\n      <ion-text class=\"ctitle\">Complete Profile</ion-text>\n    </ion-col>\n\n    <ion-col size=\"2\">\n\n    </ion-col>\n  </ion-row>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"background\">\n\t<div class=\"wrapper\">\n\t\t\n\t\t<div class=\"logodiv\" (click)=\"uploadPic()\">\n\t\t\t<!-- <img src=\"assets/imgs/icons/msglogo.svg\"> -->\n\t\t\t<img src=\"{{defaultProfile}}\">\n\t\t</div>\n\t\t<div class=\"name\">{{fname}} {{lname}}</div>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Email\" type=\"email\" [(ngModel)]=\"email\" readonly></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Mobile number\" type=\"tel\" [(ngModel)]=\"mobilenumber\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<p *ngIf=\"mobilenumberError.status\" class=\"error\">\n\t    {{mobilenumberError.message}}\n\t  </p>\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Street address\" type=\"text\" [(ngModel)]=\"address\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"addressError.status\" class=\"error\">\n\t    {{addressError.message}}\n\t  </p>\n\n\t\t<div class=\"fields\" *ngIf=\"accountTypeId!=3\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Per hour USD rate\" type=\"tel\" [(ngModel)]=\"price\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div *ngIf=\"accountTypeId!=3\">\n\t\t\t<p *ngIf=\"priceError.status\" class=\"error\">\n\t\t    {{priceError.message}}\n\t\t  </p>\n\t\t</div>\n\t\t\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-textarea placeholder=\"About\"  rows=\"6\" cols=\"20\" [(ngModel)]=\"about\"></ion-textarea>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"aboutError.status\" class=\"error\">\n\t    {{aboutError.message}}\n\t  </p>\n\n\t\t<div *ngIf=\"accountTypeId!=3\">\n\t\t\t<h6 style=\"font-size: 14px;font-weight: 600;\">Back Account</h6>\n\n\t\t\t<div class=\"fields\">\n\t\t\t\t<div class=\"inputdiv\">\n\t\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t\t<ion-input placeholder=\"Bank name\" type=\"text\" [(ngModel)]=\"bankname\"></ion-input>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<p *ngIf=\"banknameError.status\" class=\"error\">\n\t\t    {{banknameError.message}}\n\t\t  </p>\n\n\t\t\t<div class=\"fields\">\n\t\t\t\t<div class=\"inputdiv\">\n\t\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t\t<ion-input placeholder=\"Account number\" type=\"tel\" [(ngModel)]=\"accountnumber\"></ion-input>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<p *ngIf=\"accountnumberError.status\" class=\"error\">\n\t\t    {{accountnumberError.message}}\n\t\t  </p>\n\t\t</div>\n\t\n\n\t\t<div class=\"ionbutton\" (click)=\"viewprofile()\">\n\t\t\t<ion-button class=\"ib\">Done</ion-button>\n\t\t</div>\n\n\t</div>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- <ion-header>\n  <ion-toolbar>\n    <ion-title>cgprofile</ion-title>\n  </ion-toolbar>\n</ion-header> -->\n<ion-header [translucent]=\"true\" class=\"ion-no-border cheader\">\n  <ion-toolbar class=\"headBgGlobal\">\n    <ion-row>\n      <ion-col style=\"padding-top: 6px\" size=\"2\">\n        <div>\n          <ion-menu-button class=\"menuicon\"></ion-menu-button>\n        </div>\n      </ion-col>\n\n      <ion-col class=\"titleclass\" size=\"8\">\n        <ion-text class=\"ctitle\">Complete Profile</ion-text>\n      </ion-col>\n\n      <ion-col size=\"2\"> </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"background\">\n  <div id=\"page\" class=\"adjust-overflow\">\n    <div class=\"wrapper\">\n      <div class=\"logodiv\" (click)=\"uploadPic()\">\n        <!-- <img src=\"assets/imgs/icons/msglogo.svg\"> -->\n        <img src=\"{{defaultProfile}}\" />\n      </div>\n      <div class=\"name\">{{fname}} {{lname}}</div>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Email\"\n              type=\"email\"\n              [(ngModel)]=\"email\"\n              readonly\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Mobile number\"\n              type=\"tel\"\n              [(ngModel)]=\"mobilenumber\"\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n      <p *ngIf=\"mobilenumberError.status\" class=\"error\">\n        {{mobilenumberError.message}}\n      </p>\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Street address\"\n              type=\"text\"\n              [(ngModel)]=\"address\"\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"addressError.status\" class=\"error\">{{addressError.message}}</p>\n\n      <div class=\"fields\" *ngIf=\"accountTypeId!=3\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Per hour USD rate\"\n              type=\"tel\"\n              [(ngModel)]=\"price\"\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n\n      <div *ngIf=\"accountTypeId!=3\">\n        <p *ngIf=\"priceError.status\" class=\"error\">{{priceError.message}}</p>\n      </div>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-textarea\n              placeholder=\"About\"\n              rows=\"6\"\n              cols=\"20\"\n              [(ngModel)]=\"about\"\n            ></ion-textarea>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"aboutError.status\" class=\"error\">{{aboutError.message}}</p>\n\n      <div *ngIf=\"accountTypeId!=3\">\n        <h6 style=\"font-size: 14px; font-weight: 600\">Back Account</h6>\n\n        <div class=\"fields\">\n          <div class=\"inputdiv\">\n            <div class=\"pinput\">\n              <ion-input\n                placeholder=\"Bank name\"\n                type=\"text\"\n                [(ngModel)]=\"bankname\"\n              ></ion-input>\n            </div>\n          </div>\n        </div>\n        <p *ngIf=\"banknameError.status\" class=\"error\">\n          {{banknameError.message}}\n        </p>\n\n        <div class=\"fields\">\n          <div class=\"inputdiv\">\n            <div class=\"pinput\">\n              <ion-input\n                placeholder=\"Account number\"\n                type=\"tel\"\n                [(ngModel)]=\"accountnumber\"\n              ></ion-input>\n            </div>\n          </div>\n        </div>\n\n        <p *ngIf=\"accountnumberError.status\" class=\"error\">\n          {{accountnumberError.message}}\n        </p>\n      </div>\n\n      <div class=\"ionbutton\" (click)=\"viewprofile()\">\n        <ion-button class=\"ib\">Done</ion-button>\n      </div>\n    </div>\n  </div>\n</ion-content>\n");
 
 /***/ }),
 

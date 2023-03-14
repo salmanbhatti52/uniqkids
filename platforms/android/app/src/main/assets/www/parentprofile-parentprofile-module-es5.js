@@ -295,7 +295,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<!-- <ion-header>\n  <ion-toolbar>\n    <ion-title>cgprofile</ion-title>\n  </ion-toolbar>\n</ion-header> -->\n<ion-header [translucent]=\"true\" class=\"ion-no-border cheader\">\n\t<ion-toolbar class=\"headBgGlobal\">\n\t  <!-- <ion-buttons slot=\"start\">\n\t\t<ion-menu-button class=\"menuicon\"></ion-menu-button>\n\t  </ion-buttons>\n\t  <ion-title class=\"ctitle\">Complete Profile</ion-title> -->\n\n\t  <ion-row>\n\t\t  <ion-col style=\"padding-top:6px;\" size=\"2\">\n\t\t\t  <div>\n\t\t\t\t  <ion-menu-button class=\"menuicon\"></ion-menu-button>\n\t  </div>\n\t\t  </ion-col>\n\n\t\t  <ion-col class=\"titleclass\" size=\"8\">\n\t\t\t  <ion-text class=\"ctitle\">Complete Profile</ion-text>\n\t\t  </ion-col>\n\n\t\t  <ion-col size=\"2\">\n\n\t\t  </ion-col>\n\t  </ion-row>\n\n\t</ion-toolbar>\n  </ion-header>\n<ion-content class=\"background\">\n\n\t<div class=\"wrapper\">\n\t\t\n\t\t<div class=\"logodiv\" (click)=\"uploadPic()\">\n\t\t\t<!-- <img src=\"assets/imgs/icons/msglogo.svg\"> -->\n\t\t\t<img src=\"{{defaultProfile}}\">\n\t\t</div>\n\t\t<div class=\"name\">{{fname}} {{lname}}</div>\n\t\t\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Email\" type=\"email\" [(ngModel)]=\"email\" readonly></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Mobile number\" type=\"tel\" [(ngModel)]=\"mobilenumber\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<p *ngIf=\"mobilenumberError.status\" class=\"error\">\n\t    {{mobilenumberError.message}}\n\t  </p>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Relation with child\" type=\"text\" [(ngModel)]=\"relationwithchild\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"relationError.status\" class=\"error\">\n\t    {{relationError.message}}\n\t  </p>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Street address\" type=\"text\" [(ngModel)]=\"address\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"addressError.status\" class=\"error\">\n\t    {{addressError.message}}\n\t  </p>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-textarea placeholder=\"About\"  rows=\"6\" cols=\"20\" [(ngModel)]=\"about\"></ion-textarea>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"aboutError.status\" class=\"error\">\n\t    {{aboutError.message}}\n\t  </p>\n\n\t\t<div class=\"ionbutton\" (click)=\"update()\">\n\t\t\t<ion-button class=\"ib\">Done</ion-button>\n\t\t</div>\n\n\t</div>\n\n</ion-content>\n\n";
+      __webpack_exports__["default"] = "<!-- <ion-header>\n  <ion-toolbar>\n    <ion-title>cgprofile</ion-title>\n  </ion-toolbar>\n</ion-header> -->\n<ion-header [translucent]=\"true\" class=\"ion-no-border cheader\">\n  <ion-toolbar class=\"headBgGlobal\">\n    <!-- <ion-buttons slot=\"start\">\n\t\t<ion-menu-button class=\"menuicon\"></ion-menu-button>\n\t  </ion-buttons>\n\t  <ion-title class=\"ctitle\">Complete Profile</ion-title> -->\n\n    <ion-row>\n      <ion-col style=\"padding-top: 6px\" size=\"2\">\n        <div>\n          <ion-menu-button class=\"menuicon\"></ion-menu-button>\n        </div>\n      </ion-col>\n\n      <ion-col class=\"titleclass\" size=\"8\">\n        <ion-text class=\"ctitle\">Complete Profile</ion-text>\n      </ion-col>\n\n      <ion-col size=\"2\"> </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-header>\n<ion-content class=\"background\">\n  <div id=\"page\" class=\"adjust-overflow\">\n    <div class=\"wrapper\">\n      <div class=\"logodiv\" (click)=\"uploadPic()\">\n        <!-- <img src=\"assets/imgs/icons/msglogo.svg\"> -->\n        <img src=\"{{defaultProfile}}\" />\n      </div>\n      <div class=\"name\">{{fname}} {{lname}}</div>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Email\"\n              type=\"email\"\n              [(ngModel)]=\"email\"\n              readonly\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Mobile number\"\n              type=\"tel\"\n              [(ngModel)]=\"mobilenumber\"\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n      <p *ngIf=\"mobilenumberError.status\" class=\"error\">\n        {{mobilenumberError.message}}\n      </p>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Relation with child\"\n              type=\"text\"\n              [(ngModel)]=\"relationwithchild\"\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"relationError.status\" class=\"error\">\n        {{relationError.message}}\n      </p>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Street address\"\n              type=\"text\"\n              [(ngModel)]=\"address\"\n            ></ion-input>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"addressError.status\" class=\"error\">{{addressError.message}}</p>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-textarea\n              placeholder=\"About\"\n              rows=\"6\"\n              cols=\"20\"\n              [(ngModel)]=\"about\"\n            ></ion-textarea>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"aboutError.status\" class=\"error\">{{aboutError.message}}</p>\n\n      <div class=\"ionbutton\" (click)=\"update()\">\n        <ion-button class=\"ib\">Done</ion-button>\n      </div>\n    </div>\n  </div>\n</ion-content>\n";
       /***/
     },
 
@@ -440,7 +440,7 @@
       "jhN1");
 
       var ParentprofilePage = /*#__PURE__*/function () {
-        function ParentprofilePage(camera, alertCtrl, navctrl, loading, imagePicker, sanitizer, rest) {
+        function ParentprofilePage(camera, alertCtrl, navctrl, loading, imagePicker, sanitizer, rest, cd, platform) {
           _classCallCheck(this, ParentprofilePage);
 
           this.camera = camera;
@@ -450,11 +450,13 @@
           this.imagePicker = imagePicker;
           this.sanitizer = sanitizer;
           this.rest = rest;
-          this.defaultProfile = 'assets/imgs/profilelogo.png';
-          this.mobilenumber = '';
-          this.relationwithchild = '';
-          this.address = '';
-          this.about = '';
+          this.cd = cd;
+          this.platform = platform;
+          this.defaultProfile = "assets/imgs/profilelogo.png";
+          this.mobilenumber = "";
+          this.relationwithchild = "";
+          this.address = "";
+          this.about = "";
           this.mobilenumberError = {
             status: false,
             message: ""
@@ -492,62 +494,89 @@
             mediaType: this.camera.MediaType.PICTURE,
             correctOrientation: true
           };
-          this.accountTypeId = localStorage.getItem('accountTypeId');
-          console.log('accountTypeId', this.accountTypeId);
+          this.accountTypeId = localStorage.getItem("accountTypeId");
+          console.log("accountTypeId", this.accountTypeId);
         }
 
         _createClass(ParentprofilePage, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this2 = this;
+
+            this.platform.keyboardDidShow.subscribe(function (ev) {
+              var deviceHeight = window.innerHeight;
+              var keyboardHeight = ev.keyboardHeight;
+              var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+
+              deviceHeightAdjusted = deviceHeightAdjusted < 0 ? deviceHeightAdjusted * -1 : deviceHeightAdjusted; //only positive number
+
+              document.getElementById("page").style.height = deviceHeightAdjusted + "px"; //set page height
+
+              document.getElementById("page").setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+
+              console.log("keyboard show", ev);
+
+              _this2.cd.detectChanges();
+            });
+            this.platform.keyboardDidHide.subscribe(function (ev) {
+              setTimeout(function () {
+                document.getElementById("page").style.height = 110 + "%"; //device  100% height
+              }, 100);
+
+              _this2.cd.detectChanges();
+
+              console.log("keyboard hide");
+            }); //keybpoardddddd --------------
+
             this.imagePicker.requestReadPermission();
           }
         }, {
           key: "ionViewDidEnter",
           value: function ionViewDidEnter() {
-            this.userid = localStorage.getItem('uid');
-            console.log('userid', this.userid);
+            this.userid = localStorage.getItem("uid");
+            console.log("userid", this.userid);
             this.getprofiledata(this.userid);
           }
         }, {
           key: "getprofiledata",
           value: function getprofiledata(userid) {
-            var _this2 = this;
+            var _this3 = this;
 
             this.loading.loadershow();
             this.rest.sendRequest("get_profile_details", {
               userId: userid
             }).subscribe(function (data) {
-              console.log('get_profile_details data::', data);
+              console.log("get_profile_details data::", data);
 
-              if (data.status == 'success') {
-                console.log('suucesssss');
-                _this2.fname = data.data.first_name;
-                _this2.lname = data.data.last_name;
-                _this2.email = data.data.email;
+              if (data.status == "success") {
+                console.log("suucesssss");
+                _this3.fname = data.data.first_name;
+                _this3.lname = data.data.last_name;
+                _this3.email = data.data.email;
 
-                if (data.data.profile_picture == '' || data.data.profile_picture == null) {
-                  _this2.defaultProfile = 'assets/imgs/profilelogo.png';
+                if (data.data.profile_picture == "" || data.data.profile_picture == null) {
+                  _this3.defaultProfile = "assets/imgs/profilelogo.png";
                 } else {
-                  _this2.defaultProfile = data.data.profile_picture;
+                  _this3.defaultProfile = data.data.profile_picture;
                 }
 
-                _this2.relationwithchild = data.data.relation_with_child;
-                _this2.mobilenumber = data.data.mobile_number;
-                _this2.address = data.data.street_address;
-                _this2.about = data.data.about;
+                _this3.relationwithchild = data.data.relation_with_child;
+                _this3.mobilenumber = data.data.mobile_number;
+                _this3.address = data.data.street_address;
+                _this3.about = data.data.about;
 
-                _this2.loading.hideLoader();
+                _this3.loading.hideLoader();
               }
 
-              if (data.status == 'error') {
-                _this2.loading.hideLoader();
+              if (data.status == "error") {
+                _this3.loading.hideLoader();
 
-                console.log('signup request data:', data.status);
-                _this2.error.status = true;
-                _this2.error.message = data.message;
+                console.log("signup request data:", data.status);
+                _this3.error.status = true;
+                _this3.error.message = data.message;
                 setTimeout(function () {
-                  _this2.error.status = false;
-                  _this2.error.message = "";
+                  _this3.error.status = false;
+                  _this3.error.message = "";
                 }, 3000);
                 return;
               }
@@ -557,7 +586,7 @@
           key: "uploadPic",
           value: function uploadPic() {
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
-              var _this3 = this;
+              var _this4 = this;
 
               var confirm;
               return _regeneratorRuntime().wrap(function _callee6$(_context6) {
@@ -565,19 +594,19 @@
                   case 0:
                     _context6.next = 2;
                     return this.alertCtrl.create({
-                      header: 'Choose from',
-                      cssClass: 'profileAlertBox',
+                      header: "Choose from",
+                      cssClass: "profileAlertBox",
                       buttons: [{
-                        text: 'Camera',
+                        text: "Camera",
                         handler: function handler() {
-                          _this3.camera.getPicture(_this3.cameraOptions).then(function (imageData) {
-                            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this3, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+                          _this4.camera.getPicture(_this4.cameraOptions).then(function (imageData) {
+                            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this4, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
                               return _regeneratorRuntime().wrap(function _callee5$(_context5) {
                                 while (1) switch (_context5.prev = _context5.next) {
                                   case 0:
-                                    // console.log('imagedata is = ' , imageData); 
+                                    // console.log('imagedata is = ' , imageData);
                                     this.picUrl = imageData;
-                                    this.defaultProfile = "data:image/png;base64,".concat(imageData); // console.log('defaultProfile is = ' , this.defaultProfile); 
+                                    this.defaultProfile = "data:image/png;base64,".concat(imageData); // console.log('defaultProfile is = ' , this.defaultProfile);
 
                                   case 2:
                                   case "end":
@@ -588,7 +617,7 @@
                           }, function (err) {});
                         }
                       }, {
-                        text: 'Gallery',
+                        text: "Gallery",
                         handler: function handler() {
                           // this.camera.getPicture(this.galleryOptions)
                           // .then(async imageData => {
@@ -601,24 +630,24 @@
                             outputType: 1
                           };
 
-                          _this3.imagePicker.getPictures(options).then(function (results) {
-                            console.log('all selected', results);
+                          _this4.imagePicker.getPictures(options).then(function (results) {
+                            console.log("all selected", results);
 
                             if (results != null) {
                               for (var i = 0; i < results.length; i++) {
-                                console.log('each one' + results[i]);
+                                console.log("each one" + results[i]);
 
                                 if (results[i] != "") {
                                   // let dturl=this.sanitizer.bypassSecurityTrustResourceUrl(results[i]);
                                   // console.log('image sanitizewe:?',dturl)
-                                  console.log('data:image/jpeg;base64,', results[i]);
-                                  _this3.picUrl = results[i];
-                                  _this3.defaultProfile = "data:image/png;base64,".concat(results[i]);
+                                  console.log("data:image/jpeg;base64,", results[i]);
+                                  _this4.picUrl = results[i];
+                                  _this4.defaultProfile = "data:image/png;base64,".concat(results[i]);
                                 }
                               }
                             }
                           }, function (err) {
-                            console.log('error', err);
+                            console.log("error", err);
                           });
                         }
                       }]
@@ -639,7 +668,7 @@
         }, {
           key: "update",
           value: function update() {
-            var _this4 = this;
+            var _this5 = this;
 
             if (this.mobilenumber && this.relationwithchild && this.address && this.about) {
               var profiledata = {
@@ -654,27 +683,27 @@
 
               this.loading.loadershow();
               this.rest.sendRequest("update_profile", profiledata).subscribe(function (data) {
-                console.log('update_profile data::', data);
+                console.log("update_profile data::", data);
 
-                if (data.status == 'success') {
-                  _this4.loading.hideLoader();
+                if (data.status == "success") {
+                  _this5.loading.hideLoader();
 
-                  _this4.loading.presentToast('Profile Update Successfully!!'); //  if(this.accountTypeId==1){
+                  _this5.loading.presentToast("Profile Update Successfully!!"); //  if(this.accountTypeId==1){
 
 
-                  _this4.navctrl.navigateRoot('homescreen'); //  }
+                  _this5.navctrl.navigateRoot("homescreen"); //  }
 
                 }
 
-                if (data.status == 'error') {
-                  _this4.loading.hideLoader();
+                if (data.status == "error") {
+                  _this5.loading.hideLoader();
 
-                  console.log('signup request data:', data.status);
-                  _this4.error.status = true;
-                  _this4.error.message = data.message;
+                  console.log("signup request data:", data.status);
+                  _this5.error.status = true;
+                  _this5.error.message = data.message;
                   setTimeout(function () {
-                    _this4.error.status = false;
-                    _this4.error.message = "";
+                    _this5.error.status = false;
+                    _this5.error.message = "";
                   }, 3000);
                   return;
                 }
@@ -702,14 +731,14 @@
             }
 
             setTimeout(function () {
-              _this4.mobilenumberError.status = false;
-              _this4.mobilenumberError.message = "";
-              _this4.relationError.status = false;
-              _this4.relationError.message = "";
-              _this4.addressError.status = false;
-              _this4.addressError.message = "";
-              _this4.aboutError.status = false;
-              _this4.aboutError.message = "";
+              _this5.mobilenumberError.status = false;
+              _this5.mobilenumberError.message = "";
+              _this5.relationError.status = false;
+              _this5.relationError.message = "";
+              _this5.addressError.status = false;
+              _this5.addressError.message = "";
+              _this5.aboutError.status = false;
+              _this5.aboutError.message = "";
             }, 3000);
           }
         }]);
@@ -732,11 +761,15 @@
           type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["DomSanitizer"]
         }, {
           type: _services_rest_service__WEBPACK_IMPORTED_MODULE_6__["RestService"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["Platform"]
         }];
       };
 
       ParentprofilePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: 'app-parentprofile',
+        selector: "app-parentprofile",
         template: _raw_loader_parentprofile_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_parentprofile_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], ParentprofilePage);
