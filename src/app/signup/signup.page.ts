@@ -75,6 +75,35 @@ export class SignupPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.platform.keyboardDidShow.subscribe((ev) => {
+      var deviceHeight = window.innerHeight;
+      let keyboardHeight = ev.keyboardHeight;
+      var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+      deviceHeightAdjusted =
+        deviceHeightAdjusted < 0
+          ? deviceHeightAdjusted * -1
+          : deviceHeightAdjusted; //only positive number
+      document.getElementById("page").style.height =
+        deviceHeightAdjusted + "px"; //set page height
+      document
+        .getElementById("page")
+        .setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+      console.log("keyboard show", ev);
+
+      this.cd.detectChanges();
+    });
+
+    this.platform.keyboardDidHide.subscribe((ev) => {
+      setTimeout(() => {
+        document.getElementById("page").style.height = 110 + "%"; //device  100% height
+      }, 100);
+
+      this.cd.detectChanges();
+      console.log("keyboard hide");
+    });
+
+    //keybpoardddddd --------------
+
     this.userType = localStorage.getItem("userType");
     console.log("userType", this.userType);
 
@@ -171,6 +200,7 @@ export class SignupPage implements OnInit {
         userPassword: this.password,
         confirmPassword: this.confirmPassword,
         oneSignalId: this.player_id,
+        // oneSignalId: "123",
         accountTypeId: 1, //1 is for parent
         userType: 1,
       };

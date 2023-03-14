@@ -1,92 +1,114 @@
-
 <ion-content class="background">
-
   <div class="topdiv">
-		<div class="header">
-	    <div class="back-btn">
-	      <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
-	      </div>
-   	</div>
-   	<div style="text-align: center;margin-top: 4%;">
-  		<img src="assets/imgs/ulogo.png">
-  	</div>	
+    <div class="header">
+      <div class="back-btn">
+        <img
+          src="assets/imgs/icons/backbtn.svg"
+          class="backSvg"
+          (click)="goback()"
+        />
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 4%">
+      <img src="assets/imgs/ulogo.png" />
+    </div>
   </div>
   <div class="logindiv">
-	  <div class="wrapper">
-	  	
-	  	<div class="headtxt">Hey there,<br> Welcome</div>
-	  	<p style="margin-bottom: 10%;font-size:14px;color: #000000;opacity:0.8;">Enter your username/email and password to login to your UniqKidz account.</p>
+    <div class="wrapper">
+      <div id="page" class="adjust-overflow">
+        <div class="headtxt">
+          Hey there,<br />
+          Welcome
+        </div>
+        <p
+          style="
+            margin-bottom: 10%;
+            font-size: 14px;
+            color: #000000;
+            opacity: 0.8;
+          "
+        >
+          Enter your username/email and password to login to your UniqKidz
+          account.
+        </p>
 
-	  	<div class="fields">
-				<div class="inputdiv">
-					<div class="icondiv">
-						<img src="assets/imgs/icons/email.svg">
-					</div>
-					<div class="pinput">
-						<ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
-					</div>
-				</div>
-			</div>
-			<p *ngIf="emailError.status" class="error">
-		    {{emailError.message}}
-		  </p>
-			
-			<div class="fields">
-				<div class="inputdiv">
-					<div class="icondiv1">
-						<img src="assets/imgs/icons/lock.svg">
-					</div>
-					<div class="pinput">
-						<ion-input placeholder="Password" 
-							type="{{showPass ? 'text':'password' }}"
-							[(ngModel)]="password"
-						></ion-input>
-					</div>
-					<div class="icondiv">
-						<!-- <img src="assets/imgs/icons/eye.svg"> -->
-						<ion-icon name="eye" class="eye"  *ngIf="!showPass" (click)="togglePass()"></ion-icon>
-						<ion-icon name="eye-off" class="eye"  *ngIf="showPass" (click)="togglePass()"></ion-icon>
-					</div>
-				</div>
-			</div>
-			<p *ngIf="passwordError.status" class="error">
-		    {{passwordError.message}}
-		  </p>
+        <div class="fields">
+          <div class="inputdiv">
+            <div class="icondiv">
+              <img src="assets/imgs/icons/email.svg" />
+            </div>
+            <div class="pinput">
+              <ion-input
+                placeholder="Email"
+                type="email"
+                [(ngModel)]="email"
+              ></ion-input>
+            </div>
+          </div>
+        </div>
+        <p *ngIf="emailError.status" class="error">{{emailError.message}}</p>
 
-			<div class="check">
-				<div class="ch2" (click)="goto()">
-					Forgot password?
-				</div>
-			</div>	
+        <div class="fields">
+          <div class="inputdiv">
+            <div class="icondiv1">
+              <img src="assets/imgs/icons/lock.svg" />
+            </div>
+            <div class="pinput">
+              <ion-input
+                placeholder="Password"
+                type="{{showPass ? 'text':'password' }}"
+                [(ngModel)]="password"
+              ></ion-input>
+            </div>
+            <div class="icondiv">
+              <!-- <img src="assets/imgs/icons/eye.svg"> -->
+              <ion-icon
+                name="eye"
+                class="eye"
+                *ngIf="!showPass"
+                (click)="togglePass()"
+              ></ion-icon>
+              <ion-icon
+                name="eye-off"
+                class="eye"
+                *ngIf="showPass"
+                (click)="togglePass()"
+              ></ion-icon>
+            </div>
+          </div>
+        </div>
+        <p *ngIf="passwordError.status" class="error">
+          {{passwordError.message}}
+        </p>
 
-			<p *ngIf="error.status" class="error">
-		    {{error.message}}
-		  </p>
-			<div class="ionbutton" (click)="gotohome()">
-				<ion-button class="ib">
-				 <span class="btns">log in</span> 
-				</ion-button>
-			</div>
+        <div class="check">
+          <div class="ch2" (click)="goto()">Forgot password?</div>
+        </div>
 
-			 <!-- <div class="signup">
+        <p *ngIf="error.status" class="error">{{error.message}}</p>
+        <div class="ionbutton" (click)="gotohome()">
+          <ion-button class="ib">
+            <span class="btns">log in</span>
+          </ion-button>
+        </div>
+
+        <!-- <div class="signup">
 	      <p>Don't have an account already?</p>
 	      <p (click)="signupPage()" class="signupText">SIGN UP</p>
 	    </div> -->
+      </div>
+    </div>
 
-	  </div>
-
-	</div>
- 
- 
-	<!-- <div class="footer">
+    <!-- <div class="footer">
 		Already got an account? <span (click)="gotologin()">Login</span>
 	</div> -->
+  </div>
 </ion-content>
 
 <ion-footer class="ion-no-border">
-	<ion-toolbar class="bgtoolbar">
-		<div class="footer">
-			Not a member? <span (click)="gotologin()">Register now.</span>
-		</div>
-	</ion-toolbar> 
+  <ion-toolbar class="bgtoolbar">
+    <div class="footer">
+      Not a member? <span (click)="gotologin()">Register now.</span>
+    </div>
+  </ion-toolbar>
 </ion-footer>

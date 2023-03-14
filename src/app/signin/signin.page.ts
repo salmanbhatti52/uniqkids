@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import { NavController, MenuController, Platform } from "@ionic/angular";
 import { LoginwithuserService } from "../loginwithuser.service";
 import { RestService } from "../services/rest.service";
@@ -47,10 +47,40 @@ export class SigninPage implements OnInit {
     private rest: RestService,
     private oneSignal: OneSignal,
     public platform: Platform,
-    public statusbar: StatusBar
+    public statusbar: StatusBar,
+    public cd: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
+    this.platform.keyboardDidShow.subscribe((ev) => {
+      var deviceHeight = window.innerHeight;
+      let keyboardHeight = ev.keyboardHeight;
+      var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+      deviceHeightAdjusted =
+        deviceHeightAdjusted < 0
+          ? deviceHeightAdjusted * -1
+          : deviceHeightAdjusted; //only positive number
+      document.getElementById("page").style.height =
+        deviceHeightAdjusted + "px"; //set page height
+      document
+        .getElementById("page")
+        .setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+      console.log("keyboard show", ev);
+
+      this.cd.detectChanges();
+    });
+
+    this.platform.keyboardDidHide.subscribe((ev) => {
+      setTimeout(() => {
+        document.getElementById("page").style.height = 110 + "%"; //device  100% height
+      }, 100);
+
+      this.cd.detectChanges();
+      console.log("keyboard hide");
+    });
+
+    //keybpoardddddd --------------
+
     // this.player_id=localStorage.getItem('deviceID');
     // console.log('player_id',this.player_id);
     this.oneSignal.setLogLevel({ logLevel: 6, visualLevel: 2 });

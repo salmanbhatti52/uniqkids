@@ -85,6 +85,32 @@ export class CgsignupPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.platform.keyboardDidShow.subscribe((ev) => {
+      var deviceHeight = window.innerHeight;
+      let keyboardHeight = ev.keyboardHeight;
+      var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+      deviceHeightAdjusted =
+        deviceHeightAdjusted < 0
+          ? deviceHeightAdjusted * -1
+          : deviceHeightAdjusted; //only positive number
+      document.getElementById("page").style.height =
+        deviceHeightAdjusted + "px"; //set page height
+      document
+        .getElementById("page")
+        .setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+      console.log("keyboard show", ev);
+
+      this.cd.detectChanges();
+    });
+
+    this.platform.keyboardDidHide.subscribe((ev) => {
+      setTimeout(() => {
+        document.getElementById("page").style.height = 100 + "%"; //device  100% height
+      }, 100);
+
+      this.cd.detectChanges();
+      console.log("keyboard hide");
+    });
     this.userType = localStorage.getItem("userType");
     console.log("userType", this.userType);
 
@@ -220,6 +246,7 @@ export class CgsignupPage implements OnInit {
         userPassword: this.password,
         confirmPassword: this.confirmPassword,
         accountTypeId: this.accountTypeId,
+        // oneSignalId: "123",
         oneSignalId: this.player_id,
         userType: 1,
       };
@@ -259,6 +286,7 @@ export class CgsignupPage implements OnInit {
             }
           }
           if (data.status == "error") {
+            this.loading.presentToast(data.message);
             this.loading.hideLoader();
             // console.log('signup request data:',data.status);
             this.error.status = true;

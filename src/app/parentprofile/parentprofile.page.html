@@ -4,100 +4,112 @@
   </ion-toolbar>
 </ion-header> -->
 <ion-header [translucent]="true" class="ion-no-border cheader">
-	<ion-toolbar class="headBgGlobal">
-	  <!-- <ion-buttons slot="start">
+  <ion-toolbar class="headBgGlobal">
+    <!-- <ion-buttons slot="start">
 		<ion-menu-button class="menuicon"></ion-menu-button>
 	  </ion-buttons>
 	  <ion-title class="ctitle">Complete Profile</ion-title> -->
 
-	  <ion-row>
-		  <ion-col style="padding-top:6px;" size="2">
-			  <div>
-				  <ion-menu-button class="menuicon"></ion-menu-button>
-	  </div>
-		  </ion-col>
+    <ion-row>
+      <ion-col style="padding-top: 6px" size="2">
+        <div>
+          <ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+      </ion-col>
 
-		  <ion-col class="titleclass" size="8">
-			  <ion-text class="ctitle">Complete Profile</ion-text>
-		  </ion-col>
+      <ion-col class="titleclass" size="8">
+        <ion-text class="ctitle">Complete Profile</ion-text>
+      </ion-col>
 
-		  <ion-col size="2">
-
-		  </ion-col>
-	  </ion-row>
-
-	</ion-toolbar>
-  </ion-header>
+      <ion-col size="2"> </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
 <ion-content class="background">
+  <div id="page" class="adjust-overflow">
+    <div class="wrapper">
+      <div class="logodiv" (click)="uploadPic()">
+        <!-- <img src="assets/imgs/icons/msglogo.svg"> -->
+        <img src="{{defaultProfile}}" />
+      </div>
+      <div class="name">{{fname}} {{lname}}</div>
 
-	<div class="wrapper">
-		
-		<div class="logodiv" (click)="uploadPic()">
-			<!-- <img src="assets/imgs/icons/msglogo.svg"> -->
-			<img src="{{defaultProfile}}">
-		</div>
-		<div class="name">{{fname}} {{lname}}</div>
-		
-		<div class="fields">
-			<div class="inputdiv">
-				<div class="pinput">
-					<ion-input placeholder="Email" type="email" [(ngModel)]="email" readonly></ion-input>
-				</div>
-			</div>
-		</div>
+      <div class="fields">
+        <div class="inputdiv">
+          <div class="pinput">
+            <ion-input
+              placeholder="Email"
+              type="email"
+              [(ngModel)]="email"
+              readonly
+            ></ion-input>
+          </div>
+        </div>
+      </div>
 
-		<div class="fields">
-			<div class="inputdiv">
-				<div class="pinput">
-					<ion-input placeholder="Mobile number" type="tel" [(ngModel)]="mobilenumber"></ion-input>
-				</div>
-			</div>
-		</div>
-		<p *ngIf="mobilenumberError.status" class="error">
-	    {{mobilenumberError.message}}
-	  </p>
+      <div class="fields">
+        <div class="inputdiv">
+          <div class="pinput">
+            <ion-input
+              placeholder="Mobile number"
+              type="tel"
+              [(ngModel)]="mobilenumber"
+            ></ion-input>
+          </div>
+        </div>
+      </div>
+      <p *ngIf="mobilenumberError.status" class="error">
+        {{mobilenumberError.message}}
+      </p>
 
-		<div class="fields">
-			<div class="inputdiv">
-				<div class="pinput">
-					<ion-input placeholder="Relation with child" type="text" [(ngModel)]="relationwithchild"></ion-input>
-				</div>
-			</div>
-		</div>
+      <div class="fields">
+        <div class="inputdiv">
+          <div class="pinput">
+            <ion-input
+              placeholder="Relation with child"
+              type="text"
+              [(ngModel)]="relationwithchild"
+            ></ion-input>
+          </div>
+        </div>
+      </div>
 
-		<p *ngIf="relationError.status" class="error">
-	    {{relationError.message}}
-	  </p>
+      <p *ngIf="relationError.status" class="error">
+        {{relationError.message}}
+      </p>
 
-		<div class="fields">
-			<div class="inputdiv">
-				<div class="pinput">
-					<ion-input placeholder="Street address" type="text" [(ngModel)]="address"></ion-input>
-				</div>
-			</div>
-		</div>
+      <div class="fields">
+        <div class="inputdiv">
+          <div class="pinput">
+            <ion-input
+              placeholder="Street address"
+              type="text"
+              [(ngModel)]="address"
+            ></ion-input>
+          </div>
+        </div>
+      </div>
 
-		<p *ngIf="addressError.status" class="error">
-	    {{addressError.message}}
-	  </p>
+      <p *ngIf="addressError.status" class="error">{{addressError.message}}</p>
 
-		<div class="fields">
-			<div class="inputdiv">
-				<div class="pinput">
-					<ion-textarea placeholder="About"  rows="6" cols="20" [(ngModel)]="about"></ion-textarea>
-				</div>
-			</div>
-		</div>
+      <div class="fields">
+        <div class="inputdiv">
+          <div class="pinput">
+            <ion-textarea
+              placeholder="About"
+              rows="6"
+              cols="20"
+              [(ngModel)]="about"
+            ></ion-textarea>
+          </div>
+        </div>
+      </div>
 
-		<p *ngIf="aboutError.status" class="error">
-	    {{aboutError.message}}
-	  </p>
+      <p *ngIf="aboutError.status" class="error">{{aboutError.message}}</p>
 
-		<div class="ionbutton" (click)="update()">
-			<ion-button class="ib">Done</ion-button>
-		</div>
-
-	</div>
-
+      <div class="ionbutton" (click)="update()">
+        <ion-button class="ib">Done</ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>
-

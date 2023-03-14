@@ -5,122 +5,141 @@
 </ion-header> -->
 <ion-header [translucent]="true" class="ion-no-border cheader">
   <ion-toolbar class="headBgGlobal">
-  <ion-row>
-    <ion-col style="padding-top:6px;" size="2">
-      <div>
-        <ion-menu-button class="menuicon"></ion-menu-button>
-      </div>
-    </ion-col>
+    <ion-row>
+      <ion-col style="padding-top: 6px" size="2">
+        <div>
+          <ion-menu-button class="menuicon"></ion-menu-button>
+        </div>
+      </ion-col>
 
-    <ion-col class="titleclass" size="8">
-      <ion-text class="ctitle">Complete Profile</ion-text>
-    </ion-col>
+      <ion-col class="titleclass" size="8">
+        <ion-text class="ctitle">Complete Profile</ion-text>
+      </ion-col>
 
-    <ion-col size="2">
-
-    </ion-col>
-  </ion-row>
+      <ion-col size="2"> </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="background">
-	<div class="wrapper">
-		
-		<div class="logodiv" (click)="uploadPic()">
-			<!-- <img src="assets/imgs/icons/msglogo.svg"> -->
-			<img src="{{defaultProfile}}">
-		</div>
-		<div class="name">{{fname}} {{lname}}</div>
+  <div id="page" class="adjust-overflow">
+    <div class="wrapper">
+      <div class="logodiv" (click)="uploadPic()">
+        <!-- <img src="assets/imgs/icons/msglogo.svg"> -->
+        <img src="{{defaultProfile}}" />
+      </div>
+      <div class="name">{{fname}} {{lname}}</div>
 
-		<div class="fields">
-			<div class="inputdiv">
-				<div class="pinput">
-					<ion-input placeholder="Email" type="email" [(ngModel)]="email" readonly></ion-input>
-				</div>
-			</div>
-		</div>
+      <div class="fields">
+        <div class="inputdiv">
+          <div class="pinput">
+            <ion-input
+              placeholder="Email"
+              type="email"
+              [(ngModel)]="email"
+              readonly
+            ></ion-input>
+          </div>
+        </div>
+      </div>
 
-		<div class="fields">
-			<div class="inputdiv">
-				<div class="pinput">
-					<ion-input placeholder="Mobile number" type="tel" [(ngModel)]="mobilenumber"></ion-input>
-				</div>
-			</div>
-		</div>
-		<p *ngIf="mobilenumberError.status" class="error">
-	    {{mobilenumberError.message}}
-	  </p>
-		<div class="fields">
-			<div class="inputdiv">
-				<div class="pinput">
-					<ion-input placeholder="Street address" type="text" [(ngModel)]="address"></ion-input>
-				</div>
-			</div>
-		</div>
+      <div class="fields">
+        <div class="inputdiv">
+          <div class="pinput">
+            <ion-input
+              placeholder="Mobile number"
+              type="tel"
+              [(ngModel)]="mobilenumber"
+            ></ion-input>
+          </div>
+        </div>
+      </div>
+      <p *ngIf="mobilenumberError.status" class="error">
+        {{mobilenumberError.message}}
+      </p>
+      <div class="fields">
+        <div class="inputdiv">
+          <div class="pinput">
+            <ion-input
+              placeholder="Street address"
+              type="text"
+              [(ngModel)]="address"
+            ></ion-input>
+          </div>
+        </div>
+      </div>
 
-		<p *ngIf="addressError.status" class="error">
-	    {{addressError.message}}
-	  </p>
+      <p *ngIf="addressError.status" class="error">{{addressError.message}}</p>
 
-		<div class="fields" *ngIf="accountTypeId!=3">
-			<div class="inputdiv">
-				<div class="pinput">
-					<ion-input placeholder="Per hour USD rate" type="tel" [(ngModel)]="price"></ion-input>
-				</div>
-			</div>
-		</div>
+      <div class="fields" *ngIf="accountTypeId!=3">
+        <div class="inputdiv">
+          <div class="pinput">
+            <ion-input
+              placeholder="Per hour USD rate"
+              type="tel"
+              [(ngModel)]="price"
+            ></ion-input>
+          </div>
+        </div>
+      </div>
 
-		<div *ngIf="accountTypeId!=3">
-			<p *ngIf="priceError.status" class="error">
-		    {{priceError.message}}
-		  </p>
-		</div>
-		
+      <div *ngIf="accountTypeId!=3">
+        <p *ngIf="priceError.status" class="error">{{priceError.message}}</p>
+      </div>
 
-		<div class="fields">
-			<div class="inputdiv">
-				<div class="pinput">
-					<ion-textarea placeholder="About"  rows="6" cols="20" [(ngModel)]="about"></ion-textarea>
-				</div>
-			</div>
-		</div>
+      <div class="fields">
+        <div class="inputdiv">
+          <div class="pinput">
+            <ion-textarea
+              placeholder="About"
+              rows="6"
+              cols="20"
+              [(ngModel)]="about"
+            ></ion-textarea>
+          </div>
+        </div>
+      </div>
 
-		<p *ngIf="aboutError.status" class="error">
-	    {{aboutError.message}}
-	  </p>
+      <p *ngIf="aboutError.status" class="error">{{aboutError.message}}</p>
 
-		<div *ngIf="accountTypeId!=3">
-			<h6 style="font-size: 14px;font-weight: 600;">Back Account</h6>
+      <div *ngIf="accountTypeId!=3">
+        <h6 style="font-size: 14px; font-weight: 600">Back Account</h6>
 
-			<div class="fields">
-				<div class="inputdiv">
-					<div class="pinput">
-						<ion-input placeholder="Bank name" type="text" [(ngModel)]="bankname"></ion-input>
-					</div>
-				</div>
-			</div>
-			<p *ngIf="banknameError.status" class="error">
-		    {{banknameError.message}}
-		  </p>
+        <div class="fields">
+          <div class="inputdiv">
+            <div class="pinput">
+              <ion-input
+                placeholder="Bank name"
+                type="text"
+                [(ngModel)]="bankname"
+              ></ion-input>
+            </div>
+          </div>
+        </div>
+        <p *ngIf="banknameError.status" class="error">
+          {{banknameError.message}}
+        </p>
 
-			<div class="fields">
-				<div class="inputdiv">
-					<div class="pinput">
-						<ion-input placeholder="Account number" type="tel" [(ngModel)]="accountnumber"></ion-input>
-					</div>
-				</div>
-			</div>
+        <div class="fields">
+          <div class="inputdiv">
+            <div class="pinput">
+              <ion-input
+                placeholder="Account number"
+                type="tel"
+                [(ngModel)]="accountnumber"
+              ></ion-input>
+            </div>
+          </div>
+        </div>
 
-			<p *ngIf="accountnumberError.status" class="error">
-		    {{accountnumberError.message}}
-		  </p>
-		</div>
-	
+        <p *ngIf="accountnumberError.status" class="error">
+          {{accountnumberError.message}}
+        </p>
+      </div>
 
-		<div class="ionbutton" (click)="viewprofile()">
-			<ion-button class="ib">Done</ion-button>
-		</div>
-
-	</div>
-
+      <div class="ionbutton" (click)="viewprofile()">
+        <ion-button class="ib">Done</ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>

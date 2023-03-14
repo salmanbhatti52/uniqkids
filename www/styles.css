@@ -1279,3 +1279,7 @@ sub {
   --background-checked: #FE9805;
   --handle-background-checked: #FFFFFF;
 }
+.adjust-overflow {
+  height: 100%;
+  overflow: auto;
+}
