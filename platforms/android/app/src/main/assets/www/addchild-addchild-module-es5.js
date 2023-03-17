@@ -28,7 +28,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\" class=\"ion-no-border cheader\">\n\t\t  <ion-toolbar class=\"headBgGlobal\">\n        <ion-row>\n\t\t\t<ion-col class=\"backbtn\" size=\"2\">\n\t\t\t\t<div>\n\t\t\t\t  <img src=\"assets/imgs/icons/backbtn.svg\" class=\"backSvg\" (click)=\"goback()\">\n\t\t\t\t</div>\n\t\t\t  </ion-col>\n    \n          <ion-col class=\"titleclass\" size=\"8\">\n            <ion-text class=\"ctitle\">Add Child</ion-text>\n          </ion-col>\n    \n          <ion-col size=\"2\">\n    \n          </ion-col>\n        </ion-row>\n\t\t    <!-- <ion-buttons slot=\"start\" class=\"backbtn\">\n\t\t      <img src=\"assets/imgs/icons/backbtn.svg\" class=\"backSvg\" (click)=\"goback()\">\n\t\t  </ion-buttons>\n\t\t  <ion-title class=\"ctitle\">Add Child</ion-title> -->\n\t\t</ion-toolbar>\n</ion-header>\n\n<ion-content class=\"background\">\n\t<div class=\"wrapper\">\n\t\t<div class=\"topdiv\">\n\t\t\t<div class=\"logodiv\" (click)=\"uploadPic()\">\n\t\t\t\t<img src=\"{{defaultProfile}}\" *ngIf=\"defaultProfile!=''\">\n\t\t\t\t<img src=\"assets/imgs/profilelogo.png\" *ngIf=\"defaultProfile==''\">\n\t\t\t</div>\n\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Childname\" type=\"text\" [(ngModel)]=\"childname\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<p *ngIf=\"childnameError.status\" class=\"error\">\n    \t\t{{childnameError.message}}\n\t    </p>\n\t\t\t<div class=\"progressdiv\">\n\t\t\t\t<div class=\"htext\">Age</div>\n\t\t\t\t<!-- <img src=\"assets/imgs/progress.png\"> -->\n\t\t\t\t<ion-range min=\"0\" max=\"30\"\n\t\t\t\t [value]=\"age\" \n\t\t\t\t\t(ionChange)=\"setValue($event)\">\n\t\t\t \t></ion-range>\n\t\t\t\t<p style=\"margin: 0px;margin-left: 25%;font-size: 10px;font-weight: 500;\">{{age}} years</p>\n\t\t\t</div>\n\n\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Diagnosis\" type=\"text\" [(ngModel)]=\"diagnosis\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<p *ngIf=\"diagnosisError.status\" class=\"error\">\n    \t\t{{diagnosisError.message}}\n\t    </p>\n\t\t\t<div class=\"inputdiv\">\n\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t<ion-input placeholder=\"Allergies\" type=\"text\" [(ngModel)]=\"allergies\"></ion-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"para\">Write allergies separated by ,</div>\n\t\t</div>\n\t\t<p *ngIf=\"allergiesError.status\" class=\"error\">\n    \t\t{{allergiesError.message}}\n\t  </p>\n\t\t<!-- <div class=\"boxdiv\">\n\t\t\t<div class=\"one\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t\t<img src=\"assets/imgs/pharma.svg\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"text1\">Medications</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"box2\">\n\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t<img src=\"assets/imgs/nutrition.svg\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"text1\">Eating Time</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"one\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t\t<img src=\"assets/imgs/pharma.svg\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"text1\">Medications</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"box2\">\n\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t<img src=\"assets/imgs/nutrition.svg\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"text1\">Eating Time</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"one\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t\t<img src=\"assets/imgs/pharma.svg\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"text1\">Medications</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"box2\">\n\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t<img src=\"assets/imgs/nutrition.svg\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"text1\">Eating Time</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div> -->\n\n\t\t<div class=\"boxdiv\">\n\t\t\t<div class=\"left\" (click)=\"medication()\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<img src=\"assets/imgs/pharma.svg\">\n\t\t\t\t\t\t<div class=\"text1\">Medications</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"right\" (click)=\"eating()\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<img src=\"assets/imgs/nutrition-protein.svg\">\n\t\t\t\t\t\t<div class=\"text1\">Eating Time</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"clear\"></div>\n\t\t</div>\n\n\t\t<div class=\"boxdiv\">\n\t\t\t<div class=\"left\" (click)=\"snack()\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<img src=\"assets/imgs/snack.svg\">\n\t\t\t\t\t\t<div class=\"text1\">Snack Time</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"right\" (click)=\"likes()\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<img src=\"assets/imgs/likes.svg\">\n\t\t\t\t\t\t<div class=\"text1\">Likes</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"clear\"></div>\n\t\t</div>\n\n\t\t<div class=\"boxdiv\">\n\t\t\t<div class=\"left\"  (click)=\"dislikes()\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<img src=\"assets/imgs/dislikes.svg\">\n\t\t\t\t\t\t<div class=\"text1\">DisLikes</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"right\" (click)=\"favorite()\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<img src=\"assets/imgs/star.svg\">\n\t\t\t\t\t\t<div class=\"text1\">Favorite Activities</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"clear\"></div>\n\t\t</div>\n\n\t\t<div class=\"inputdiv1\">\n\t\t\t<div class=\"pinput1\">\n\t\t\t\t<ion-input placeholder=\"Emergency Contacts\" type=\"tel\" [(ngModel)]=\"contacts\"></ion-input>\n\t\t\t</div>\n\t\t\t<img src=\"assets/imgs/icons/plus.svg\" class=\"cimg\" (click)=\"add()\">\n\t\t</div>\n\n\t\t<!-- <p *ngIf=\"contactsError.status\" class=\"error\">\n    \t\t{{contactsError.message}}\n\t  </p> -->\n\t  <!-- <p *ngIf=\"error.status\" class=\"error\">\n      {{error.message}}\n    </p> -->\n\n\t\t<div class=\"contactdiv\" *ngFor=\"let arr of array\">\n\t\t\t<div class=\"icondiv\">\n\t\t\t\t<img src=\"assets/imgs/icons/call.png\">\n\t\t\t</div>\n\t\t\t<p>{{arr.phoneno}}</p>\n\t\t</div>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv1\">\n\t\t\t\t<div class=\"pinput1\">\n\t\t\t\t\t<ion-textarea placeholder=\"Pediatrician\"  rows=\"3\" cols=\"20\" [(ngModel)]=\"pediatrician\"></ion-textarea>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<p *ngIf=\"pediatricianError.status\" class=\"error\">\n    \t\t{{pediatricianError.message}}\n\t  </p>\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv1\">\n\t\t\t\t<div class=\"pinput1\">\n\t\t\t\t\t<ion-textarea placeholder=\"Insurance information\"  rows=\"3\" cols=\"20\" [(ngModel)]=\"insuranceinfo\"></ion-textarea>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"insuranceinfoError.status\" class=\"error\">\n    \t\t{{insuranceinfoError.message}}\n\t  </p>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv1\">\n\t\t\t\t<div class=\"pinput1\">\n\t\t\t\t\t<ion-textarea placeholder=\"Special instructions\"  rows=\"3\" cols=\"20\" [(ngModel)]=\"instructions\"></ion-textarea>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"instructionsError.status\" class=\"error\">\n    \t\t{{instructionsError.message}}\n\t  </p>\n\n\t\t<div class=\"fields\">\n\t\t\t<div class=\"inputdiv1\">\n\t\t\t\t<div class=\"pinput1\">\n\t\t\t\t\t<ion-textarea placeholder=\"Additional Notes\"  rows=\"3\" cols=\"20\" [(ngModel)]=\"notes\"></ion-textarea>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<p *ngIf=\"notesError.status\" class=\"error\">\n    \t\t{{notesError.message}}\n\t  </p>\n\n\t\t<div class=\"ionbutton\" (click)=\"gotoprofile()\">\n\t\t\t<ion-button class=\"ib\">Save</ion-button>\n\t\t</div>\n\n\t</div>\n\n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\" class=\"ion-no-border cheader\">\n  <ion-toolbar class=\"headBgGlobal\">\n    <ion-row>\n      <ion-col class=\"backbtn\" size=\"2\">\n        <div>\n          <img\n            src=\"assets/imgs/icons/backbtn.svg\"\n            class=\"backSvg\"\n            (click)=\"goback()\"\n          />\n        </div>\n      </ion-col>\n\n      <ion-col class=\"titleclass\" size=\"8\">\n        <ion-text class=\"ctitle\">Add Child</ion-text>\n      </ion-col>\n\n      <ion-col size=\"2\"> </ion-col>\n    </ion-row>\n    <!-- <ion-buttons slot=\"start\" class=\"backbtn\">\n\t\t      <img src=\"assets/imgs/icons/backbtn.svg\" class=\"backSvg\" (click)=\"goback()\">\n\t\t  </ion-buttons>\n\t\t  <ion-title class=\"ctitle\">Add Child</ion-title> -->\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"background\">\n  <div class=\"wrapper\">\n    <div id=\"pagechild\" class=\"adjust-overflow\">\n      <div class=\"topdiv\">\n        <div class=\"logodiv\" (click)=\"uploadPic()\">\n          <img src=\"{{defaultProfile}}\" *ngIf=\"defaultProfile!=''\" />\n          <img src=\"assets/imgs/profilelogo.png\" *ngIf=\"defaultProfile==''\" />\n        </div>\n\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Childname\"\n              type=\"text\"\n              [(ngModel)]=\"childname\"\n            ></ion-input>\n          </div>\n        </div>\n        <p *ngIf=\"childnameError.status\" class=\"error\">\n          {{childnameError.message}}\n        </p>\n        <div class=\"progressdiv\">\n          <div class=\"htext\">Age</div>\n          <!-- <img src=\"assets/imgs/progress.png\"> -->\n          <ion-range\n            min=\"0\"\n            max=\"30\"\n            [value]=\"age\"\n            (ionChange)=\"setValue($event)\"\n          >\n            ></ion-range\n          >\n          <p\n            style=\"\n              margin: 0px;\n              margin-left: 25%;\n              font-size: 10px;\n              font-weight: 500;\n            \"\n          >\n            {{age}} years\n          </p>\n        </div>\n\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Diagnosis\"\n              type=\"text\"\n              [(ngModel)]=\"diagnosis\"\n            ></ion-input>\n          </div>\n        </div>\n        <p *ngIf=\"diagnosisError.status\" class=\"error\">\n          {{diagnosisError.message}}\n        </p>\n        <div class=\"inputdiv\">\n          <div class=\"pinput\">\n            <ion-input\n              placeholder=\"Allergies\"\n              type=\"text\"\n              [(ngModel)]=\"allergies\"\n            ></ion-input>\n          </div>\n        </div>\n        <div class=\"para\">Write allergies separated by ,</div>\n      </div>\n      <p *ngIf=\"allergiesError.status\" class=\"error\">\n        {{allergiesError.message}}\n      </p>\n      <!-- <div class=\"boxdiv\">\n\t\t\t<div class=\"one\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t\t<img src=\"assets/imgs/pharma.svg\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"text1\">Medications</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"box2\">\n\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t<img src=\"assets/imgs/nutrition.svg\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"text1\">Eating Time</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"one\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t\t<img src=\"assets/imgs/pharma.svg\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"text1\">Medications</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"box2\">\n\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t<img src=\"assets/imgs/nutrition.svg\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"text1\">Eating Time</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"one\">\n\t\t\t\t<div class=\"box1\">\n\t\t\t\t\t<div class=\"innerbox\">\n\t\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t\t<img src=\"assets/imgs/pharma.svg\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"text1\">Medications</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"box2\">\n\t\t\t\t\t<div class=\"imgdiv\">\n\t\t\t\t\t\t<img src=\"assets/imgs/nutrition.svg\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"text1\">Eating Time</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div> -->\n\n      <div class=\"boxdiv\">\n        <div class=\"left\" (click)=\"medication()\">\n          <div class=\"box1\">\n            <div class=\"innerbox\">\n              <img src=\"assets/imgs/pharma.svg\" />\n              <div class=\"text1\">Medications</div>\n            </div>\n          </div>\n        </div>\n        <div class=\"right\" (click)=\"eating()\">\n          <div class=\"box1\">\n            <div class=\"innerbox\">\n              <img src=\"assets/imgs/nutrition-protein.svg\" />\n              <div class=\"text1\">Eating Time</div>\n            </div>\n          </div>\n        </div>\n        <div class=\"clear\"></div>\n      </div>\n\n      <div class=\"boxdiv\">\n        <div class=\"left\" (click)=\"snack()\">\n          <div class=\"box1\">\n            <div class=\"innerbox\">\n              <img src=\"assets/imgs/snack.svg\" />\n              <div class=\"text1\">Snack Time</div>\n            </div>\n          </div>\n        </div>\n        <div class=\"right\" (click)=\"likes()\">\n          <div class=\"box1\">\n            <div class=\"innerbox\">\n              <img src=\"assets/imgs/likes.svg\" />\n              <div class=\"text1\">Likes</div>\n            </div>\n          </div>\n        </div>\n        <div class=\"clear\"></div>\n      </div>\n\n      <div class=\"boxdiv\">\n        <div class=\"left\" (click)=\"dislikes()\">\n          <div class=\"box1\">\n            <div class=\"innerbox\">\n              <img src=\"assets/imgs/dislikes.svg\" />\n              <div class=\"text1\">DisLikes</div>\n            </div>\n          </div>\n        </div>\n        <div class=\"right\" (click)=\"favorite()\">\n          <div class=\"box1\">\n            <div class=\"innerbox\">\n              <img src=\"assets/imgs/star.svg\" />\n              <div class=\"text1\">Favorite Activities</div>\n            </div>\n          </div>\n        </div>\n        <div class=\"clear\"></div>\n      </div>\n\n      <div class=\"inputdiv1\">\n        <div class=\"pinput1\">\n          <ion-input\n            placeholder=\"Emergency Contacts\"\n            type=\"tel\"\n            [(ngModel)]=\"contacts\"\n          ></ion-input>\n        </div>\n        <img src=\"assets/imgs/icons/plus.svg\" class=\"cimg\" (click)=\"add()\" />\n      </div>\n\n      <!-- <p *ngIf=\"contactsError.status\" class=\"error\">\n    \t\t{{contactsError.message}}\n\t  </p> -->\n      <!-- <p *ngIf=\"error.status\" class=\"error\">\n      {{error.message}}\n    </p> -->\n\n      <div class=\"contactdiv\" *ngFor=\"let arr of array\">\n        <div class=\"icondiv\">\n          <img src=\"assets/imgs/icons/call.png\" />\n        </div>\n        <p>{{arr.phoneno}}</p>\n      </div>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv1\">\n          <div class=\"pinput1\">\n            <ion-textarea\n              placeholder=\"Pediatrician\"\n              rows=\"3\"\n              cols=\"20\"\n              [(ngModel)]=\"pediatrician\"\n            ></ion-textarea>\n          </div>\n        </div>\n      </div>\n      <p *ngIf=\"pediatricianError.status\" class=\"error\">\n        {{pediatricianError.message}}\n      </p>\n      <div class=\"fields\">\n        <div class=\"inputdiv1\">\n          <div class=\"pinput1\">\n            <ion-textarea\n              placeholder=\"Insurance information\"\n              rows=\"3\"\n              cols=\"20\"\n              [(ngModel)]=\"insuranceinfo\"\n            ></ion-textarea>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"insuranceinfoError.status\" class=\"error\">\n        {{insuranceinfoError.message}}\n      </p>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv1\">\n          <div class=\"pinput1\">\n            <ion-textarea\n              placeholder=\"Special instructions\"\n              rows=\"3\"\n              cols=\"20\"\n              [(ngModel)]=\"instructions\"\n            ></ion-textarea>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"instructionsError.status\" class=\"error\">\n        {{instructionsError.message}}\n      </p>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv1\">\n          <div class=\"pinput1\">\n            <ion-textarea\n              placeholder=\"Additional Notes\"\n              rows=\"3\"\n              cols=\"20\"\n              [(ngModel)]=\"notes\"\n            ></ion-textarea>\n          </div>\n        </div>\n      </div>\n\n      <p *ngIf=\"notesError.status\" class=\"error\">{{notesError.message}}</p>\n\n      <div class=\"ionbutton\" (click)=\"gotoprofile()\">\n        <ion-button class=\"ib\">Save</ion-button>\n      </div>\n    </div>\n  </div>\n</ion-content>\n";
       /***/
     },
 
@@ -446,7 +446,7 @@
       "tAfe");
 
       var AddchildPage = /*#__PURE__*/function () {
-        function AddchildPage(navCtrl, childService, camera, imagePicker, alertCtrl, loading, rest, route) {
+        function AddchildPage(navCtrl, childService, camera, imagePicker, alertCtrl, loading, rest, route, platform, cd) {
           _classCallCheck(this, AddchildPage);
 
           this.navCtrl = navCtrl;
@@ -457,19 +457,21 @@
           this.loading = loading;
           this.rest = rest;
           this.route = route;
+          this.platform = platform;
+          this.cd = cd;
           this.numberarray = [];
           this.array = [];
-          this.defaultProfile = '';
-          this.picUrl = '';
+          this.defaultProfile = "";
+          this.picUrl = "";
           this.age = 0;
-          this.contacts = '';
-          this.childname = '';
-          this.diagnosis = '';
-          this.allergies = '';
-          this.pediatrician = '';
-          this.insuranceinfo = '';
-          this.instructions = '';
-          this.notes = '';
+          this.contacts = "";
+          this.childname = "";
+          this.diagnosis = "";
+          this.allergies = "";
+          this.pediatrician = "";
+          this.insuranceinfo = "";
+          this.instructions = "";
+          this.notes = "";
           this.allergiesarr = [];
           this.medicationname = [];
           this.foodname = [];
@@ -536,9 +538,36 @@
         _createClass(AddchildPage, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            this.userid = localStorage.getItem('uid');
-            console.log('userid', this.userid);
-            console.log('allergies', this.allergies);
+            var _this2 = this;
+
+            this.platform.keyboardDidShow.subscribe(function (ev) {
+              var deviceHeight = window.innerHeight;
+              var keyboardHeight = ev.keyboardHeight;
+              var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+
+              deviceHeightAdjusted = deviceHeightAdjusted < 0 ? deviceHeightAdjusted * -1 : deviceHeightAdjusted; //only positive number
+
+              document.getElementById("pagechild").style.height = deviceHeightAdjusted - 90 + "px"; //set page height
+
+              document.getElementById("pagechild").setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+
+              console.log("keyboard show", ev);
+
+              _this2.cd.detectChanges();
+            });
+            this.platform.keyboardDidHide.subscribe(function (ev) {
+              setTimeout(function () {
+                document.getElementById("pagechild").style.height = 100 + "%"; //device  100% height
+              }, 100);
+
+              _this2.cd.detectChanges();
+
+              console.log("keyboard hide");
+            }); //keybpoardddddd --------------
+
+            this.userid = localStorage.getItem("uid");
+            console.log("userid", this.userid);
+            console.log("allergies", this.allergies);
             this.imagePicker.requestReadPermission(); // this.childid = this.childService.childid
             // console.log('child id',this.childid);
             // this.parentid = this.childService.parentid
@@ -548,63 +577,63 @@
           key: "ionViewDidEnter",
           value: function ionViewDidEnter() {
             this.medicationname = this.childService.medication;
-            console.log('medication', this.medicationname);
+            console.log("medication", this.medicationname);
             this.foodname = this.childService.food;
-            console.log('food', this.foodname);
+            console.log("food", this.foodname);
             this.snackname = this.childService.snack;
-            console.log('snack', this.snackname);
+            console.log("snack", this.snackname);
             this.nooflikes = this.childService.likes;
-            console.log('likes', this.nooflikes);
+            console.log("likes", this.nooflikes);
             this.noofdislkikes = this.childService.dislikes;
-            console.log('dislikes', this.noofdislkikes);
+            console.log("dislikes", this.noofdislkikes);
             this.nooffavorite = this.childService.favorite;
-            console.log('favorite', this.nooffavorite); // this.getdetails();
+            console.log("favorite", this.nooffavorite); // this.getdetails();
           }
         }, {
           key: "goback",
           value: function goback() {
-            this.navCtrl.navigateBack('/child');
+            this.navCtrl.navigateBack("/child");
           }
         }, {
           key: "medication",
           value: function medication() {
-            this.navCtrl.navigateForward('/medicationtime'); // this.childService.page='add';
+            this.navCtrl.navigateForward("/medicationtime"); // this.childService.page='add';
           }
         }, {
           key: "eating",
           value: function eating() {
-            this.navCtrl.navigateForward('/eatingtime'); // this.childService.page='add';
+            this.navCtrl.navigateForward("/eatingtime"); // this.childService.page='add';
           }
         }, {
           key: "snack",
           value: function snack() {
-            this.navCtrl.navigateForward('/snacktime'); // this.childService.page='add';
+            this.navCtrl.navigateForward("/snacktime"); // this.childService.page='add';
           }
         }, {
           key: "likes",
           value: function likes() {
-            this.navCtrl.navigateForward('/likes'); // this.childService.page='add';
+            this.navCtrl.navigateForward("/likes"); // this.childService.page='add';
           }
         }, {
           key: "dislikes",
           value: function dislikes() {
-            this.navCtrl.navigateForward('/dislikes'); // this.childService.page='add';
+            this.navCtrl.navigateForward("/dislikes"); // this.childService.page='add';
           }
         }, {
           key: "favorite",
           value: function favorite() {
-            this.navCtrl.navigateForward('/favoriteactivities'); // this.childService.page='add';
+            this.navCtrl.navigateForward("/favoriteactivities"); // this.childService.page='add';
           }
         }, {
           key: "setValue",
           value: function setValue($event) {
             this.age = parseInt($event.target.value, 10);
-            console.log('current value', this.age);
+            console.log("current value", this.age);
           }
         }, {
           key: "add",
           value: function add() {
-            var _this2 = this;
+            var _this3 = this;
 
             if (this.contacts) {
               var data = {
@@ -612,15 +641,15 @@
               };
               this.array.push(data);
               this.numberarray.push(this.contacts);
-              console.log('t', this.numberarray);
-              this.contacts = '';
+              console.log("t", this.numberarray);
+              this.contacts = "";
             } else if (!this.contacts) {
-              console.log('nullllllllll');
+              console.log("nullllllllll");
               this.error.status = true;
               this.error.message = "Atleast one number is required";
               setTimeout(function () {
-                _this2.error.status = false;
-                _this2.error.message = "";
+                _this3.error.status = false;
+                _this3.error.message = "";
               }, 2000);
             }
           }
@@ -628,7 +657,7 @@
           key: "uploadPic",
           value: function uploadPic() {
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
-              var _this3 = this;
+              var _this4 = this;
 
               var confirm;
               return _regeneratorRuntime().wrap(function _callee6$(_context6) {
@@ -636,20 +665,20 @@
                   case 0:
                     _context6.next = 2;
                     return this.alertCtrl.create({
-                      header: 'Choose from',
-                      cssClass: 'profileAlertBox',
+                      header: "Choose from",
+                      cssClass: "profileAlertBox",
                       buttons: [{
-                        text: 'Camera',
+                        text: "Camera",
                         handler: function handler() {
-                          _this3.camera.getPicture(_this3.cameraOptions).then(function (imageData) {
-                            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this3, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+                          _this4.camera.getPicture(_this4.cameraOptions).then(function (imageData) {
+                            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this4, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
                               return _regeneratorRuntime().wrap(function _callee5$(_context5) {
                                 while (1) switch (_context5.prev = _context5.next) {
                                   case 0:
-                                    console.log('imagedata is = ', imageData);
+                                    console.log("imagedata is = ", imageData);
                                     this.picUrl = imageData;
                                     this.defaultProfile = "data:image/png;base64,".concat(imageData);
-                                    console.log('defaultProfile is = ', this.defaultProfile);
+                                    console.log("defaultProfile is = ", this.defaultProfile);
 
                                   case 4:
                                   case "end":
@@ -660,35 +689,35 @@
                           }, function (err) {});
                         }
                       }, {
-                        text: 'Gallery',
+                        text: "Gallery",
                         handler: function handler() {
                           var options = {
                             maximumImagesCount: 1,
                             outputType: 1
                           };
 
-                          _this3.imagePicker.getPictures(options).then(function (results) {
-                            console.log('all selected', results);
+                          _this4.imagePicker.getPictures(options).then(function (results) {
+                            console.log("all selected", results);
 
                             if (results != null) {
                               for (var i = 0; i < results.length; i++) {
-                                console.log('each one' + results[i]);
+                                console.log("each one" + results[i]);
 
                                 if (results[i] != "") {
-                                  console.log('data:image/jpeg;base64,', results[i]);
-                                  _this3.picUrl = results[i];
-                                  _this3.defaultProfile = "data:image/png;base64,".concat(results[i]);
+                                  console.log("data:image/jpeg;base64,", results[i]);
+                                  _this4.picUrl = results[i];
+                                  _this4.defaultProfile = "data:image/png;base64,".concat(results[i]);
                                 }
                               }
                             }
                           }, function (err) {
-                            console.log('error', err);
+                            console.log("error", err);
                           }); // this.camera.getPicture(this.galleryOptions)
                           // .then(async imageData => {
                           //  console.log('imagedata is = ' , imageData);
                           //  this.picUrl=imageData;
                           //   this.defaultProfile = `data:image/png;base64,${imageData}`
-                          //   console.log('defaultProfile is = ' , this.defaultProfile); 
+                          //   console.log('defaultProfile is = ' , this.defaultProfile);
                           // }, err => {
                           // })
 
@@ -711,14 +740,14 @@
         }, {
           key: "gotoprofile",
           value: function gotoprofile() {
-            var _this4 = this;
+            var _this5 = this;
 
-            if (this.allergies == '') {
+            if (this.allergies == "") {
               this.allergiesarr;
             } else {
               this.allergies;
               this.allergiesarr = this.allergies.split(",");
-              console.log('allergies', this.allergiesarr);
+              console.log("allergies", this.allergiesarr);
             }
 
             if (this.childname && this.diagnosis && this.allergies.length > 0 && this.pediatrician && this.insuranceinfo && this.instructions && this.notes) {
@@ -741,33 +770,33 @@
                 specialInstructions: this.instructions,
                 additionalNotes: this.notes
               };
-              console.log('json stringfy', JSON.stringify(fields));
+              console.log("json stringfy", JSON.stringify(fields));
               this.loading.loadershow();
               this.rest.sendRequest("add_child", fields).subscribe(function (data) {
-                console.log('add child data::', data);
+                console.log("add child data::", data);
 
-                if (data.status = 'success') {
-                  _this4.loading.hideLoader();
+                if (data.status = "success") {
+                  _this5.loading.hideLoader();
 
-                  _this4.navCtrl.navigateForward('/child');
+                  _this5.navCtrl.navigateForward("/child");
 
-                  _this4.childService.medication = [];
-                  _this4.childService.food = [];
-                  _this4.childService.snack = [];
-                  _this4.childService.likes = [];
-                  _this4.childService.dislikes = [];
-                  _this4.childService.favorite = [];
+                  _this5.childService.medication = [];
+                  _this5.childService.food = [];
+                  _this5.childService.snack = [];
+                  _this5.childService.likes = [];
+                  _this5.childService.dislikes = [];
+                  _this5.childService.favorite = [];
                 }
 
-                if (data.status == 'error') {
-                  _this4.loading.hideLoader();
+                if (data.status == "error") {
+                  _this5.loading.hideLoader();
 
-                  console.log('add child data:', data.status);
-                  _this4.error.status = true;
-                  _this4.error.message = data.message;
+                  console.log("add child data:", data.status);
+                  _this5.error.status = true;
+                  _this5.error.message = data.message;
                   setTimeout(function () {
-                    _this4.error.status = false;
-                    _this4.error.message = "";
+                    _this5.error.status = false;
+                    _this5.error.message = "";
                   }, 3000);
                   return;
                 }
@@ -814,22 +843,22 @@
             }
 
             setTimeout(function () {
-              _this4.childnameError.status = false;
-              _this4.childnameError.message = "";
-              _this4.diagnosisError.status = false;
-              _this4.diagnosisError.message = "";
-              _this4.allergiesError.status = false;
-              _this4.allergiesError.message = "";
-              _this4.contactsError.status = false;
-              _this4.contactsError.message = "";
-              _this4.pediatricianError.status = false;
-              _this4.pediatricianError.message = "";
-              _this4.insuranceinfoError.status = false;
-              _this4.insuranceinfoError.message = "";
-              _this4.instructionsError.status = false;
-              _this4.instructionsError.message = "";
-              _this4.notesError.status = false;
-              _this4.notesError.message = "";
+              _this5.childnameError.status = false;
+              _this5.childnameError.message = "";
+              _this5.diagnosisError.status = false;
+              _this5.diagnosisError.message = "";
+              _this5.allergiesError.status = false;
+              _this5.allergiesError.message = "";
+              _this5.contactsError.status = false;
+              _this5.contactsError.message = "";
+              _this5.pediatricianError.status = false;
+              _this5.pediatricianError.message = "";
+              _this5.insuranceinfoError.status = false;
+              _this5.insuranceinfoError.message = "";
+              _this5.instructionsError.status = false;
+              _this5.instructionsError.message = "";
+              _this5.notesError.status = false;
+              _this5.notesError.message = "";
             }, 3000);
           }
         }]);
@@ -854,11 +883,15 @@
           type: _services_rest_service__WEBPACK_IMPORTED_MODULE_7__["RestService"]
         }, {
           type: _angular_router__WEBPACK_IMPORTED_MODULE_9__["ActivatedRoute"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]
         }];
       };
 
       AddchildPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: 'app-addchild',
+        selector: "app-addchild",
         template: _raw_loader_addchild_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_addchild_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], AddchildPage);

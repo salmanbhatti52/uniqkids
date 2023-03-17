@@ -1,5 +1,3 @@
-
-
 <!-- <ion-content class="background" fullscreen>
 	<ion-header class="ion-no-border">
     <ion-toolbar class="headBgGlobal">
@@ -76,85 +74,91 @@
 
 </ion-content> -->
 
-
 <ion-content class="background">
-
   <div class="topdiv">
-    <div class="header">
-      <div class="back-btn">
-        <img src="assets/imgs/icons/backbtn.svg" class="backSvg" (click)="goback()">
+    <div id="pageotp" class="adjust-overflow">
+      <div class="header">
+        <div class="back-btn">
+          <img
+            src="assets/imgs/icons/backbtn.svg"
+            class="backSvg"
+            (click)="goback()"
+          />
         </div>
-    </div>
-    <div style="text-align: center;margin-top: 4%;">
-      <img src="assets/imgs/ulogo.png">
-    </div>  
-  </div>
-  <div class="logindiv">
-    <div class="wrapper">
-    <div class="headtxt">Verification <br>Code</div>
-    <p style="margin-bottom: 10%;font-size:14px;color: #000000;opacity:0.8;">Please enter 4 digit code<br>forwarded to your email</p>
-
-    <div class="pinCode">
-        <div class="pins">
-          <ion-input
-            #Field1
-            (keyup)="next($event,Field2,Field1)"
-            class="pinInput"
-            maxlength="1"
-            size="1"
-            [(ngModel)]="pin1"
-            type="tel"
-            value=""
-          ></ion-input>
-          <ion-input
-            #Field2
-            (keyup)="next($event,Field3,Field1)"
-            class="pinInput"
-            maxlength="1"
-            size="1"
-            [(ngModel)]="pin2"
-            type="tel"
-            value=""
-          ></ion-input>
-          <ion-input
-            #Field3
-            (keyup)="next($event,Field4,Field2)"
-            class="pinInput"
-            maxlength="1"
-            size="1"
-            [(ngModel)]="pin3"
-            type="tel"
-            value=""
-          ></ion-input>
-          <ion-input
-            #Field4
-            (keyup)="next($event,Field4,Field3)"
-            class="pinInput"
-            maxlength="1"
-            size="1"
-            [(ngModel)]="pin4"
-            type="tel"
-            value=""
-          ></ion-input>
-        </div>
-        <p *ngIf="pinError.status" class="error">{{pinError.message}}</p>
-        <p *ngIf="Error.status" class="error">{{Error.message}}</p>
       </div>
-    
-
-    
-
-    <div class="ionbutton" (click)="resetpass()">
-      <ion-button class="ib">Next</ion-button>
+      <div style="text-align: center; margin-top: 4%">
+        <img src="assets/imgs/ulogo.png" />
+      </div>
     </div>
+    <div class="logindiv">
+      <div class="wrapper">
+        <div class="headtxt">Verification <br />Code</div>
+        <p
+          style="
+            margin-bottom: 10%;
+            font-size: 14px;
+            color: #000000;
+            opacity: 0.8;
+          "
+        >
+          Please enter 4 digit code<br />forwarded to your email
+        </p>
 
+        <div class="pinCode">
+          <div class="pins">
+            <ion-input
+              #Field1
+              (keyup)="next($event,Field2,Field1)"
+              class="pinInput"
+              maxlength="1"
+              size="1"
+              [(ngModel)]="pin1"
+              type="tel"
+              value=""
+            ></ion-input>
+            <ion-input
+              #Field2
+              (keyup)="next($event,Field3,Field1)"
+              class="pinInput"
+              maxlength="1"
+              size="1"
+              [(ngModel)]="pin2"
+              type="tel"
+              value=""
+            ></ion-input>
+            <ion-input
+              #Field3
+              (keyup)="next($event,Field4,Field2)"
+              class="pinInput"
+              maxlength="1"
+              size="1"
+              [(ngModel)]="pin3"
+              type="tel"
+              value=""
+            ></ion-input>
+            <ion-input
+              #Field4
+              (keyup)="next($event,Field4,Field3)"
+              class="pinInput"
+              maxlength="1"
+              size="1"
+              [(ngModel)]="pin4"
+              type="tel"
+              value=""
+            ></ion-input>
+          </div>
+          <p *ngIf="pinError.status" class="error">{{pinError.message}}</p>
+          <p *ngIf="Error.status" class="error">{{Error.message}}</p>
+        </div>
+
+        <div class="ionbutton" (click)="resetpass()">
+          <ion-button class="ib">Next</ion-button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  </div>
- 
- 
   <!-- <div class="footer">
     Already got an account? <span (click)="gotologin()">Login</span>
   </div> -->
 </ion-content>
-

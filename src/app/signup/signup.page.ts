@@ -76,6 +76,10 @@ export class SignupPage implements OnInit {
 
   ngOnInit() {
     this.platform.keyboardDidShow.subscribe((ev) => {
+      console.log("keyboard show", ev);
+      this.showfooter = false;
+      this.cd.detectChanges();
+      console.log("showFooter", this.showfooter);
       var deviceHeight = window.innerHeight;
       let keyboardHeight = ev.keyboardHeight;
       var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
@@ -84,7 +88,7 @@ export class SignupPage implements OnInit {
           ? deviceHeightAdjusted * -1
           : deviceHeightAdjusted; //only positive number
       document.getElementById("page").style.height =
-        deviceHeightAdjusted + "px"; //set page height
+        deviceHeightAdjusted - 90 + "px"; //set page height
       document
         .getElementById("page")
         .setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
@@ -94,8 +98,16 @@ export class SignupPage implements OnInit {
     });
 
     this.platform.keyboardDidHide.subscribe((ev) => {
+      if (this.showhide == true) {
+        this.showfooter = true;
+        this.showhide = false;
+        this.cd.detectChanges();
+        console.log("keyboard hide");
+      } else {
+        this.showhide = true;
+      }
       setTimeout(() => {
-        document.getElementById("page").style.height = 110 + "%"; //device  100% height
+        document.getElementById("page").style.height = 100 + "%"; //device  100% height
       }, 100);
 
       this.cd.detectChanges();
@@ -110,23 +122,23 @@ export class SignupPage implements OnInit {
     this.player_id = localStorage.getItem("deviceID");
     console.log("player_id", this.player_id);
 
-    this.platform.keyboardDidShow.subscribe((ev) => {
-      console.log("keyboard show", ev);
-      this.showfooter = false;
-      this.cd.detectChanges();
-      console.log("showFooter", this.showfooter);
-    });
+    // this.platform.keyboardDidShow.subscribe((ev) => {
+    //   console.log("keyboard show", ev);
+    //   this.showfooter = false;
+    //   this.cd.detectChanges();
+    //   console.log("showFooter", this.showfooter);
+    // });
 
-    this.platform.keyboardDidHide.subscribe((ev) => {
-      if (this.showhide == true) {
-        this.showfooter = true;
-        this.showhide = false;
-        this.cd.detectChanges();
-        console.log("keyboard hide");
-      } else {
-        this.showhide = true;
-      }
-    });
+    // this.platform.keyboardDidHide.subscribe((ev) => {
+    //   if (this.showhide == true) {
+    //     this.showfooter = true;
+    //     this.showhide = false;
+    //     this.cd.detectChanges();
+    //     console.log("keyboard hide");
+    //   } else {
+    //     this.showhide = true;
+    //   }
+    // });
     this.oneSignal.setLogLevel({ logLevel: 6, visualLevel: 2 });
     this.oneSignal.startInit(this.oneSignalAppId, this.sender_id);
     this.oneSignal.endInit();

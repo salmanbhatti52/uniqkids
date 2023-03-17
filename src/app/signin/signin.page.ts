@@ -61,7 +61,7 @@ export class SigninPage implements OnInit {
           ? deviceHeightAdjusted * -1
           : deviceHeightAdjusted; //only positive number
       document.getElementById("page").style.height =
-        deviceHeightAdjusted + "px"; //set page height
+        deviceHeightAdjusted + 380 + "px"; //set page height
       document
         .getElementById("page")
         .setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
@@ -72,7 +72,7 @@ export class SigninPage implements OnInit {
 
     this.platform.keyboardDidHide.subscribe((ev) => {
       setTimeout(() => {
-        document.getElementById("page").style.height = 110 + "%"; //device  100% height
+        document.getElementById("page").style.height = 100 + "%"; //device  100% height
       }, 100);
 
       this.cd.detectChanges();
@@ -145,6 +145,7 @@ export class SigninPage implements OnInit {
       const signInData = {
         userEmail: this.email,
         userPassword: this.password,
+        // oneSignalId: "1111",
         oneSignalId: this.player_id,
       };
       this.rest.sendRequest("login", signInData).subscribe(

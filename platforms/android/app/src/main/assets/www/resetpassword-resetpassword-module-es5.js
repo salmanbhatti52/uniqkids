@@ -28,7 +28,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "\n\n<ion-content class=\"background\">\n\n  <div class=\"topdiv\">\n    <div class=\"header\">\n      <div class=\"back-btn\">\n        <img src=\"assets/imgs/icons/backbtn.svg\" class=\"backSvg\" (click)=\"goback()\">\n        </div>\n    </div>\n    <div style=\"text-align: center;margin-top: 4%;\">\n      <img src=\"assets/imgs/ulogo.png\">\n    </div>  \n  </div>\n  <div class=\"logindiv\">\n    <div class=\"wrapper\">\n      \n      <div class=\"headtxt\">Forgot,<br>Password?</div>\n      <p style=\"margin-bottom: 10%;font-size:14px;color: #000000;opacity:0.8;\">Enter your email to get the recovery <br>OTP</p>\n\n\t\t\t<div class=\"fields\">\n\t\t\t\t<div class=\"emaildiv\">\n\t\t\t\t\t<div class=\"icondiv\">\n\t\t\t\t\t\t<img src=\"assets/imgs/icons/lock.svg\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t\t<ion-input placeholder=\"New Password\"\n\t\t\t\t\t\t type=\"{{showPass ? 'text':'password' }}\"\n\t\t\t\t\t\t  [(ngModel)]=\"newPassword\"\n\t\t\t\t\t\t></ion-input>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"icondiv\">\n\t\t\t\t\t\t<!-- <img src=\"assets/imgs/icons/eye.svg\"> -->\n\t\t\t\t\t\t<ion-icon name=\"eye\" class=\"eye\"  *ngIf=\"!showPass\" (click)=\"togglePass()\"></ion-icon>\n\t\t\t\t\t\t<ion-icon name=\"eye-off\" class=\"eye\"  *ngIf=\"showPass\" (click)=\"togglePass()\"></ion-icon>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<p *ngIf=\"newPassError.status\" class=\"error\">{{newPassError.message}}</p>\n\t\t\t\n\t\t\t<div class=\"fields\">\n\t\t\t\t<div class=\"emaildiv\">\n\t\t\t\t\t<div class=\"icondiv\">\n\t\t\t\t\t\t<img src=\"assets/imgs/icons/lock.svg\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"pinput\">\n\t\t\t\t\t\t<ion-input placeholder=\"Confirm Password\"\n\t\t\t\t\t\t type=\"{{showcPass ? 'text':'password' }}\"\n\t\t\t\t\t\t  [(ngModel)]=\"confirmPassword\"></ion-input>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"icondiv\">\n\t\t\t\t\t\t<!-- <img src=\"assets/imgs/icons/eye.svg\"> -->\n\t\t\t\t\t\t<ion-icon name=\"eye\" class=\"eye\"  *ngIf=\"!showcPass\" (click)=\"togglecPass()\"></ion-icon>\n\t\t\t\t\t\t<ion-icon name=\"eye-off\" class=\"eye\"  *ngIf=\"showcPass\" (click)=\"togglecPass()\"></ion-icon>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<p *ngIf=\"confPassError.status\" class=\"error\">{{confPassError.message}}</p>\n\n\t\t\t<p *ngIf=\"error.status\" class=\"error\">{{error.message}}</p>\n\n      <div class=\"ionbutton\" (click)=\"gotologin()\">\n\t\t\t\t<ion-button class=\"ib\">Reset</ion-button>\n\t\t\t</div>\n\n      \n    </div>\n\n  </div>\n \n \n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-content class=\"background\">\n  <div class=\"topdiv\">\n    <div id=\"pagereset\" class=\"adjust-overflow\"></div>\n    <div class=\"header\">\n      <div class=\"back-btn\">\n        <img\n          src=\"assets/imgs/icons/backbtn.svg\"\n          class=\"backSvg\"\n          (click)=\"goback()\"\n        />\n      </div>\n    </div>\n    <div style=\"text-align: center; margin-top: 4%\">\n      <img src=\"assets/imgs/ulogo.png\" />\n    </div>\n  </div>\n  <div class=\"logindiv\">\n    <div class=\"wrapper\">\n      \n        <div class=\"headtxt\">Forgot,<br />Password?</div>\n        <p\n          style=\"\n            margin-bottom: 10%;\n            font-size: 14px;\n            color: #000000;\n            opacity: 0.8;\n          \"\n        >\n          Enter your email to get the recovery <br />OTP\n        </p>\n\n        <div class=\"fields\">\n          <div class=\"emaildiv\">\n            <div class=\"icondiv\">\n              <img src=\"assets/imgs/icons/lock.svg\" />\n            </div>\n            <div class=\"pinput\">\n              <ion-input\n                placeholder=\"New Password\"\n                type=\"{{showPass ? 'text':'password' }}\"\n                [(ngModel)]=\"newPassword\"\n              ></ion-input>\n            </div>\n            <div class=\"icondiv\">\n              <!-- <img src=\"assets/imgs/icons/eye.svg\"> -->\n              <ion-icon\n                name=\"eye\"\n                class=\"eye\"\n                *ngIf=\"!showPass\"\n                (click)=\"togglePass()\"\n              ></ion-icon>\n              <ion-icon\n                name=\"eye-off\"\n                class=\"eye\"\n                *ngIf=\"showPass\"\n                (click)=\"togglePass()\"\n              ></ion-icon>\n            </div>\n          </div>\n        </div>\n        <p *ngIf=\"newPassError.status\" class=\"error\">\n          {{newPassError.message}}\n        </p>\n\n        <div class=\"fields\">\n          <div class=\"emaildiv\">\n            <div class=\"icondiv\">\n              <img src=\"assets/imgs/icons/lock.svg\" />\n            </div>\n            <div class=\"pinput\">\n              <ion-input\n                placeholder=\"Confirm Password\"\n                type=\"{{showcPass ? 'text':'password' }}\"\n                [(ngModel)]=\"confirmPassword\"\n              ></ion-input>\n            </div>\n            <div class=\"icondiv\">\n              <!-- <img src=\"assets/imgs/icons/eye.svg\"> -->\n              <ion-icon\n                name=\"eye\"\n                class=\"eye\"\n                *ngIf=\"!showcPass\"\n                (click)=\"togglecPass()\"\n              ></ion-icon>\n              <ion-icon\n                name=\"eye-off\"\n                class=\"eye\"\n                *ngIf=\"showcPass\"\n                (click)=\"togglecPass()\"\n              ></ion-icon>\n            </div>\n          </div>\n        </div>\n        <p *ngIf=\"confPassError.status\" class=\"error\">\n          {{confPassError.message}}\n        </p>\n\n        <p *ngIf=\"error.status\" class=\"error\">{{error.message}}</p>\n\n        <div class=\"ionbutton\" (click)=\"gotologin()\">\n          <ion-button class=\"ib\">Reset</ion-button>\n        </div>\n      </div>\n    </div>\n  </div>\n</ion-content>\n";
       /***/
     },
 
@@ -115,34 +115,63 @@
       "tyNb");
 
       var ResetpasswordPage = /*#__PURE__*/function () {
-        function ResetpasswordPage(navCtrl, menuCtrl, activatedRoute, rest) {
+        function ResetpasswordPage(navCtrl, menuCtrl, activatedRoute, rest, platform, cd) {
           _classCallCheck(this, ResetpasswordPage);
 
           this.navCtrl = navCtrl;
           this.menuCtrl = menuCtrl;
           this.activatedRoute = activatedRoute;
           this.rest = rest;
+          this.platform = platform;
+          this.cd = cd;
           this.showPass = false;
           this.showcPass = false;
           this.newPassError = {
             status: false,
-            message: ''
+            message: ""
           };
           this.confPassError = {
             status: false,
-            message: ''
+            message: ""
           };
           this.error = {
             status: false,
-            message: ''
+            message: ""
           };
-          this.recoveryEmail = this.activatedRoute.snapshot.params['email'];
-          console.log('recoveryEmail::', this.recoveryEmail);
+          this.recoveryEmail = this.activatedRoute.snapshot.params["email"];
+          console.log("recoveryEmail::", this.recoveryEmail);
         }
 
         _createClass(ResetpasswordPage, [{
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {
+            var _this = this;
+
+            this.platform.keyboardDidShow.subscribe(function (ev) {
+              var deviceHeight = window.innerHeight;
+              var keyboardHeight = ev.keyboardHeight;
+              var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+
+              deviceHeightAdjusted = deviceHeightAdjusted < 0 ? deviceHeightAdjusted * -1 : deviceHeightAdjusted; //only positive number
+
+              document.getElementById("pagereset").style.height = deviceHeightAdjusted + 380 + "px"; //set page height
+
+              document.getElementById("pagereset").setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+
+              console.log("keyboard show", ev);
+
+              _this.cd.detectChanges();
+            });
+            this.platform.keyboardDidHide.subscribe(function (ev) {
+              setTimeout(function () {
+                document.getElementById("pagereset").style.height = 100 + "%"; //device  100% height
+              }, 100);
+
+              _this.cd.detectChanges();
+
+              console.log("keyboard hide");
+            }); //keybpoardddddd --------------
+          }
         }, {
           key: "ionViewDidEnter",
           value: function ionViewDidEnter() {
@@ -157,7 +186,7 @@
         }, {
           key: "goback",
           value: function goback() {
-            this.navCtrl.navigateBack('/otp');
+            this.navCtrl.navigateBack("/otp");
           }
         }, {
           key: "togglePass",
@@ -172,23 +201,23 @@
         }, {
           key: "gotologin",
           value: function gotologin() {
-            var _this = this;
+            var _this2 = this;
 
             if (this.newPassword && this.confirmPassword) {
               if (this.newPassword === this.confirmPassword) {
-                this.rest.sendRequest('forgot_password', {
-                  requestType: 'reset_password',
+                this.rest.sendRequest("forgot_password", {
+                  requestType: "reset_password",
                   email: this.recoveryEmail,
                   userPassword: this.newPassword,
                   confirmPassword: this.confirmPassword
                 }).subscribe(function (data) {
-                  return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+                  return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this2, void 0, void 0, /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
                     return _regeneratorRuntime().wrap(function _callee$(_context) {
                       while (1) switch (_context.prev = _context.next) {
                         case 0:
-                          this.newPassword = '';
-                          this.confirmPassword = '';
-                          this.navCtrl.navigateForward('/signin');
+                          this.newPassword = "";
+                          this.confirmPassword = "";
+                          this.navCtrl.navigateForward("/signin");
 
                         case 3:
                         case "end":
@@ -197,38 +226,38 @@
                     }, _callee, this);
                   }));
                 }, function (err) {
-                  _this.error.status = true;
-                  _this.error.message = err.error.message;
+                  _this2.error.status = true;
+                  _this2.error.message = err.error.message;
                   setTimeout(function () {
-                    _this.error.status = false;
-                    _this.error.message = '';
+                    _this2.error.status = false;
+                    _this2.error.message = "";
                   }, 3000);
                 });
               } else {
                 this.confPassError.status = true;
-                this.confPassError.message = 'Password not match!';
+                this.confPassError.message = "Password not match!";
                 setTimeout(function () {
-                  _this.confPassError.status = false;
-                  _this.confPassError.message = '';
+                  _this2.confPassError.status = false;
+                  _this2.confPassError.message = "";
                 }, 3000);
               }
             }
 
             if (!this.newPassword) {
               this.newPassError.status = true;
-              this.newPassError.message = 'Password is required';
+              this.newPassError.message = "Password is required";
             }
 
             if (!this.confirmPassword) {
               this.confPassError.status = true;
-              this.confPassError.message = 'Confirm Password is required';
+              this.confPassError.message = "Confirm Password is required";
             }
 
             setTimeout(function () {
-              _this.newPassError.status = false;
-              _this.newPassError.message = '';
-              _this.confPassError.status = false;
-              _this.confPassError.message = '';
+              _this2.newPassError.status = false;
+              _this2.newPassError.message = "";
+              _this2.confPassError.status = false;
+              _this2.confPassError.message = "";
             }, 3000);
           }
         }]);
@@ -245,11 +274,15 @@
           type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"]
         }, {
           type: _services_rest_service__WEBPACK_IMPORTED_MODULE_5__["RestService"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]
         }];
       };
 
       ResetpasswordPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: 'app-resetpassword',
+        selector: "app-resetpassword",
         template: _raw_loader_resetpassword_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_resetpassword_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], ResetpasswordPage);

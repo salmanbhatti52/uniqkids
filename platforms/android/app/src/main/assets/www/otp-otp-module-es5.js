@@ -26,7 +26,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "\n\n<!-- <ion-content class=\"background\" fullscreen>\n\t<ion-header class=\"ion-no-border\">\n    <ion-toolbar class=\"headBgGlobal\">\n      <div class=\"header\">\n        <div class=\"back-btn\">\n         \t\n         \t\t<img src=\"assets/imgs/icons/backbtn.svg\" class=\"backSvg\" (click)=\"goback()\">\n        </div>\n      </div>\n    </ion-toolbar>\n  </ion-header>\n\n  <div class=\"wrapper\">\n  \t<div style=\"text-align: center;height: 150px;\">\n  \t\t<img src=\"assets/imgs/logo.png\" height=\"102px\">\n  \t</div>\n  \t<div class=\"headtxt\">Verification <br>Code</div>\n  \t<p style=\"margin-bottom: 10%;font-size:14px;color: #000000;opacity:0.8;\">Please enter 4 digit code<br>forwarded to your email</p>\n\n  \t<div class=\"pinCode\">\n        <div class=\"pins\">\n          <ion-input\n            #Field1\n            (keyup)=\"next($event,Field2,Field1)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n           \n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n          <ion-input\n            #Field2\n            (keyup)=\"next($event,Field3,Field1)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n           \n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n          <ion-input\n            #Field3\n            (keyup)=\"next($event,Field4,Field2)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n           \n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n          <ion-input\n            #Field4\n            (keyup)=\"next($event,Field4,Field3)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n           \n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n        </div>\n      </div>\n\t\t\n\n\t\t\n\n\t\t<div class=\"ionbutton\" (click)=\"resetpass()\">\n\t\t\t<ion-button class=\"ib\">Next</ion-button>\n\t\t</div>\n\n  </div>\n  \n\n</ion-content> -->\n\n\n<ion-content class=\"background\">\n\n  <div class=\"topdiv\">\n    <div class=\"header\">\n      <div class=\"back-btn\">\n        <img src=\"assets/imgs/icons/backbtn.svg\" class=\"backSvg\" (click)=\"goback()\">\n        </div>\n    </div>\n    <div style=\"text-align: center;margin-top: 4%;\">\n      <img src=\"assets/imgs/ulogo.png\">\n    </div>  \n  </div>\n  <div class=\"logindiv\">\n    <div class=\"wrapper\">\n    <div class=\"headtxt\">Verification <br>Code</div>\n    <p style=\"margin-bottom: 10%;font-size:14px;color: #000000;opacity:0.8;\">Please enter 4 digit code<br>forwarded to your email</p>\n\n    <div class=\"pinCode\">\n        <div class=\"pins\">\n          <ion-input\n            #Field1\n            (keyup)=\"next($event,Field2,Field1)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n            [(ngModel)]=\"pin1\"\n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n          <ion-input\n            #Field2\n            (keyup)=\"next($event,Field3,Field1)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n            [(ngModel)]=\"pin2\"\n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n          <ion-input\n            #Field3\n            (keyup)=\"next($event,Field4,Field2)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n            [(ngModel)]=\"pin3\"\n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n          <ion-input\n            #Field4\n            (keyup)=\"next($event,Field4,Field3)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n            [(ngModel)]=\"pin4\"\n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n        </div>\n        <p *ngIf=\"pinError.status\" class=\"error\">{{pinError.message}}</p>\n        <p *ngIf=\"Error.status\" class=\"error\">{{Error.message}}</p>\n      </div>\n    \n\n    \n\n    <div class=\"ionbutton\" (click)=\"resetpass()\">\n      <ion-button class=\"ib\">Next</ion-button>\n    </div>\n\n  </div>\n\n  </div>\n \n \n  <!-- <div class=\"footer\">\n    Already got an account? <span (click)=\"gotologin()\">Login</span>\n  </div> -->\n</ion-content>\n\n";
+      __webpack_exports__["default"] = "<!-- <ion-content class=\"background\" fullscreen>\n\t<ion-header class=\"ion-no-border\">\n    <ion-toolbar class=\"headBgGlobal\">\n      <div class=\"header\">\n        <div class=\"back-btn\">\n         \t\n         \t\t<img src=\"assets/imgs/icons/backbtn.svg\" class=\"backSvg\" (click)=\"goback()\">\n        </div>\n      </div>\n    </ion-toolbar>\n  </ion-header>\n\n  <div class=\"wrapper\">\n  \t<div style=\"text-align: center;height: 150px;\">\n  \t\t<img src=\"assets/imgs/logo.png\" height=\"102px\">\n  \t</div>\n  \t<div class=\"headtxt\">Verification <br>Code</div>\n  \t<p style=\"margin-bottom: 10%;font-size:14px;color: #000000;opacity:0.8;\">Please enter 4 digit code<br>forwarded to your email</p>\n\n  \t<div class=\"pinCode\">\n        <div class=\"pins\">\n          <ion-input\n            #Field1\n            (keyup)=\"next($event,Field2,Field1)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n           \n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n          <ion-input\n            #Field2\n            (keyup)=\"next($event,Field3,Field1)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n           \n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n          <ion-input\n            #Field3\n            (keyup)=\"next($event,Field4,Field2)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n           \n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n          <ion-input\n            #Field4\n            (keyup)=\"next($event,Field4,Field3)\"\n            class=\"pinInput\"\n            maxlength=\"1\"\n            size=\"1\"\n           \n            type=\"tel\"\n            value=\"\"\n          ></ion-input>\n        </div>\n      </div>\n\t\t\n\n\t\t\n\n\t\t<div class=\"ionbutton\" (click)=\"resetpass()\">\n\t\t\t<ion-button class=\"ib\">Next</ion-button>\n\t\t</div>\n\n  </div>\n  \n\n</ion-content> -->\n\n<ion-content class=\"background\">\n  <div class=\"topdiv\">\n    <div id=\"pageotp\" class=\"adjust-overflow\">\n      <div class=\"header\">\n        <div class=\"back-btn\">\n          <img\n            src=\"assets/imgs/icons/backbtn.svg\"\n            class=\"backSvg\"\n            (click)=\"goback()\"\n          />\n        </div>\n      </div>\n      <div style=\"text-align: center; margin-top: 4%\">\n        <img src=\"assets/imgs/ulogo.png\" />\n      </div>\n    </div>\n    <div class=\"logindiv\">\n      <div class=\"wrapper\">\n        <div class=\"headtxt\">Verification <br />Code</div>\n        <p\n          style=\"\n            margin-bottom: 10%;\n            font-size: 14px;\n            color: #000000;\n            opacity: 0.8;\n          \"\n        >\n          Please enter 4 digit code<br />forwarded to your email\n        </p>\n\n        <div class=\"pinCode\">\n          <div class=\"pins\">\n            <ion-input\n              #Field1\n              (keyup)=\"next($event,Field2,Field1)\"\n              class=\"pinInput\"\n              maxlength=\"1\"\n              size=\"1\"\n              [(ngModel)]=\"pin1\"\n              type=\"tel\"\n              value=\"\"\n            ></ion-input>\n            <ion-input\n              #Field2\n              (keyup)=\"next($event,Field3,Field1)\"\n              class=\"pinInput\"\n              maxlength=\"1\"\n              size=\"1\"\n              [(ngModel)]=\"pin2\"\n              type=\"tel\"\n              value=\"\"\n            ></ion-input>\n            <ion-input\n              #Field3\n              (keyup)=\"next($event,Field4,Field2)\"\n              class=\"pinInput\"\n              maxlength=\"1\"\n              size=\"1\"\n              [(ngModel)]=\"pin3\"\n              type=\"tel\"\n              value=\"\"\n            ></ion-input>\n            <ion-input\n              #Field4\n              (keyup)=\"next($event,Field4,Field3)\"\n              class=\"pinInput\"\n              maxlength=\"1\"\n              size=\"1\"\n              [(ngModel)]=\"pin4\"\n              type=\"tel\"\n              value=\"\"\n            ></ion-input>\n          </div>\n          <p *ngIf=\"pinError.status\" class=\"error\">{{pinError.message}}</p>\n          <p *ngIf=\"Error.status\" class=\"error\">{{Error.message}}</p>\n        </div>\n\n        <div class=\"ionbutton\" (click)=\"resetpass()\">\n          <ion-button class=\"ib\">Next</ion-button>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- <div class=\"footer\">\n    Already got an account? <span (click)=\"gotologin()\">Login</span>\n  </div> -->\n</ion-content>\n";
       /***/
     },
 
@@ -246,28 +246,57 @@
       "tyNb");
 
       var OtpPage = /*#__PURE__*/function () {
-        function OtpPage(navCtrl, menuCtrl, activatedRoute, rest) {
+        function OtpPage(navCtrl, menuCtrl, activatedRoute, rest, platform, cd) {
           _classCallCheck(this, OtpPage);
 
           this.navCtrl = navCtrl;
           this.menuCtrl = menuCtrl;
           this.activatedRoute = activatedRoute;
           this.rest = rest;
+          this.platform = platform;
+          this.cd = cd;
           this.pinError = {
             status: false,
-            message: ''
+            message: ""
           };
           this.Error = {
             status: false,
-            message: ''
+            message: ""
           };
-          this.recoveryEmail = this.activatedRoute.snapshot.params['email'];
-          console.log('recoveryEmail::', this.recoveryEmail);
+          this.recoveryEmail = this.activatedRoute.snapshot.params["email"];
+          console.log("recoveryEmail::", this.recoveryEmail);
         }
 
         _createClass(OtpPage, [{
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {
+            var _this = this;
+
+            this.platform.keyboardDidShow.subscribe(function (ev) {
+              var deviceHeight = window.innerHeight;
+              var keyboardHeight = ev.keyboardHeight;
+              var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+
+              deviceHeightAdjusted = deviceHeightAdjusted < 0 ? deviceHeightAdjusted * -1 : deviceHeightAdjusted; //only positive number
+
+              document.getElementById("pageotp").style.height = deviceHeightAdjusted + 380 + "px"; //set page height
+
+              document.getElementById("pageotp").setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+
+              console.log("keyboard show", ev);
+
+              _this.cd.detectChanges();
+            });
+            this.platform.keyboardDidHide.subscribe(function (ev) {
+              setTimeout(function () {
+                document.getElementById("pageotp").style.height = 100 + "%"; //device  100% height
+              }, 100);
+
+              _this.cd.detectChanges();
+
+              console.log("keyboard hide");
+            }); //keybpoardddddd --------------
+          }
         }, {
           key: "ionViewDidEnter",
           value: function ionViewDidEnter() {
@@ -294,43 +323,43 @@
         }, {
           key: "goback",
           value: function goback() {
-            this.navCtrl.navigateBack('/forgotpassword');
+            this.navCtrl.navigateBack("/forgotpassword");
           }
         }, {
           key: "resetpass",
           value: function resetpass() {
-            var _this = this;
+            var _this2 = this;
 
             if (this.pin1 && this.pin2 && this.pin3 && this.pin4) {
               console.log(this.pin1 + this.pin2 + this.pin3 + this.pin4);
 
               if (!this.isANumber(this.pin1) || !this.isANumber(this.pin2) || !this.isANumber(this.pin3) || !this.isANumber(this.pin4)) {
                 this.pinError.status = true;
-                this.pinError.message = 'Pin should contain only numbers!';
+                this.pinError.message = "Pin should contain only numbers!";
                 setTimeout(function () {
-                  _this.pinError.status = false;
-                  _this.pinError.message = '';
+                  _this2.pinError.status = false;
+                  _this2.pinError.message = "";
                 }, 3000);
               } else {
-                this.rest.sendRequest('forgot_password', {
-                  requestType: 'match_code',
+                this.rest.sendRequest("forgot_password", {
+                  requestType: "match_code",
                   email: this.recoveryEmail,
                   code: this.pin1 + this.pin2 + this.pin3 + this.pin4
                 }).subscribe(function (data) {
-                  _this.pin1 = '';
-                  _this.pin2 = '';
-                  _this.pin3 = '';
-                  _this.pin4 = '';
+                  _this2.pin1 = "";
+                  _this2.pin2 = "";
+                  _this2.pin3 = "";
+                  _this2.pin4 = "";
 
-                  _this.navCtrl.navigateForward(['/resetpassword', {
-                    email: _this.recoveryEmail
+                  _this2.navCtrl.navigateForward(["/resetpassword", {
+                    email: _this2.recoveryEmail
                   }]);
                 }, function (err) {
-                  _this.pinError.status = true;
-                  _this.pinError.message = err.error.message;
+                  _this2.pinError.status = true;
+                  _this2.pinError.message = err.error.message;
                   setTimeout(function () {
-                    _this.pinError.status = false;
-                    _this.pinError.message = '';
+                    _this2.pinError.status = false;
+                    _this2.pinError.message = "";
                   }, 3000);
                 });
               }
@@ -338,12 +367,12 @@
 
             if (!this.pin1 && !this.pin2 && !this.pin3 && !this.pin4) {
               this.Error.status = true;
-              this.Error.message = 'Pin is required';
+              this.Error.message = "Pin is required";
             }
 
             setTimeout(function () {
-              _this.Error.status = false;
-              _this.Error.message = '';
+              _this2.Error.status = false;
+              _this2.Error.message = "";
             }, 3000);
           }
         }, {
@@ -366,11 +395,15 @@
           type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"]
         }, {
           type: _services_rest_service__WEBPACK_IMPORTED_MODULE_5__["RestService"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]
         }];
       };
 
       OtpPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: 'app-otp',
+        selector: "app-otp",
         template: _raw_loader_otp_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_otp_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], OtpPage);

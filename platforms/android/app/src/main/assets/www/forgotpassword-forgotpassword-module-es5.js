@@ -28,7 +28,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "\n<ion-content class=\"background\">\n\n  <div class=\"topdiv\">\n    <div class=\"header\">\n      <div class=\"back-btn\">\n        <img src=\"assets/imgs/icons/backbtn.svg\" class=\"backSvg\" (click)=\"goback()\">\n        </div>\n    </div>\n    <div style=\"text-align: center;margin-top: 4%;\">\n      <img src=\"assets/imgs/ulogo.png\">\n    </div>  \n  </div>\n  <div class=\"logindiv\">\n    <div class=\"wrapper\">\n      \n      <div class=\"headtxt\">Forgot,<br>Password?</div>\n      <p style=\"margin-bottom: 10%;font-size:14px;color: #000000;opacity:0.8;\">Enter your email to get the recovery <br>OTP</p>\n\n      <div class=\"fields\">\n        <div class=\"inputdiv\">\n          <div class=\"icondiv\">\n            <img src=\"assets/imgs/icons/email.svg\">\n          </div>\n          <div class=\"pinput\">\n            <ion-input placeholder=\"Email\" type=\"email\" [(ngModel)]=\"email\"></ion-input>\n          </div>\n        </div>\n      </div>\n      <p *ngIf=\"emailError.status\" class=\"error\">\n        {{emailError.message}}\n      </p>\n       <p *ngIf=\"error.status\" class=\"error\">\n        {{error.message}}\n      </p>\n\n      <div class=\"ionbutton\" (click)=\"gotootp()\">\n        <ion-button class=\"ib\">\n         <span class=\"btns\">log in</span> \n        </ion-button>\n      </div>\n\n      \n    </div>\n\n  </div>\n \n \n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-content class=\"background\">\n  <div id=\"mypage\" class=\"adjust-overflow\">\n    <div class=\"topdiv\">\n      <div class=\"header\">\n        <div class=\"back-btn\">\n          <img\n            src=\"assets/imgs/icons/backbtn.svg\"\n            class=\"backSvg\"\n            (click)=\"goback()\"\n          />\n        </div>\n      </div>\n      <div style=\"text-align: center; margin-top: 4%\">\n        <img src=\"assets/imgs/ulogo.png\" />\n      </div>\n    </div>\n    <div class=\"logindiv\">\n      <div class=\"wrapper\">\n        <div class=\"headtxt\">Forgot,<br />Password?</div>\n        <p\n          style=\"\n            margin-bottom: 10%;\n            font-size: 14px;\n            color: #000000;\n            opacity: 0.8;\n          \"\n        >\n          Enter your email to get the recovery <br />OTP\n        </p>\n\n        <div class=\"fields\">\n          <div class=\"inputdiv\">\n            <div class=\"icondiv\">\n              <img src=\"assets/imgs/icons/email.svg\" />\n            </div>\n            <div class=\"pinput\">\n              <ion-input\n                placeholder=\"Email\"\n                type=\"email\"\n                [(ngModel)]=\"email\"\n              ></ion-input>\n            </div>\n          </div>\n        </div>\n        <p *ngIf=\"emailError.status\" class=\"error\">{{emailError.message}}</p>\n        <p *ngIf=\"error.status\" class=\"error\">{{error.message}}</p>\n\n        <div class=\"ionbutton\" (click)=\"gotootp()\">\n          <ion-button class=\"ib\">\n            <span class=\"btns\">get opt</span>\n          </ion-button>\n        </div>\n      </div>\n    </div>\n  </div>\n</ion-content>\n";
       /***/
     },
 
@@ -362,14 +362,16 @@
       "7ch9");
 
       var ForgotpasswordPage = /*#__PURE__*/function () {
-        function ForgotpasswordPage(navCtrl, menuCtrl, loading, rest) {
+        function ForgotpasswordPage(navCtrl, menuCtrl, loading, rest, platform, cd) {
           _classCallCheck(this, ForgotpasswordPage);
 
           this.navCtrl = navCtrl;
           this.menuCtrl = menuCtrl;
           this.loading = loading;
           this.rest = rest;
-          this.email = '';
+          this.platform = platform;
+          this.cd = cd;
+          this.email = "";
           this.emailError = {
             status: false,
             message: ""
@@ -383,8 +385,35 @@
         _createClass(ForgotpasswordPage, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this2 = this;
+
+            this.platform.keyboardDidShow.subscribe(function (ev) {
+              var deviceHeight = window.innerHeight;
+              var keyboardHeight = ev.keyboardHeight;
+              var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+
+              deviceHeightAdjusted = deviceHeightAdjusted < 0 ? deviceHeightAdjusted * -1 : deviceHeightAdjusted; //only positive number
+
+              document.getElementById("mypage").style.height = deviceHeightAdjusted + 380 + "px"; //set page height
+
+              document.getElementById("mypage").setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+
+              console.log("keyboard show", ev);
+
+              _this2.cd.detectChanges();
+            });
+            this.platform.keyboardDidHide.subscribe(function (ev) {
+              setTimeout(function () {
+                document.getElementById("mypage").style.height = 100 + "%"; //device  100% height
+              }, 100);
+
+              _this2.cd.detectChanges();
+
+              console.log("keyboard hide");
+            }); //keybpoardddddd --------------
+
             this.userType = localStorage.getItem("userType");
-            console.log('userType', this.userType);
+            console.log("userType", this.userType);
           }
         }, {
           key: "ionViewDidEnter",
@@ -400,20 +429,20 @@
         }, {
           key: "goback",
           value: function goback() {
-            this.navCtrl.navigateForward('/signin');
+            this.navCtrl.navigateForward("/signin");
           }
         }, {
           key: "gotootp",
           value: function gotootp() {
-            var _this2 = this;
+            var _this3 = this;
 
             if (this.email) {
               if (!this.validateEmail(this.email)) {
                 this.emailError.status = true;
                 this.emailError.message = "Invalid Email address.";
                 setTimeout(function () {
-                  _this2.emailError.status = false;
-                  _this2.emailError.message = "";
+                  _this3.emailError.status = false;
+                  _this3.emailError.message = "";
                 }, 3000);
                 return;
               }
@@ -423,23 +452,23 @@
                 email: this.email
               };
               this.rest.sendRequest("forgot_password", Data).subscribe(function (data) {
-                console.log('forgot_password data', data);
+                console.log("forgot_password data", data);
 
-                if (data.status == 'Success') {
-                  _this2.navCtrl.navigateForward(['/otp', {
-                    email: _this2.email
+                if (data.status == "Success") {
+                  _this3.navCtrl.navigateForward(["/otp", {
+                    email: _this3.email
                   }]);
                 }
 
-                if (data.status == 'error') {
-                  _this2.loading.hideLoader(); // console.log('signup request data:',data.status);
+                if (data.status == "error") {
+                  _this3.loading.hideLoader(); // console.log('signup request data:',data.status);
 
 
-                  _this2.error.status = true;
-                  _this2.error.message = data.message;
+                  _this3.error.status = true;
+                  _this3.error.message = data.message;
                   setTimeout(function () {
-                    _this2.error.status = false;
-                    _this2.error.message = "";
+                    _this3.error.status = false;
+                    _this3.error.message = "";
                   }, 3000);
                   return;
                 }
@@ -452,8 +481,8 @@
             }
 
             setTimeout(function () {
-              _this2.emailError.status = false;
-              _this2.emailError.message = "";
+              _this3.emailError.status = false;
+              _this3.emailError.message = "";
             }, 3000);
           }
         }, {
@@ -476,11 +505,15 @@
           type: _services_loading_service__WEBPACK_IMPORTED_MODULE_6__["LoadingService"]
         }, {
           type: _services_rest_service__WEBPACK_IMPORTED_MODULE_5__["RestService"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]
         }];
       };
 
       ForgotpasswordPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: 'app-forgotpassword',
+        selector: "app-forgotpassword",
         template: _raw_loader_forgotpassword_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_forgotpassword_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], ForgotpasswordPage);

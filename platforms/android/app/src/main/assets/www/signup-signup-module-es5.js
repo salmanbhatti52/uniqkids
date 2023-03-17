@@ -497,41 +497,25 @@
             var _this2 = this;
 
             this.platform.keyboardDidShow.subscribe(function (ev) {
-              var deviceHeight = window.innerHeight;
-              var keyboardHeight = ev.keyboardHeight;
-              var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
-
-              deviceHeightAdjusted = deviceHeightAdjusted < 0 ? deviceHeightAdjusted * -1 : deviceHeightAdjusted; //only positive number
-
-              document.getElementById("page").style.height = deviceHeightAdjusted + "px"; //set page height
-
-              document.getElementById("page").setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
-
-              console.log("keyboard show", ev);
-
-              _this2.cd.detectChanges();
-            });
-            this.platform.keyboardDidHide.subscribe(function (ev) {
-              setTimeout(function () {
-                document.getElementById("page").style.height = 110 + "%"; //device  100% height
-              }, 100);
-
-              _this2.cd.detectChanges();
-
-              console.log("keyboard hide");
-            }); //keybpoardddddd --------------
-
-            this.userType = localStorage.getItem("userType");
-            console.log("userType", this.userType);
-            this.player_id = localStorage.getItem("deviceID");
-            console.log("player_id", this.player_id);
-            this.platform.keyboardDidShow.subscribe(function (ev) {
               console.log("keyboard show", ev);
               _this2.showfooter = false;
 
               _this2.cd.detectChanges();
 
               console.log("showFooter", _this2.showfooter);
+              var deviceHeight = window.innerHeight;
+              var keyboardHeight = ev.keyboardHeight;
+              var deviceHeightAdjusted = deviceHeight - keyboardHeight; //device height adjusted
+
+              deviceHeightAdjusted = deviceHeightAdjusted < 0 ? deviceHeightAdjusted * -1 : deviceHeightAdjusted; //only positive number
+
+              document.getElementById("page").style.height = deviceHeightAdjusted - 90 + "px"; //set page height
+
+              document.getElementById("page").setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
+
+              console.log("keyboard show", ev);
+
+              _this2.cd.detectChanges();
             });
             this.platform.keyboardDidHide.subscribe(function (ev) {
               if (_this2.showhide == true) {
@@ -544,7 +528,36 @@
               } else {
                 _this2.showhide = true;
               }
-            });
+
+              setTimeout(function () {
+                document.getElementById("page").style.height = 100 + "%"; //device  100% height
+              }, 100);
+
+              _this2.cd.detectChanges();
+
+              console.log("keyboard hide");
+            }); //keybpoardddddd --------------
+
+            this.userType = localStorage.getItem("userType");
+            console.log("userType", this.userType);
+            this.player_id = localStorage.getItem("deviceID");
+            console.log("player_id", this.player_id); // this.platform.keyboardDidShow.subscribe((ev) => {
+            //   console.log("keyboard show", ev);
+            //   this.showfooter = false;
+            //   this.cd.detectChanges();
+            //   console.log("showFooter", this.showfooter);
+            // });
+            // this.platform.keyboardDidHide.subscribe((ev) => {
+            //   if (this.showhide == true) {
+            //     this.showfooter = true;
+            //     this.showhide = false;
+            //     this.cd.detectChanges();
+            //     console.log("keyboard hide");
+            //   } else {
+            //     this.showhide = true;
+            //   }
+            // });
+
             this.oneSignal.setLogLevel({
               logLevel: 6,
               visualLevel: 2
