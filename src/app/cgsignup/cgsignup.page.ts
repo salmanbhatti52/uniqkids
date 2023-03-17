@@ -97,10 +97,10 @@ export class CgsignupPage implements OnInit {
         deviceHeightAdjusted < 0
           ? deviceHeightAdjusted * -1
           : deviceHeightAdjusted; //only positive number
-      document.getElementById("page").style.height =
+      document.getElementById("cgssspage").style.height =
         deviceHeightAdjusted - 90 + "px"; //set page height
       document
-        .getElementById("page")
+        .getElementById("cgssspage")
         .setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
       console.log("keyboard show", ev);
 
@@ -117,7 +117,7 @@ export class CgsignupPage implements OnInit {
         this.showhide = true;
       }
       setTimeout(() => {
-        document.getElementById("page").style.height = 100 + "%"; //device  100% height
+        document.getElementById("cgssspage").style.height = 100 + "%"; //device  100% height
       }, 100);
 
       this.cd.detectChanges();

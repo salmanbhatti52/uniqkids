@@ -92,10 +92,10 @@ export class ParentprofilePage implements OnInit {
         deviceHeightAdjusted < 0
           ? deviceHeightAdjusted * -1
           : deviceHeightAdjusted; //only positive number
-      document.getElementById("page").style.height =
-        deviceHeightAdjusted + "px"; //set page height
+      document.getElementById("parentpage").style.height =
+        deviceHeightAdjusted - 92 + "px"; //set page height
       document
-        .getElementById("page")
+        .getElementById("parentpage")
         .setAttribute("keyBoardHeight", keyboardHeight); //save keyboard height
       console.log("keyboard show", ev);
 
@@ -104,7 +104,7 @@ export class ParentprofilePage implements OnInit {
 
     this.platform.keyboardDidHide.subscribe((ev) => {
       setTimeout(() => {
-        document.getElementById("page").style.height = 110 + "%"; //device  100% height
+        document.getElementById("parentpage").style.height = 100 + "%"; //device  100% height
       }, 100);
 
       this.cd.detectChanges();
