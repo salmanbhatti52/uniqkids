@@ -30,26 +30,21 @@
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "com.uniqkidz.app"
     },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.uniqkidz.app"
-    },
     "cordova-plugin-stripe": {
       "PACKAGE_NAME": "com.uniqkidz.app"
     },
-    "cordova-plugin-telerik-imagepicker": {
-      "ANDROID_SUPPORT_V7_VERSION": "27.+",
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.uniqkidz.app"
     },
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.uniqkidz.app"
+    },
+    "cordova-plugin-file": {
       "PACKAGE_NAME": "com.uniqkidz.app"
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.uniqkidz.app"
     }
   },
-  "dependent_plugins": {
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.uniqkidz.app"
-    }
-  }
+  "dependent_plugins": {}
 }
