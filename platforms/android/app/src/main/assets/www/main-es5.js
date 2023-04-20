@@ -264,31 +264,36 @@
             this.uid = localStorage.getItem('uid');
             console.log('userloggedid in app compoenent::', this.uid);
             this.accountTypeId = localStorage.getItem('accountTypeId');
-            console.log('accountTypeId:', this.accountTypeId); //  if(this.uid){
-            //    if(this.accountTypeId==1){
-            //     this.userService.setSideMenu('Parent');
-            //     this.userService.userType='Parent';
-            //      this.navCtrl.navigateRoot('homescreen');
-            //      console.log('userlogged parent app component::')
-            //    }
-            //    if(this.accountTypeId==2){
-            //     this.userService.setSideMenu('Professional');
-            //     this.userService.userType='Professional';
-            //      this.navCtrl.navigateRoot('cghomescreen');
-            //    }
-            //    if(this.accountTypeId==3){
-            //     this.userService.setSideMenu('Family');
-            //     this.userService.userType='Family';
-            //      this.navCtrl.navigateRoot('cghomescreen');
-            //    }
-            //    if(this.accountTypeId==4){
-            //     this.userService.setSideMenu('Agency');
-            //     this.userService.userType='Agency';
-            //      this.navCtrl.navigateRoot('agencyhomescreen');
-            //    }
-            //  }else{
-            //    this.navCtrl.navigateRoot('onboarding');
-            //  }
+            console.log('accountTypeId:', this.accountTypeId);
+
+            if (this.uid) {
+              if (this.accountTypeId == 1) {
+                this.userService.setSideMenu('Parent');
+                this.userService.userType = 'Parent';
+                this.navCtrl.navigateRoot('homescreen');
+                console.log('userlogged parent app component::');
+              }
+
+              if (this.accountTypeId == 2) {
+                this.userService.setSideMenu('Professional');
+                this.userService.userType = 'Professional';
+                this.navCtrl.navigateRoot('cghomescreen');
+              }
+
+              if (this.accountTypeId == 3) {
+                this.userService.setSideMenu('Family');
+                this.userService.userType = 'Family';
+                this.navCtrl.navigateRoot('cghomescreen');
+              }
+
+              if (this.accountTypeId == 4) {
+                this.userService.setSideMenu('Agency');
+                this.userService.userType = 'Agency';
+                this.navCtrl.navigateRoot('agencyhomescreen');
+              }
+            } else {
+              this.navCtrl.navigateRoot('onboarding');
+            }
 
             this.pushNotification();
           }
