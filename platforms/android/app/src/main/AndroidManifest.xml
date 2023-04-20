@@ -21,7 +21,7 @@
                 <category android:name="com.uniqkidz.app" />
             </intent-filter>
         </receiver>
-        
+
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE" />
