@@ -72,7 +72,7 @@ export class SignupPage implements OnInit {
     public menuCtrl: MenuController,
     public cd: ChangeDetectorRef,
     private oneSignal: OneSignal
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.platform.keyboardDidShow.subscribe((ev) => {
@@ -119,8 +119,13 @@ export class SignupPage implements OnInit {
     this.userType = localStorage.getItem("userType");
     console.log("userType", this.userType);
 
-    this.player_id = localStorage.getItem("deviceID");
-    console.log("player_id", this.player_id);
+    if (localStorage.getItem("deviceID") == null) {
+      this.player_id = '123456'
+    } else {
+      this.player_id = localStorage.getItem("deviceID");
+      console.log("player_id", this.player_id);
+    }
+
 
     // this.platform.keyboardDidShow.subscribe((ev) => {
     //   console.log("keyboard show", ev);
@@ -244,7 +249,7 @@ export class SignupPage implements OnInit {
             return;
           }
         },
-        (err) => {}
+        (err) => { }
       );
     }
     if (!this.firstname) {

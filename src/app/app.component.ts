@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,MenuController, Platform } from '@ionic/angular';
+import { NavController, MenuController, Platform } from '@ionic/angular';
 import { LoginwithuserService } from './loginwithuser.service';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { Router } from '@angular/router';
@@ -15,7 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent{
+export class AppComponent {
   // userType:any;
   uid: any;
   accountTypeId: any;
@@ -46,7 +46,7 @@ export class AppComponent{
     // { title: 'OTP', url: '/otp', icon: 'mail' },
     // { title: 'Resetpassword', url: '/resetpassword', icon: 'mail' },
     // { title: 'TermsandCondition', url: '/termsandcondition', img: '/assets/imgs/icons/term.png' },
-     // { title: 'Medication', url: '/medicationtime', icon: 'mail' },
+    // { title: 'Medication', url: '/medicationtime', icon: 'mail' },
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(public navCtrl: NavController,
@@ -57,9 +57,9 @@ export class AppComponent{
     public platform: Platform,
     private ngZone: NgZone,
     private rest: RestService,
-    public statusbar:StatusBar
+    public statusbar: StatusBar
     // private splashScreen: SplashScreen
-    ) {
+  ) {
 
   }
 
@@ -67,33 +67,33 @@ export class AppComponent{
 
     this.platform.ready().then(() => {
       this.initializeApp();
-       
+
     })
 
-   
-   
+
+
   }
 
-  parentprofile(){
+  parentprofile() {
     this.menuCtrl.toggle();
     this.navCtrl.navigateForward('homescreen');
   }
-  cgprofile(type){
+  cgprofile(type) {
     this.menuCtrl.toggle();
-    if(type=='Professional'|| type=='Family'){
+    if (type == 'Professional' || type == 'Family') {
       this.navCtrl.navigateForward('cghomescreen');
     }
-    if(type=='Agency'){
+    if (type == 'Agency') {
       this.navCtrl.navigateForward('agencyhomescreen');
     }
 
   }
 
-  menu(){
+  menu() {
     this.menuCtrl.toggle();
   }
-  initializeApp(){
-  
+  initializeApp() {
+
     // this.platform.ready().then(() => {
     //   setTimeout(() => {
     //     this.splashScreen.hide();
@@ -134,42 +134,42 @@ export class AppComponent{
 
     //  console.log('this.identy.userId',this.identy.userId);
 
-   this.uid=localStorage.getItem('uid');
-   console.log('userloggedid in app compoenent::',this.uid)
-   this.accountTypeId=localStorage.getItem('accountTypeId');
-   console.log('accountTypeId:',this.accountTypeId);
-   if(this.uid){
-     if(this.accountTypeId==1){
-      this.userService.setSideMenu('Parent');
-      this.userService.userType='Parent';
-       this.navCtrl.navigateRoot('homescreen');
-       console.log('userlogged parent app component::')
-     }
-     if(this.accountTypeId==2){
-      this.userService.setSideMenu('Professional');
-      this.userService.userType='Professional';
-       this.navCtrl.navigateRoot('cghomescreen');
-     }
-     if(this.accountTypeId==3){
-      this.userService.setSideMenu('Family');
-      this.userService.userType='Family';
-       this.navCtrl.navigateRoot('cghomescreen');
-     }
-     if(this.accountTypeId==4){
-      this.userService.setSideMenu('Agency');
-      this.userService.userType='Agency';
-       this.navCtrl.navigateRoot('agencyhomescreen');
-     }
+    this.uid = localStorage.getItem('uid');
+    console.log('userloggedid in app compoenent::', this.uid)
+    this.accountTypeId = localStorage.getItem('accountTypeId');
+    console.log('accountTypeId:', this.accountTypeId);
+    if (this.uid) {
+      if (this.accountTypeId == 1) {
+        this.userService.setSideMenu('Parent');
+        this.userService.userType = 'Parent';
+        this.navCtrl.navigateRoot('homescreen');
+        console.log('userlogged parent app component::')
+      }
+      if (this.accountTypeId == 2) {
+        this.userService.setSideMenu('Professional');
+        this.userService.userType = 'Professional';
+        this.navCtrl.navigateRoot('cghomescreen');
+      }
+      if (this.accountTypeId == 3) {
+        this.userService.setSideMenu('Family');
+        this.userService.userType = 'Family';
+        this.navCtrl.navigateRoot('cghomescreen');
+      }
+      if (this.accountTypeId == 4) {
+        this.userService.setSideMenu('Agency');
+        this.userService.userType = 'Agency';
+        this.navCtrl.navigateRoot('agencyhomescreen');
+      }
 
-   }else{
-     this.navCtrl.navigateRoot('onboarding');
-   }
+    } else {
+      this.navCtrl.navigateRoot('onboarding');
+    }
 
-   this.pushNotification();
+    this.pushNotification();
 
   }
 
-  pushNotification(){
+  pushNotification() {
     console.log('push notification in function.....');
     this.oneSignal.startInit(this.oneSignalAppId, this.sender_id);
 
@@ -178,22 +178,22 @@ export class AppComponent{
     );
 
     this.oneSignal.handleNotificationReceived().subscribe((data) => {
-      console.log('data load',data.payload);
+      console.log('data load', data.payload);
     });
 
     this.oneSignal.handleNotificationOpened().subscribe((data) => {
-      console.log('data open notification',data);
+      console.log('data open notification', data);
 
       if (data.notification.payload.additionalData.type === 'requestsending') {
 
-        this.ngZone.run(()=>this.router.navigate(['requests1']));
+        this.ngZone.run(() => this.router.navigate(['requests1']));
 
 
-     }
+      }
 
       if (data.notification.payload.additionalData.type === 'requestrejection') {
         // this.router.navigate(['requests']);
-        this.ngZone.run(()=>this.router.navigate(['requests']));
+        this.ngZone.run(() => this.router.navigate(['requests']));
       }
 
 
@@ -201,7 +201,7 @@ export class AppComponent{
       if (data.notification.payload.additionalData.type === 'requestacceptance') {
 
         // this.router.navigate(['requests']);
-        this.ngZone.run(()=>this.router.navigate(['requests']));
+        this.ngZone.run(() => this.router.navigate(['requests']));
 
 
       }
@@ -209,13 +209,13 @@ export class AppComponent{
       if (data.notification.payload.additionalData.type === 'paymentConfirmation') {
 
         // this.router.navigate(['earning']);
-        this.ngZone.run(()=>this.router.navigate(['earning']));
+        this.ngZone.run(() => this.router.navigate(['earning']));
 
       }
       if (data.notification.payload.additionalData.type === 'messageNotification') {
 
         // this.router.navigate(['inbox']);
-        this.ngZone.run(()=>this.router.navigate(['chat']));
+        this.ngZone.run(() => this.router.navigate(['chat']));
 
 
       }
@@ -225,7 +225,7 @@ export class AppComponent{
   }
 
 
-  logout(){
+  logout() {
     this.menuCtrl.toggle();
     // this.userService.userType = "";
     localStorage.removeItem('userType');
