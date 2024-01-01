@@ -158,7 +158,7 @@ export class ParentprofilePage implements OnInit {
           return;
         }
       },
-      (err) => {}
+      (err) => { }
     );
   }
 
@@ -177,7 +177,7 @@ export class ParentprofilePage implements OnInit {
                 this.defaultProfile = `data:image/png;base64,${imageData}`;
                 // console.log('defaultProfile is = ' , this.defaultProfile);
               },
-              (err) => {}
+              (err) => { }
             );
           },
         },
@@ -268,7 +268,7 @@ export class ParentprofilePage implements OnInit {
             return;
           }
         },
-        (err) => {}
+        (err) => { }
       );
     }
     if (!this.mobilenumber) {
